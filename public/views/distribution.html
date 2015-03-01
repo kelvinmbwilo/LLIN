@@ -1,0 +1,149 @@
+<style>
+    .md-button{
+    padding:2px;
+    }
+    td,th{
+        text-align: center;
+    }
+</style>
+<h3 class="text-center">Net Distribution Summary</h3>
+<md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+        <table class="table table-condensed">
+            <tr style="background-image: -webkit-gradient(linear, left top, left bottom, from(#22331C), to(#3B3738))">
+                <th>Details</th>
+                <th>Region</th>
+                <th>Male</th>
+                <th>Female</th>
+                <th>Total</th>
+                <th>Number of <br> Nets</th>
+                <th>Coupons</th>
+                <th>Redeemed <br> Coupons</th>
+                <th>Non Redeemed<br> Coupons</th>
+                <!--<th></th>-->
+            </tr>
+            <tr ng-repeat-start="region in data.regions" >
+                <td>
+                    <md-button title="click to see details" class="md-hue-3 md-primary media-left" ng-if="!districtVisible[region.id]"  ng-click="showDistrictDetails(region)" ><i class="fa fa-chevron-down"></i></md-button>
+                    <md-button title="click to hide details" class="md-hue-3 md-primary media-left" ng-if="districtVisible[region.id]" ng-click="hideDistrictDetails(region)" ><i class="fa fa-chevron-up"></i></md-button>
+                </td>
+                <td>{{ region.region }}</td>
+                <td>{{ region.people.male }}</td>
+                <td>{{ region.people.female }}</td>
+                <td>{{ region.people.total }}</td>
+                <td>{{ region.people.total/2 | number:0 }}</td>
+                <td>{{ region.people.kaya }}</td>
+                <td>{{ region.people.done }}</td>
+                <td>{{ region.people.not_done }}</td>
+                <!--<td><span ng-if="region.people.kaya == region.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
+            </tr>
+            <!--district-->
+            <tr ng-repeat-end >
+                <td ng-if="districtVisible[region.id]"></td >
+                <td colspan="9" ng-if="districtVisible[region.id]" >
+                    <h5>{{ region.region }} Region  Net Distribution Status</h5>
+                    <table class="table table-bordered table-responsive" style="background-image: url(mh.png);background-repeat: no-repeat;background-size: cover;">
+                        <tr>
+                            <th>
+                            Details
+                            </th>
+                            <th>District</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                            <th>Total</th>
+                            <th>Number of <br> Nets</th>
+                            <th>Coupons</th>
+                            <th>Redeemed <br> Coupons</th>
+                            <th>Non Redeemed<br> Coupons</th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat-start="district in region.districts">
+                            <td>
+                                <md-button title="click to see details" class="md-hue-3 md-primary media-left" ng-if="!wardVisible[district.id]"  ng-click="showWardDetails(district)" ><i class="fa fa-chevron-down"></i></md-button>
+                                <md-button title="click to hide details" class="md-hue-3 md-primary media-left" ng-if="wardVisible[district.id]" ng-click="hideWardDetails(district)" ><i class="fa fa-chevron-up"></i></md-button>
+                            </td>
+                            <td>{{ district.district }}</td>
+                            <td>{{ district.people.male }}</td>
+                            <td>{{ district.people.female }}</td>
+                            <td>{{ district.people.total }}</td>
+                            <td>{{ district.people.total/2 | number:0 }}</td>
+                            <td>{{ district.people.kaya }}</td>
+                            <td>{{ district.people.done }}</td>
+                            <td>{{ district.people.not_done }}</td>
+                            <!--<td><span ng-if="district.people.kaya == district.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
+                        </tr>
+                        <!--wards-->
+                        <tr ng-repeat-end >
+                            <td ng-if="wardVisible[district.id]"></td >
+                            <td colspan="9" ng-if="wardVisible[district.id]" >
+                                <h5>{{ district.district }} District  Net Distribution Status</h5>
+                                <table class="table table-bordered table-responsive">
+                                    <tr>
+                                        <th>
+                                            Details
+                                        </th>
+                                        <th>Ward</th>
+                                        <th>Male</th>
+                                        <th>Female</th>
+                                        <th>Total</th>
+                                        <th>Number of <br> Nets</th>
+                                        <th>Coupons</th>
+                                        <th>Redeemed <br> Coupons</th>
+                                        <th>Non Redeemed<br> Coupons</th>
+                                    </tr>
+                                    <tr ng-repeat-start="ward in district.ward">
+                                        <td>
+                                            <md-button title="click to see details" class="md-hue-3 md-primary media-left" ng-if="!villageVisible[ward.id]"  ng-click="showVillageDetails(ward)" ><i class="fa fa-chevron-down"></i></md-button>
+                                            <md-button title="click to hide details" class="md-hue-3 md-primary media-left" ng-if="villageVisible[ward.id]" ng-click="hideVillageDetails(ward)" ><i class="fa fa-chevron-up"></i></md-button>
+                                        </td>
+                                        <td>{{ ward.name }}</td>
+                                        <td>{{ ward.people.male }}</td>
+                                        <td>{{ ward.people.female }}</td>
+                                        <td>{{ ward.people.total }}</td>
+                                        <td>{{ ward.people.total/2 | number:0 }}</td>
+                                        <td>{{ ward.people.kaya }}</td>
+                                        <td>{{ ward.people.done }}</td>
+                                        <td>{{ ward.people.not_done }}</td>
+                                        <!--<td><span ng-if="ward.people.kaya == ward.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
+                                    </tr>
+                                    <!--villages-->
+                                    <tr ng-repeat-end >
+                                        <td ng-if="villageVisible[ward.id]"></td >
+                                        <td colspan="9" ng-if="villageVisible[ward.id]" >
+                                            <h5>{{ ward.name }}  Net Distribution Status</h5>
+                                            <table class="table table-bordered table-responsive">
+                                                <tr>
+                                                    <th>Village</th>
+                                                    <th>Male</th>
+                                                    <th>Female</th>
+                                                    <th>Total</th>
+                                                    <th>Number of <br> Nets</th>
+                                                    <th>Coupons</th>
+                                                    <th>Redeemed <br> Coupons</th>
+                                                    <th>Non Redeemed<br> Coupons</th>
+                                                </tr>
+                                                <tr ng-repeat-start="village in ward.village">
+                                                    <td>{{ village.name }}</td>
+                                                    <td>{{ village.people.male }}</td>
+                                                    <td>{{ village.people.female }}</td>
+                                                    <td>{{ village.people.total }}</td>
+                                                    <td>{{ village.people.total/2 | number:0 }}</td>
+                                                    <td>{{ village.people.kaya }}</td>
+                                                    <td>{{ village.people.done }}</td>
+                                                    <td>{{ village.people.not_done }}</td>
+                                                    <!--<td><span ng-if="village.people.kaya == village.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
+                                                </tr>
+                                                <tr ng-repeat-end >
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+</md-whiteframe>

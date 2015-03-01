@@ -1,0 +1,20 @@
+<h2>Wards </h2>
+<md-list>
+    <md-item ng-repeat="ward in data.wardss" ng-hide="deletedWard[ward.id]">
+        <md-item-content>
+            <div class="md-tile-left">
+            </div>
+            <div class="md-tile-content">
+                <h3 ng-if="!currentEditWard[ward.id]">{{ward.ward}}</h3>
+                <div ng-if="currentEditWard[ward.id]"><input ng-model="data.editingWard" type="text"></div>
+                <h4>{{ward.village }} Villages {{ward.households }} Households </h4>
+            </div>
+            <div class="md-tile-right">
+                <md-button ng-if="!currentEditWard[ward.id] && !currentSavingWard[ward.id]" ng-click="showEdit(ward.ward,ward.id,'ward')" title="Edit {{ward.ward}} " class="md-fab md-raised" style="width: 30px;height: 30px"><i class="fa fa-pencil"></i> </md-button>
+                <md-button ng-if="currentEditWard[ward.id]" ng-click="editOrgUnit(ward.id,'ward',data.editingWard)" title="Save Changes" class="md-fab md-accent md-raised md-hue-3" style="width: 30px;height: 30px"><i class="fa fa-check text-success"></i> </md-button>
+                <md-button ng-if="currentSavingWard[ward.id]"  title="Saving Changes" class="md-fab md-accent md-raised md-hue-3" style="width: 30px;height: 30px"><i class="fa fa-spin fa-spinner"></i> </md-button>
+                <md-button ng-click="showConfirm($event,ward.id,'ward')" title="Delete {{ward.ward}}" class="md-fab md-raised md-warn" style="width: 30px;height: 30px"><i class="fa fa-trash-o"></i> </md-button>
+            </div>
+        </md-item-content>
+    </md-item>
+</md-list>

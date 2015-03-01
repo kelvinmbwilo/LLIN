@@ -1,0 +1,20 @@
+<h2>Villages </h2>
+<md-list>
+    <md-item ng-repeat="village in data.villagess" ng-hide="deletedVillage[village.id]">
+        <md-item-content>
+            <div class="md-tile-left">
+            </div>
+            <div class="md-tile-content">
+                <h3 ng-if="!currentEditVillage[village.id]">{{ village.village }}</h3>
+                <div ng-if="currentEditVillage[village.id]"><input ng-model="data.editingVillage" type="text"></div>
+                <h4>{{ village.households }} Households </h4>
+            </div>
+            <div class="md-tile-right">
+                <md-button ng-if="!currentEditVillage[village.id] && !currentSavingvillage[village.id]" ng-click="showEdit(village.village,village.id,'village')" title="Edit {{village.village}} " class="md-fab md-raised" style="width: 30px;height: 30px"><i class="fa fa-pencil"></i> </md-button>
+                <md-button ng-if="currentEditVillage[village.id]" ng-click="editOrgUnit(village.id,'village',data.editingVillage)" title="Save Changes" class="md-fab md-accent md-raised md-hue-3" style="width: 30px;height: 30px"><i class="fa fa-check text-success"></i> </md-button>
+                <md-button ng-if="currentSavingVillage[village.id]"  title="Saving Changes" class="md-fab md-accent md-raised md-hue-3" style="width: 30px;height: 30px"><i class="fa fa-spin fa-spinner"></i> </md-button>
+                <md-button ng-click="showConfirm($event,village.id,'village')" title="Delete {{village.village}}" class="md-fab md-raised md-warn" style="width: 30px;height: 30px"><i class="fa fa-trash-o"></i> </md-button>
+            </div>
+        </md-item-content>
+    </md-item>
+</md-list>

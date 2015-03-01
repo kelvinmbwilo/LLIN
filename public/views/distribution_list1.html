@@ -1,0 +1,63 @@
+<style xmlns="http://www.w3.org/1999/html">
+    .entry{
+        border: 0px;
+        border-bottom-style:dashed ;
+        border-bottom-color:#000000 ;
+        border-bottom-width:0px ;
+        width: 100%;
+        /*background-color: #ffffff;*/
+    }
+    td,th{
+        text-align: center;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="col-xs-6">
+        Mkoa
+        <select class="entry" ng-model="currentKaya.region">
+            <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
+        </select>
+    </div>
+    <div class="col-xs-6">
+        Wilaya
+        <select class="entry" ng-model="currentKaya.district" required >
+            <option ng-repeat="district in data.districts  | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
+        </select>
+    </div>
+
+
+</div>
+<md-button class="pull-right md-primary md-hue-3 md-raised" ng-click="getList(currentKaya)" style="margin: 15px">
+    Get List
+    <md-tooltip>
+        Show The list
+    </md-tooltip>
+</md-button>
+<md-button href="index.php/distribution_list1/{{ currentKaya.region }}/{{ currentKaya.district }}" target="_blank" ng-show="showDisList && data.onedistrict.villagelist != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px">
+
+    <img src="bower_components/icons/ic_print_24px.svg">
+<md-tooltip>
+    Print The list
+</md-tooltip>
+</md-button>
+
+<md-whiteframe class="md-whiteframe-z5">
+    <table class="table table-bordered table-striped sortable" ng-show="showDisList && data.onedistrict.villagelist != 0">
+        <tr style="background-image: -webkit-gradient(linear, left top, left bottom, from(#7E8F7C), to(#3B3738))">
+            <th ng-click="changeOrder('name')">Village</th>
+            <th ng-click="changeOrder('people.kaya')">Number of Coupons</th>
+            <th ng-click="changeOrder('people.kaya')">Number of <br> Nets</th>
+            <th ng-click="changeOrder('people.kaya')">Buffer</th>
+            <!--<th></th>-->
+        </tr>
+        <tr ng-repeat="ward in data.onedistrict.villagelist | orderBy:'name'">
+            <td style="text-align: left" >{{ ward.name }}</td>
+            <td>{{ ward.people.kaya }}</td>
+            <td>{{ ward.people.total/2 | number:0 }}</td>
+            <td></td>
+            <!--<td><span ng-if="region.people.kaya == region.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
+        </tr>
+
+        </table>
+</md-whiteframe>

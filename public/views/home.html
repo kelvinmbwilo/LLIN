@@ -1,0 +1,40 @@
+<div layout="colum" layout-margin layout-align="center center">
+    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
+        <md-icon icon="bower_components/icons/ic_access_time_48px.svg"></md-icon>
+    </md-whiteframe>
+    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
+        <md-icon icon="bower_components/icons/ic_account_balance_48px.svg"></md-icon>
+        <h2>26 Regions 136 Districts 425 Villages  </h2>
+
+    </md-whiteframe>
+    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
+        <md-icon icon="bower_components/icons/ic_comment_48px.svg"></md-icon>
+    </md-whiteframe>
+    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
+        <md-icon icon="bower_components/icons/ic_people_48px.svg"></md-icon>
+        <h2>43 Users</h2>
+    </md-whiteframe>
+
+</div>
+<div layout="column" layout-margin style="margin-left: 15px;margin-right: 15px">
+<md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
+    <md-tabs md-selected="selectedIndex">
+        <md-tab ng-repeat="region in data.regions"
+                ng-disabled="tab.disabled"
+                label="{{region.region}}">
+            <div class="demo-tab tab{{$index%4}}" layout="column" layout-fill layout-align="space-around center">
+                <div><h2>{{ region.region }} Region Net Distribution Summary</h2></div>
+
+            </div>
+        </md-tab>
+    </md-tabs>
+<!--<md-tabs md-selected="selectedIndex">-->
+    <!--<md-tab ng-repeat="region in data.regions" ng-disabled="tab.disabled" label="{{region.region}}" ng-click="getDetails(region)">-->
+        <!--<div class="demo-tab tab{{$index%4}}" layout="column" layout-fill layout-align="space-around center">-->
+            <!--<div><h2>{{ region.region }} Region Net Distribution Summary</h2></div>-->
+            <!---->
+        <!--</div>-->
+    <!--</md-tab>-->
+<!--</md-tabs>-->
+    </md-whiteframe>
+    </div>

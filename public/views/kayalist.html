@@ -1,0 +1,111 @@
+<style>
+    thead th{
+        padding: 2px;
+    }
+    .repeated-item.ng-enter, .repeated-item.ng-move {
+        -webkit-transition:0.5s linear all;
+        -moz-transition:0.5s linear all;
+        -o-transition:0.5s linear all;
+        transition:0.5s linear all;
+        opacity:0;
+    }
+
+    /**
+     The ng-enter-active and ng-move-active
+     are where the transition destination properties
+     are set so that the animation knows what to
+     animate.
+    */
+    .repeated-item.ng-enter.ng-enter-active,
+    .repeated-item.ng-move.ng-move-active {
+        opacity:1;
+    }
+
+    /**
+      We're using CSS keyframe animations for when
+      the leave event is triggered for the element
+      that has the .repeated-item class
+    */
+    .repeated-item.ng-leave {
+        -webkit-animation:0.5s my_animation;
+        -moz-animation:0.5s my_animation;
+        -o-animation:0.5s my_animation;
+        animation:0.5s my_animation;
+    }
+
+    @keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    /*
+      Unfortunately each browser vendor requires
+      its own definition of keyframe animation code...
+    */
+    @-webkit-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    @-moz-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    @-o-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+    .showSlow.ng-enter, .showSlow.ng-move {
+        -webkit-transition:0.3s linear all;
+        -moz-transition:0.3s linear all;
+        -o-transition:0.3s linear all;
+        transition:0.3s linear all;
+        opacity:0;
+    }
+    .showSlow.ng-leave {
+        -webkit-animation:0.3s my_animation;
+        -moz-animation:0.3s my_animation;
+        -o-animation:0.3s my_animation;
+        animation:0.3s my_animation;
+    }
+</style>
+        <input type="text" ng-model="searchkaya" placeholder="search">
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead style="background-color: #5B9BD5">
+    <tr >
+        <th rowspan="2">#</th>
+        <th rowspan="2">Uid</th>
+        <th rowspan="2">Jina La Mkuu wa kaya</th>
+        <th colspan="3">Idadi ya Wanakaya</th>
+        <th rowspan="2">Idadi ya Vyandarua</th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+
+        <th >Me</th>
+        <th >Ke</th>
+        <th >Jumla</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="kaya in data.kaya | filter:searchkaya |orderBy:'-id'" class="repeated-item">
+          <td>{{ $index+1 }}</td>
+          <td>{{ kaya.uid }}</td>
+          <td>{{ kaya.leader_name }}</td>
+          <td>{{ kaya.male }}</td>
+          <td>{{ kaya.female}}</td>
+          <td>{{ findSum(kaya) }}</td>
+          <td>{{ findSum(kaya)/2 }}</td>
+          <td>
+              <button ng-click="enableEdit(kaya)" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> </button>
+              <button ng-if="!currentDelete[kaya.id]" ng-click="enableDelete(kaya)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> </button>
+              <span ng-if="currentDelete[kaya.id]" class="showSlow"><br/>Are you sure
+                <button ng-click="cancelDelete(kaya)" class="btn btn-xs btn-success">No</button>
+                <button ng-click="deleteKaya(kaya)" class="btn btn-xs btn-warning">Yes</button>
+              </span>
+              <span ng-if="deleteSuccess[kaya.id]"><br/><i class="fa fa-spinner fa-spin"></i> Deleting </span>
+          </td>
+      </tr>
+    </tbody>
+</table>

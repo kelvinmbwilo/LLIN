@@ -1,0 +1,27 @@
+<h1>Coupon Verification</h1>
+<md-whiteframe class="md-whiteframe-z2" layout="column" layout-align="start start" style="padding-bottom: 20px">
+ <form name="scaningForm" novalidate="" style="padding-bottom: 10px">
+
+<div class="col-sm-4">Scan(write) the Code on Voucher </div>
+<div class="col-sm-4"><input name="kayaId" ng-change="checkKaya(data.kayaId)" ng-model="data.kayaId" id="voucher_no" type="text" style="border: 0px;" required=""></div>
+
+      <div class="col-sm-4">
+          <span ng-if="!currentKayaPresent"> <strong> {{ addTwo(currentKaya.male,currentKaya.female)/2 |number:0 }} Net(s)</strong>  </span>
+        <span ng-hide="currentKayaPresent">
+            <md-button ng-disabled="currentKayaPresent" class="md-fab md-hue-3 md-primary md-raised" ng-click="confirmVericationKaya(data.kayaId)" style="height: 40px;width:40px">
+                <i class="fa fa-check"></i>
+
+            </md-button> Confirm Verification</span>
+        <!--<md-button class="md-hue-3 md-primary md-raised" ng-click="activatecheckKaya()">Check Again</md-button>-->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span ng-if="checkingKaya"><i class="fa fa-spin fa-spinner fa-2x"></i> Checking... </span>
+        <span ng-if="currentKaya.verified == 1" class="text-success"><i class="fa fa-check fa-2x"></i> This coupon is already confirmed </span>
+        <span ng-if="performingDistribution"><i class="fa fa-spin fa-spinner fa-2x"></i> Confirming Distribution... </span>
+        <span ng-if="errorcheckingKaya && !scaningForm.kayaId.$error.required" class="text-danger"><i class="fa fa-exclamation"></i> Incorrect Coupon Number Try Again </span>
+
+     </div>
+    </form>
+    <div ng-include="'views/one_voucher.html'" >
+
+    </div>
+</md-whiteframe>

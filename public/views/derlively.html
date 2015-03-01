@@ -1,0 +1,82 @@
+<style xmlns="http://www.w3.org/1999/html">
+    .entry{
+        border: 0px;
+        border-bottom-style:dashed ;
+        border-bottom-color:#000000 ;
+        border-bottom-width:0px ;
+        width: 100%;
+        /*background-color: #ffffff;*/
+    }
+    td,th{
+        text-align: center;
+    }
+</style>
+<div class="col-md-12" style="margin-bottom: 20px">
+    <div class="col-xs-3">
+        Mkoa
+        <select class="entry" ng-model="currentKaya.region">
+            <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
+        </select>
+    </div>
+    <div class="col-xs-3">
+        Wilaya
+        <select class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
+            <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
+        </select>
+    </div>
+    <div class="col-xs-3">
+        Kata
+        <select class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
+            <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
+        </select>
+    </div>
+    <div class="col-xs-3">
+        Kijiji/Mtaa
+        <select class="entry" ng-model="currentKaya.village" ng-change="getVillage(currentKaya.village)">
+            <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
+        </select>
+    </div>
+
+</div>
+<div class="col-md-12" ng-if="currentKaya.village &&  wardDetails.derlivery_status == 0">
+    <h3 style="padding-left: 30px" >Taarifa za kupoelewa kwa Vyandarua {{ wardDetails.name }}</h3>
+    <div class="col-md-6">
+      <div class="col-xs-6"><b>Idadi ya Kaya</b></div>
+      <div class="col-xs-6"><b>{{ wardDetails.households }}</b></div><br><br>
+      <div class="col-xs-6"><b>Idadi Ya Watu</b></div>
+      <div class="col-xs-6">
+          <div class="col-xs-6" style="padding: 0px"><b>Wanawake <br> {{ wardDetails.me }}</b></div>
+          <div class="col-xs-6" style="padding: 0px"><b>Wanaume <br>{{ wardDetails.ke }}</b></div>
+      </div><br><br>
+      <div class="col-xs-6"><br><br><b>Jina La VEO</b></div>
+      <div class="col-xs-6"><br><br><b>{{ wardDetails.leader_name }}</b></div>
+    </div>
+    <div class="col-md-6">
+        <form name="kayaForm" novalidate="" style="padding-bottom: 10px">
+        <div class="col-md-12">
+                Tarehe ya kupokelewa
+                <input required="" type="text" class="entry" ui-date="dateOptions" ng-model="currentKaya.derlivery_date">
+        </div>
+        <div class="col-md-12">
+                Jina la Msambazaji
+                <input required="" type="text" class="entry" ng-model="currentKaya.derlivery_name">
+        </div>
+        <div class="col-md-12">
+                Idadi ya Vyandarua
+                <input required="" type="text" class="entry" ng-model="currentKaya.net_derlivered">
+        </div>
+
+        <div class="col-md-12" style="margin-top: 10px">
+            <div class="col-xs-5">
+                <!--saving messages-->
+                <span class="pull-left" ng-if="currentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+                <span class="pull-left text-success" ng-if="kayaSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+                <span class="pull-left text-danger" ng-if="kayaSavedFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+                <div ng-hide="currentEditting"class="btn btn-primary btn-sm pull-right" ng-click="saveDerliverly(currentKaya)" ng-disabled="kayaForm.$invalid">&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i> Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+            </div>
+        </div>
+            </form>
+    </div>
+
+
+</div>
