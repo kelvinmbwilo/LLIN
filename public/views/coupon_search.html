@@ -33,4 +33,37 @@
         </md-button>
     </div>
 
+
 </div>
+        <div class="col-xs-12">
+            <table class="table table-striped table-hover table-condensed table-bordered" >
+                <thead >
+                <tr >
+                    <th rowspan="2">Na</th>
+                    <th rowspan="2">Voucher Number</th>
+                    <th rowspan="2">Jina La Mkuu wa kaya</th>
+                    <th colspan="3" >Idadi ya Wanakaya</th>
+                    <th rowspan="2">Idadi ya Vyandarua</th>
+                </tr>
+                <tr>
+                    <th style="border: 0px">Me</th>
+                    <th style="border: 0px">Ke</th>
+                    <th style="border: 0px">Jumla</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-hide="kaya.length != 0">
+                    <td colspan="7" class="text-center"><h4>No Data</h4></td>
+                </tr>
+                <tr ng-repeat="kaya in kaya | orderBy:'-id'" class="repeated-item">
+                    <td>{{ $index+1 }}</td>
+                    <td>{{ kaya.uid }}</td>
+                    <td>{{ kaya.leader_name }}</td>
+                    <td>{{ kaya.male }}</td>
+                    <td>{{ kaya.female}}</td>
+                    <td>{{ findSum(kaya) }}</td>
+                    <td>{{ kaya.nets }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>

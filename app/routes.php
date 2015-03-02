@@ -43,8 +43,11 @@ Route::post('user/{id}',array('uses'=>'UserController@update'));
  * Uploading the file with households
  */
 
-//getting kaya
+//saving uploaded  kaya
 Route::post('upload',array('uses'=>'kayaController@upload'));
+
+//searching for kaya
+Route::post('search/kaya',array('uses'=>'kayaController@searchResult'));
 
 /////////////////////////////////////////////////////////////
 //getting kaya

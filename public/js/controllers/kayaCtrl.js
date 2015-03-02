@@ -19,6 +19,8 @@ angular.module("malariaApp")
 
         $scope.saveKaya = function(kaya){
             $scope.currentSaving = true;
+            var nets = (parseInt(kaya.male)+parseInt(kaya.female))/2;
+            kaya.nets = (nets > 5)?5:nets;
             $http.post("index.php/kaya", kaya).success(function (newKaya) {
 //                $scope.data.kaya.push(newKaya);
                 $scope.currentKaya = {};

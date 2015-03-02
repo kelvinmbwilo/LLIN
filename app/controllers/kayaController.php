@@ -13,6 +13,24 @@ class kayaController extends \BaseController {
 	}
 
     /**
+	 * Display a search result.
+	 *
+	 * @return Response
+	 */
+	public function searchResult()
+	{
+        if(Input::get('ward') == NULL){
+            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->get();
+
+        }elseif(Input::get('village') == NULL){
+            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->get();
+
+        }else{
+            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
+        }
+	}
+
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -42,12 +60,14 @@ class kayaController extends \BaseController {
                             array_push($duplicate,$kaya);
                         }else{
                             array_push($newVals,$kaya);
-                            Kaya::create(array(
+                            $nets = intval(($kaya['me'] + $kaya['ke'])/2);
+                             Kaya::create(array(
                                 'uid' => $kaya['registration_number'],
                                 'leader_name' => $kaya['full_name'],
                                 'phone' => $kaya['simu'],
                                 'male' => $kaya['me'],
                                 'female' => $kaya['ke'],
+                                'nets'   => ($nets > 5)?5:$nets,
                                 'station' => $kaya['kituo_cha_ugawaji'],
                                 'name_of_veo' => $kaya['jina_la_veo'],
                                 'writer' => $kaya['mwandishi'],
@@ -154,6 +174,7 @@ class kayaController extends \BaseController {
         $array['name'] = District::find($disid)->district;
 		$array['male'] =  Kaya::where('district',$disid)->sum('male');
         $array['female'] =  Kaya::where('district',$disid)->sum('female');
+        $array['nets'] =  Kaya::where('district',$disid)->sum('nets');
         $array['kaya'] =  Kaya::where('district',$disid)->count();
         $array['done'] =  Kaya::where('district',$disid)->where('status',1)->count();
         $array['not_done'] =  Kaya::where('district',$disid)->where('status',0)->count();
@@ -172,6 +193,7 @@ class kayaController extends \BaseController {
         $array = array();
 		$array['male'] =  Kaya::where('region',$regid)->sum('male');
         $array['female'] =  Kaya::where('region',$regid)->sum('female');
+        $array['nets'] =  Kaya::where('region',$regid)->sum('nets');
         $array['kaya'] =  Kaya::where('region',$regid)->count();
         $array['done'] =  Kaya::where('region',$regid)->where('status',1)->count();
         $array['not_done'] =  Kaya::where('region',$regid)->where('status',0)->count();
@@ -190,6 +212,7 @@ class kayaController extends \BaseController {
         $array = array();
 		$array['male'] =  Kaya::where('ward',$wardId)->sum('male');
         $array['female'] =  Kaya::where('ward',$wardId)->sum('female');
+        $array['nets'] =  Kaya::where('ward',$wardId)->sum('nets');
         $array['kaya'] =  Kaya::where('ward',$wardId)->count();
         $array['done'] =  Kaya::where('ward',$wardId)->where('status',1)->count();
         $array['not_done'] =  Kaya::where('ward',$wardId)->where('status',0)->count();
@@ -209,6 +232,7 @@ class kayaController extends \BaseController {
         $array = array();
 		$array['male'] =  Kaya::where('village',$vilId)->sum('male');
         $array['female'] =  Kaya::where('village',$vilId)->sum('female');
+        $array['nets'] =  Kaya::where('village',$vilId)->sum('nets');
         $array['kaya'] =  Kaya::where('village',$vilId)->count();
         $array['done'] =  Kaya::where('village',$vilId)->where('status',1)->count();
         $array['not_done'] =  Kaya::where('village',$vilId)->where('status',0)->count();
@@ -367,6 +391,7 @@ class kayaController extends \BaseController {
 	 */
 	public function update($id)
 	{
+        $nets = intval((Input::get("male") + Input::get("female")));
         $kaya = Kaya::find($id);
         $kaya->region = Input::get("region");
         $kaya->district = Input::get("district");
@@ -375,6 +400,7 @@ class kayaController extends \BaseController {
         $kaya->leader_name = Input::get("leader_name");
         $kaya->phone = Input::get("phone");
         $kaya->male = Input::get("male");
+        $kaya->nets = ($nets > 5)?5:$nets;
         $kaya->female = Input::get("female");
         $kaya->station= Input::get("station");
         $kaya->name_of_veo = Input::get("name_of_veo");
@@ -651,6 +677,7 @@ class kayaController extends \BaseController {
                 $villag[$j]['name'] = $village->name;
                 $villag[$j]['male'] =  Kaya::where('village',$village->id)->sum('male');
                 $villag[$j]['female'] =  Kaya::where('village',$village->id)->sum('female');
+                $villag[$j]['nets'] =  Kaya::where('village',$village->id)->sum('nets');
                 $villag[$j]['kaya'] =  Kaya::where('village',$village->id)->count();
                 $villag[$j]['total'] = $villag[$j]['male'] + $villag[$j]['female'];
                 $j++;

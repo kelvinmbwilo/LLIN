@@ -57,7 +57,7 @@
         <tr ng-repeat="ward in data.onedistrict.villagelist | orderBy:'name'">
             <td style="text-align: left" >{{ ward.name }}</td>
             <td>{{ ward.people.kaya }}</td>
-            <td>{{ ward.people.total/2 | number:0 }}</td>
+            <td>{{ ward.people.nets }}</td>
             <td></td>
             <!--<td><span ng-if="region.people.kaya == region.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
         </tr>

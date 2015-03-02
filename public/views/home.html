@@ -1,40 +1,137 @@
-<div layout="colum" layout-margin layout-align="center center">
-    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
-        <md-icon icon="bower_components/icons/ic_access_time_48px.svg"></md-icon>
-    </md-whiteframe>
-    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
-        <md-icon icon="bower_components/icons/ic_account_balance_48px.svg"></md-icon>
-        <h2>26 Regions 136 Districts 425 Villages  </h2>
+<div class="col-xs-4" style="padding: 0px">
+    <div class="block block-drop-shadow" >
 
-    </md-whiteframe>
-    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
-        <md-icon icon="bower_components/icons/ic_comment_48px.svg"></md-icon>
-    </md-whiteframe>
-    <md-whiteframe class="md-whiteframe-z5" flex style="height: 100px;background-color: cadetblue">
-        <md-icon icon="bower_components/icons/ic_people_48px.svg"></md-icon>
-        <h2>43 Users</h2>
-    </md-whiteframe>
+        <div class="head bg-dot30">
+            <h2>Administrative Areas</h2>
+
+            <div class="head-panel">
+                <div class="chart" id="dash_chart_2" style="height: 70px;">
+
+                    <div class="head">
+                        <div class="head-panel nm">
+                            <div class="hp-info pull-left">
+                                <div class="hp-icon">
+                                    <span class="icon-globe"></span>
+                                </div>
+                                <span class="hp-main">12,480</span>
+                                <span class="hp-sm">Regions</span>
+                            </div>
+                            <div class="hp-info pull-left">
+                                <div class="hp-icon">
+                                    <span class="icon-globe"></span>
+                                </div>
+                                <span class="hp-main" style="margin-left: 35px;">10,140</span>
+                                <span class="hp-sm" style="margin-left: 35px;">Districts</span>
+                            </div>
+                            <div class="hp-info pull-left">
+                                <div class="hp-icon">
+                                    <span class="icon-globe"></span>
+                                </div>
+                                <span class="hp-main" style="margin-left: 35px;">1,204</span>
+                                <span class="hp-sm" style="margin-left: 35px;">Wards</span>
+                            </div>
+                            <div class="hp-info pull-left">
+                                <div class="hp-icon">
+                                    <span class="icon-globe"></span>
+                                </div>
+                                <span class="hp-main">424</span>
+                                <span class="hp-sm">Villages</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-xs-4">
+    <div class="block block-drop-shadow">
+        <div class="head bg-default bg-light-ltr">
+            <h2>Coupons</h2>
+            <div class="head-panel">
+                <div class="chart" id="dash_chart_1" style="height: 70px;">
+                    <div class="hp-info pull-left">
+                        <div class="hp-icon">
+                            <span class="icon-list-alt"></span>
+                        </div>
+                        <span class="hp-main" style="margin-left: 35px;">12,480</span>
+                        <span class="hp-sm" style="margin-left: 35px;">Coupons</span>
+                    </div>
+                    <div class="hp-info pull-left">
+                        <div class="hp-icon">
+                            <span class="icon-cloud-download"></span>
+                        </div>
+                        <span class="hp-main" style="margin-left: 35px;">10,140</span>
+                        <span class="hp-sm" style="margin-left: 35px;">Imported Coupons</span>
+                    </div>
+                    <div class="hp-info pull-left">
+                        <div class="hp-icon">
+                            <span class="icon-ok-sign"></span>
+                        </div>
+                        <span class="hp-main" style="margin-left: 35px;">1,204</span>
+                        <span class="hp-sm" style="margin-left: 35px;">Verified Coupons</span>
+                    </div>
+                    <div class="hp-info pull-left">
+                        <div class="hp-icon">
+                            <span class="icon-check"></span>
+                        </div>
+                        <span class="hp-main" style="margin-left: 35px;">424</span>
+                        <span class="hp-sm" style="margin-left: 35px;">Redeemed Coupns</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-4" style="padding: 0px">
+    <div class="block block-drop-shadow" >
+
+        <div class="head bg-dot30">
+            <h2>Distribution Status/Timeline</h2>
+
+            <div class="head-panel">
+                <div class="chart" id="dash_chart_2" style="height: 70px;"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="block block-drop-shadow">
+
+    <div class="head bg-dot30">
+        <h2>Distribution Summary</h2>
+        <div class="head-panel">
+            <div class="chart" id="dash_chart_2" style="height: 150px;"></div>
+        </div>
+    </div>
 
 </div>
-<div layout="column" layout-margin style="margin-left: 15px;margin-right: 15px">
-<md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
-    <md-tabs md-selected="selectedIndex">
-        <md-tab ng-repeat="region in data.regions"
-                ng-disabled="tab.disabled"
-                label="{{region.region}}">
-            <div class="demo-tab tab{{$index%4}}" layout="column" layout-fill layout-align="space-around center">
-                <div><h2>{{ region.region }} Region Net Distribution Summary</h2></div>
+<div class="block block-drop-shadow">
+    <div class="head bg-default bg-light-ltr">
+        <h2>Coupons Quality</h2>
 
-            </div>
-        </md-tab>
-    </md-tabs>
-<!--<md-tabs md-selected="selectedIndex">-->
-    <!--<md-tab ng-repeat="region in data.regions" ng-disabled="tab.disabled" label="{{region.region}}" ng-click="getDetails(region)">-->
-        <!--<div class="demo-tab tab{{$index%4}}" layout="column" layout-fill layout-align="space-around center">-->
-            <!--<div><h2>{{ region.region }} Region Net Distribution Summary</h2></div>-->
-            <!---->
-        <!--</div>-->
-    <!--</md-tab>-->
-<!--</md-tabs>-->
-    </md-whiteframe>
+        <div class="head-panel nm">
+
+            <div class="chart" id="dash_chart_1" style="height: 150px;"></div>
+        </div>
     </div>
+
+</div>
+
+<div class="block block-drop-shadow">
+
+    <div class="head bg-dot30">
+        <h2>Net Delivery Status</h2>
+
+        <div class="head-panel">
+            <div class="chart" id="dash_chart_2" style="height: 150px;"></div>
+        </div>
+    </div>
+
+</div>

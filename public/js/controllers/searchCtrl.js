@@ -3,11 +3,15 @@
  */
 angular.module("malariaApp")
     .controller("searchCtrl",function ($scope, $http) {
+        $scope.currentKaya = {};
+        $scope.currentKaya.ward = null;
+        $scope.currentKaya.village = null;
+        $scope.kaya =[];
         $scope.search = function(currentKaya){
-            if(currentKaya.ward && currentKaya.ward == ""){
-                alert("ward empty")
-            }
             console.log(currentKaya);
+            $http.post("index.php/search/kaya",currentKaya).success(function(data){
+                $scope.kaya = data ;
+            });
         }
 
         $scope.getWards = function(id){

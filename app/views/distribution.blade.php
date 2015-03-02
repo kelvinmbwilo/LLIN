@@ -201,17 +201,18 @@
         </thead>
         <tbody>
         <?php $index=0;
-        $j = 0; $total = 0;
+        $j = 0; $total = 0; $total1 = 0;
         ?>
         @foreach($kaya as $kay)
         <?php $j++;
-        $total += ($kay->male + $kay->female)
+        $total += ($kay->male + $kay->female);
+        $total1 += $kay->nets;
         ?>
         <tr>
             <td>{{ $kay->uid }}</td>
             <td>{{ $kay->leader_name }}</td>
             <td>{{ $kay->male + $kay->female }}</td>
-            <td>{{ ($kay->male + $kay->female)/2 }}</td>
+            <td>{{ $kay->nets }}</td>
             <td>____________</td>
             <td>____________</td>
         </tr>
@@ -220,7 +221,7 @@
             <td></td>
             <td>Jumla</td>
             <td>{{ $total }}</td>
-            <td>{{ $total/2 }}</td>
+            <td>{{ $total1 }}</td>
             <td></td>
             <td></td>
         </tr>

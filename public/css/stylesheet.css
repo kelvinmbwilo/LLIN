@@ -190,7 +190,7 @@ a:hover,a:focus,a:active{color: #FFF; text-decoration: none;}
         
     .block .head{padding: 8px 10px; float: left; width: 100%;}
         .head-subtitle{font-size: 11px; color: #DDD; float: left; line-height: 13px; margin-bottom: 5px; width: 100%;}
-        .block .head-panel{width: 100%; float: left; margin: 30px 0px 0px; position: relative;}    
+        .block .head-panel{width: 100%; float: left; margin: 10px 0px 0px; position: relative;}
             .block .head-panel .hp-info{margin-left: 20px; position: relative;}
                 .block .head-panel .hp-info:first-child{margin-left: 0px;}
                 .block .head-panel .hp-info.hp-disabled{opacity: 0.5; filter: alpha(opacity=50);}
