@@ -136,14 +136,9 @@
                             <li><a href="#/coupon_search"><i class="fa fa-th"></i> Coupon Search </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" ng-class="{ active: isActive('/distribution_list') || isActive('/distribution_list1') || isActive('/distribution') }">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/statistics_distribution"><i class="fa fa-book"></i> Distribution </a></li>
-                            <li><a href="#/distribution_list1"><i class="fa fa-list"></i> Delivery </a></li>
-                            <li><a href="#/distribution_list1"><i class="fa fa-list"></i> Households </a></li>
-                            <li><a href="#/distribution_list"><i class="fa fa-th"></i> Coupons  Quality </a></li>
-                        </ul>
+                    <li class="dropdown" ng-class="{ active: isActive('/statistics_distribution') }">
+                        <a href="#/statistics_distribution" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
+
                     </li>
                     <li class="dropdown" ng-class="{ active: isActive('/stations') || isActive('/users') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Settings <span class="icon-cog"></span></a>

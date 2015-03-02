@@ -26,7 +26,7 @@
       <file leaf-file-name="statistics_distribution.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/statistics_distribution.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="3" selection-start="4429" selection-end="4429" vertical-scroll-proportion="-4.0" vertical-offset="1890" max-vertical-offset="2484">
+            <state line="110" column="0" selection-start="4425" selection-end="4425" vertical-scroll-proportion="-3.3333333" vertical-offset="1890" max-vertical-offset="2466">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statisticsCtrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="statisticsCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controllers/statisticsCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="59" selection-start="3781" selection-end="3781" vertical-scroll-proportion="0.8613445" vertical-offset="1552" max-vertical-offset="4104">
+            <state line="109" column="59" selection-start="3781" selection-end="3781" vertical-scroll-proportion="-14.642858" vertical-offset="1552" max-vertical-offset="4104">
               <folding />
             </state>
           </provider>
@@ -81,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="21" selection-start="4955" selection-end="4955" vertical-scroll-proportion="-14.851851" vertical-offset="1021" max-vertical-offset="3510">
+            <state line="138" column="97" selection-start="9463" selection-end="9463" vertical-scroll-proportion="0.5926724" vertical-offset="2209" max-vertical-offset="3420">
               <folding />
             </state>
           </provider>
@@ -140,10 +140,10 @@
         <option value="$PROJECT_DIR$/public/views/verify.html" />
         <option value="$PROJECT_DIR$/public/css/angular-multi-select.css" />
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/home.php" />
         <option value="$PROJECT_DIR$/public/views/coupon_search.html" />
-        <option value="$PROJECT_DIR$/public/views/statistics_distribution.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/statisticsCtrl.js" />
+        <option value="$PROJECT_DIR$/public/views/statistics_distribution.html" />
+        <option value="$PROJECT_DIR$/app/views/home.php" />
       </list>
     </option>
   </component>
@@ -638,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="21" selection-start="4955" selection-end="4955" vertical-scroll-proportion="-14.851851" vertical-offset="1021" max-vertical-offset="3510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controllers/malariaAppCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="44" selection-start="1532" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1656">
@@ -663,16 +656,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/statistics_distribution.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/statisticsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="3" selection-start="4429" selection-end="4429" vertical-scroll-proportion="-4.0" vertical-offset="1890" max-vertical-offset="2484">
+        <state line="109" column="59" selection-start="3781" selection-end="3781" vertical-scroll-proportion="-14.642858" vertical-offset="1552" max-vertical-offset="4104">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/statisticsCtrl.js">
+    <entry file="file://$PROJECT_DIR$/public/views/statistics_distribution.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="59" selection-start="3781" selection-end="3781" vertical-scroll-proportion="0.8613445" vertical-offset="1552" max-vertical-offset="4104">
+        <state line="110" column="0" selection-start="4425" selection-end="4425" vertical-scroll-proportion="-3.3333333" vertical-offset="1890" max-vertical-offset="2466">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="97" selection-start="9463" selection-end="9463" vertical-scroll-proportion="0.5926724" vertical-offset="2209" max-vertical-offset="3420">
           <folding />
         </state>
       </provider>
