@@ -49,7 +49,7 @@ class kayaController extends \BaseController {
                 Excel::load($destinationPath ."/".$filename, function($reader) {
                     $reader->toArray();
                     $arr = $reader->get(array(
-                        'id','simu','Jina_la_mkuu_wa_kaya','me','ke','kituo_cha_ugawaji','jina_la_veo','mwandishi'
+                        'id','simu','jina_la_mkuu_wa_kaya','me','ke','kituo_cha_ugawaji','jina_la_veo','mwandishi'
                     ))->toArray();
                     //json_encode($arr);exit;
                     $duplicate = array();
@@ -62,8 +62,8 @@ class kayaController extends \BaseController {
                             array_push($newVals,$kaya);
                             $nets = intval(($kaya['me'] + $kaya['ke'])/2);
                              Kaya::create(array(
-                                'uid' => $kaya['registration_number'],
-                                'leader_name' => $kaya['full_name'],
+                                'uid' => $kaya['id'],
+                                'leader_name' => $kaya['jina_la_mkuu_wa_kaya'],
                                 'phone' => $kaya['simu'],
                                 'male' => $kaya['me'],
                                 'female' => $kaya['ke'],

@@ -191,6 +191,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+        'Excel'             => 'Maatwebsite\Excel\Facades\Excel',
         'PDF'               => 'Barryvdh\DomPDF\Facade',
 
 	),

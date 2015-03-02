@@ -82,10 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="42" selection-start="4427" selection-end="4427" vertical-scroll-proportion="0.75831485" vertical-offset="1890" max-vertical-offset="3672">
+            <state line="194" column="56" selection-start="7742" selection-end="7742" vertical-scroll-proportion="-50.037037" vertical-offset="2141" max-vertical-offset="3690">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kayaController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/kayaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="54" selection-start="2918" selection-end="2922" vertical-scroll-proportion="0.76144576" vertical-offset="872" max-vertical-offset="12942">
               <folding />
             </state>
           </provider>
@@ -154,7 +163,6 @@
         <option value="$PROJECT_DIR$/app/views/distribution1.blade.php" />
         <option value="$PROJECT_DIR$/app/views/distribution.blade.php" />
         <option value="$PROJECT_DIR$/public/views/distribution_list.html" />
-        <option value="$PROJECT_DIR$/app/controllers/kayaController.php" />
         <option value="$PROJECT_DIR$/public/views/distribution_list1.html" />
         <option value="$PROJECT_DIR$/public/views/coupon_search.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/searchCtrl.js" />
@@ -162,6 +170,7 @@
         <option value="$PROJECT_DIR$/public/views/home.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/app/controllers/kayaController.php" />
       </list>
     </option>
   </component>
@@ -227,6 +236,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LLIN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LLIN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -660,13 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/kayaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="67" selection-start="5657" selection-end="5657" vertical-scroll-proportion="8.186047" vertical-offset="0" max-vertical-offset="12942">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/coupon_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="39" selection-start="2522" selection-end="2522" vertical-scroll-proportion="-10.222222" vertical-offset="750" max-vertical-offset="1350">
@@ -740,7 +760,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="42" selection-start="4427" selection-end="4427" vertical-scroll-proportion="0.75831485" vertical-offset="1890" max-vertical-offset="3672">
+        <state line="194" column="56" selection-start="7742" selection-end="7742" vertical-scroll-proportion="-50.037037" vertical-offset="2141" max-vertical-offset="3690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/kayaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="54" selection-start="2918" selection-end="2922" vertical-scroll-proportion="0.76144576" vertical-offset="872" max-vertical-offset="12942">
           <folding />
         </state>
       </provider>
