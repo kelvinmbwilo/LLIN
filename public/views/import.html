@@ -1,13 +1,75 @@
+<style>
+    .drop-box {
+        background: #F8F8F8;
+        border: 5px dashed #DDD;
+        width: 200px;
+        height: 85px;
+        text-align: center;
+        padding-top: 25px;
+        margin: 10px;
+    }
+    .dragover {
+        border: 5px dashed blue;
+    }
+</style>
 <h3 class="text-center">Import Coupons</h3>
 <p style="font-size: 16px">This Functionality allows you to import the excel file containing coupons information to the system,
     The coupons will be imported but will be marked as not verified  </p>
- <md-whiteframe class="md-whiteframe-z5">
-     <h4>The expected file format is</h4>
-     <img src="img/xls.png">
-     <hr>
-     <input type="file" class="pull-left"/>
-     <md-button class="md-raised md-hue-3 pull-left"><i class="fa fa-upload"></i> Upload
-         <md-tooltip>
-             Upload Selected File
-         </md-tooltip></md-button>
+<h3>Make sure of the following before uploading the file </h3>
+<ol>
+    <li>The heading columns in the excel are on the first row.(not preceded by any rows)</li>
+    <li>The column names looks exactly the same as the one in the sample below</li>
+    <li>Be sure to select the correct Area ie Region,District,Ward,Village</li>
+    <li>See the <a href="sample.xlsx" title="Get sample Excel File"><i class="fa fa-download"></i> Sample file </a> </li>
+</ol>
+<md-whiteframe class="md-whiteframe-z5">
+     <div class="col-md-12" style="padding: 0px;margin-bottom: 10px">
+         <div class="col-xs-3">
+             Mkoa
+             <select class="entry" ng-model="currentKaya.region">
+                 <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
+             </select>
+         </div>
+         <div class="col-xs-3">
+             Wilaya
+             <select class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
+                 <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
+             </select>
+         </div>
+         <div class="col-xs-3">
+             Kata
+             <select class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
+                 <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
+             </select>
+         </div>
+         <div class="col-xs-3">
+             Kijiji/Mtaa
+             <select class="entry" ng-model="currentKaya.village" >
+                 <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
+             </select>
+         </div>
+
+     </div>
+    <div class="col-xs-12" ng-show="currentKaya.village">
+        <h4>The expected file format is</h4>
+        <img src="img/kaya.png">
+        <br>
+        <div>
+            Drop File:<span class="help-block" style="color: #000000">**The upload will start immediately  after you select or drop the file</span>
+            <div ng-file-drop ng-file-select ng-model="files" class="drop-box"
+                 drag-over-class="dragover" ng-multiple="true" allow-dir="false">
+                Drop xlxs here or click to upload
+            </div>
+            <div class="progress" ng-if="progressParcent != 0">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ progressParcent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progressParcent }}%">
+                    <span class="sr-only">{{ progressParcent }}% Complete (success)</span>
+                </div>
+            </div>
+            <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            <ul>
+                <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+            </ul>
+        </div>
+    </div>
+
  </md-whiteframe>

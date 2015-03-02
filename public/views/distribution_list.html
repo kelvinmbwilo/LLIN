@@ -13,42 +13,36 @@
 </style>
 
 <div class="col-md-12">
-    <div class="col-xs-4">
+    <div class="col-xs-3">
         Mkoa
         <select class="entry" ng-model="currentKaya.region">
             <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
         </select>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
         Wilaya
         <select class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
             <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
         </select>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
         Kata
         <select class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
             <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
+        </select>
+    </div>
+    <div class="col-xs-3">
+        Kijiji/Mtaa
+        <select class="entry" ng-model="currentKaya.village" >
+            <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
         </select>
     </div>
 
 </div>
 
 <div class="col-md-12">
-    <div class="col-xs-4">
-        Kijiji/Mtaa
-        <select class="entry" ng-model="currentKaya.village" >
-            <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
-        </select>
-    </div>
-    <div class="col-xs-4">
-        Jina la VEO
-        <input type="text" class="entry">
-    </div>
-    <div class="col-xs-4">
-        Jina la Kituo cha ugawaji
-        <input type="text" class="entry">
-    </div>
+
+
 </div>
     <md-button class="pull-right md-primary md-hue-3 md-raised" ng-click="getList(currentKaya)" style="margin: 15px">Get List
         <md-tooltip>
@@ -63,13 +57,13 @@
 
 <md-whiteframe class="md-whiteframe-z5" ng-show="showList">
     <div>
-    <table class="table table-striped table-hover table-condensed" style="border-right: 1px solid #92B4D2;border-left: 1px solid #92B4D2;border-bottom: 1px solid #92B4D2">
-        <thead style="background-image: -webkit-gradient(linear, left top, left bottom, from(#92B4D2), to(#E4E4E4))">
+    <table class="table table-striped table-hover table-condensed table-bordered" >
+        <thead >
         <tr >
             <th rowspan="2">Na</th>
             <th rowspan="2">Voucher Number</th>
             <th rowspan="2">Jina La Mkuu wa kaya</th>
-            <th colspan="3" style="border: 0px;background-image: -webkit-gradient(linear, left top, left bottom, from(#92B4D2), to(#92B4D2))">Idadi ya Wanakaya</th>
+            <th colspan="3" >Idadi ya Wanakaya</th>
             <th rowspan="2">Idadi ya Vyandarua</th>
         </tr>
         <tr>

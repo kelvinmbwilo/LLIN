@@ -13,6 +13,61 @@ class kayaController extends \BaseController {
 	}
 
     /**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function upload()
+	{
+        if (Input::hasFile('file'))
+        {
+            $file = Input::file('file'); // your file upload input field in the form should be named 'file'
+            $destinationPath = public_path().'/uploads';
+            $filename = $file->getClientOriginalName();
+            //$extension =$file->getClientOriginalExtension(); //if you need extension of the file
+            $uploadSuccess = Input::file('file')->move($destinationPath, $filename);
+            chmod($destinationPath ."/".$filename , 0777);
+            if($uploadSuccess ){
+                Excel::load($destinationPath ."/".$filename, function($reader) {
+                    $reader->toArray();
+                    $arr = $reader->get(array(
+                        'id','simu','Jina_la_mkuu_wa_kaya','me','ke','kituo_cha_ugawaji','jina_la_veo','mwandishi'
+                    ))->toArray();
+                    //json_encode($arr);exit;
+                    $duplicate = array();
+                    $newVals   = array();
+//                    echo json_encode($reader->get(array('surname', 'other_names','national_id','phone_number','gender','date_of_birth','gender','date_of_birth','national','driving_license_id','occupation','driving _class','expiry_date'))->toArray());
+                    foreach($arr as $kaya){
+                        if(Kaya::where('uid',$kaya['id'])->first()){
+                            array_push($duplicate,$kaya);
+                        }else{
+                            array_push($newVals,$kaya);
+                            Kaya::create(array(
+                                'uid' => $kaya['registration_number'],
+                                'leader_name' => $kaya['full_name'],
+                                'phone' => $kaya['simu'],
+                                'male' => $kaya['me'],
+                                'female' => $kaya['ke'],
+                                'station' => $kaya['kituo_cha_ugawaji'],
+                                'name_of_veo' => $kaya['jina_la_veo'],
+                                'writer' => $kaya['mwandishi'],
+                                'region' => Input::get('region'),
+                                'district' => Input::get('district'),
+                                'ward' => Input::get('ward'),
+                                'village' => Input::get('village')
+                            ));
+                        }
+                    }
+                    $retunArr = array("duplicates"=>$duplicate,"newValue"=>$newVals);
+                    echo json_encode($retunArr);
+                });
+            }
+        }else{
+            echo "no file";
+        }
+	}
+
+    /**
 	 * Display a listing of Regions.
 	 *
 	 * @return Response

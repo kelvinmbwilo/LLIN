@@ -1,0 +1,36 @@
+<h3 class="text-center">Coupon Search</h3>
+<div class="col-md-12">
+    <span style="color: #000000;padding-left: 15px" class="help-block">**Select at least to district level, Ward and Village are optional</span>
+    <div class="col-xs-3">
+        Mkoa
+        <select class="entry" ng-model="currentKaya.region">
+            <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
+        </select>
+    </div>
+    <div class="col-xs-3">
+        Wilaya
+        <select class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
+            <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        Kata
+        <select class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
+            <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        Kijiji/Mtaa
+        <select class="entry" ng-model="currentKaya.village" >
+            <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        <md-button class="md-primary md-hue-3 md-raised" ng-click="search(currentKaya)" style="margin: 15px"><i class="fa fa-search"></i> Search
+            <md-tooltip>
+                Search Result
+            </md-tooltip>
+        </md-button>
+    </div>
+
+</div>

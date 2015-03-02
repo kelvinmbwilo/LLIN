@@ -17,8 +17,7 @@
 
 <!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
     <script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/plugins/datatables/jquery.dataTables.min.js") ?>'></script>
-
+    <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
 
     <script type='text/javascript' src='<?php echo asset("js/plugins.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/actions.js") ?>'></script>
@@ -32,14 +31,18 @@
     <script src="<?php echo asset('bower_components/angular-aria/angular-aria.min.js') ?>"></script>
     <script src="<?php echo asset('bower_components/hammerjs/hammer.min.js') ?>"></script>
     <script src="<?php echo asset('bower_components/angular-material/angular-material.min.js') ?>"></script>
+    <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
 
 
     <script src="<?php echo asset('js/abn_tree_directive.js') ?>"></script>
+    <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
+    <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
     <link href="<?php echo asset('css/abn_tree.css') ?>" rel="stylesheet" />
     <link href="<?php echo asset('font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo asset('bower_components/angular-material/angular-material.css') ?>">
     <script>
-        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date']);
+        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload"]);
     </script>
     <script src="<?php echo asset('js/routes.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>
@@ -48,6 +51,9 @@
     <script src="<?php echo asset('js/controllers/distributeCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/stationsCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/listCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/userCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/importCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
     <style>
         @font-face {
             font-family: myBoldFont;
@@ -92,7 +98,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-reorder"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="padding: 0px;"><img src="<?php echo asset('img/malaria_haikubaliki.jpg') ?>" style="height: 40px;width: 40px" class="img-rounded"></a>
+                <a class="navbar-brand" href="index.html" style="padding: 0px;"><img src="<?php echo asset('img/malaria_haikubaliki.png') ?>" style="height: 40px;width: 40px" class="img-rounded"></a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -124,6 +130,7 @@
                             <li><a href="#/supervisor"><i class="fa fa-list"></i> Activity Closing </a></li>
                             <li><a href="#/delivery"><i class="fa fa-th"></i> Net Delivery </a></li>
                             <li><a href="#/delivery"><i class="fa fa-th"></i> Time Line </a></li>
+                            <li><a href="#/coupon_search"><i class="fa fa-th"></i> Coupon Search </a></li>
                         </ul>
                     </li>
                     <li class="dropdown" ng-class="{ active: isActive('/distribution_list') || isActive('/distribution_list1') || isActive('/distribution') }">
@@ -140,6 +147,19 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#/stations">Administrative Units</a></li>
                             <li><a href="#/users"> Users </a></li>
+                            <li><a href="#/add_timeline"> Add Time Line </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> User <span class="icon-user"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/profile"><i class="fa fa-envelope"></i> Messages</a></li>
+                            <li><a href="#/profile"><i class="fa fa-user"></i> profile</a></li>
+                            <li><a href="#/change_password"><i class="fa fa-lock"></i> change password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="index.php/login"><i class="fa fa-power-off"></i> logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -153,7 +173,7 @@
 
     </div>
 </div>
-    <section>
+    <section style="min-height: 600px">
         <div ng-view></div>
     </section>
 <div class="row">

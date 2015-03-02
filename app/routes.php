@@ -24,6 +24,29 @@ Route::post('login',function(){
     return Redirect::to('/');
 });
 
+/**
+ * Users
+ */
+//getting users
+Route::get('users',array('uses'=>'UserController@index'));
+
+//saving new user
+Route::post('users',array('uses'=>'UserController@store'));
+
+//Deleting user
+Route::post('delete/user/{id}',array('uses'=>'UserController@destroy'));
+
+//Updating  user
+Route::post('user/{id}',array('uses'=>'UserController@update'));
+
+/**
+ * Uploading the file with households
+ */
+
+//getting kaya
+Route::post('upload',array('uses'=>'kayaController@upload'));
+
+/////////////////////////////////////////////////////////////
 //getting kaya
 Route::post('getkaya',array('uses'=>'kayaController@index'));
 

@@ -24,7 +24,7 @@ angular.module("malariaApp")
     });
     $routeProvider.when("/import",{
         templateUrl: 'views/import.html',
-        controller: 'kayaCtrl'
+        controller: 'importCtrl'
     });
 
     $routeProvider.when("/home",{
@@ -74,7 +74,11 @@ angular.module("malariaApp")
 //
     $routeProvider.when("/users",{
         templateUrl: 'views/users.html',
-        controller: 'settingsCtrl'
+        controller: 'userCtrl'
+    });
+        $routeProvider.when("/coupon_search",{
+        templateUrl: 'views/coupon_search.html',
+        controller: 'searchCtrl'
     });
 //
 //    $routeProvider.when("/group_settings",{
