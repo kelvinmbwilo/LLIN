@@ -64,7 +64,6 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     }
 
     $scope.prepareDropdown = function(){
-        alert('nimefika')
         $scope.area = [];
         if($scope.data.category == "Regions"){
             angular.forEach($scope.data.selectedRegions,function(value){
