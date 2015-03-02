@@ -8,6 +8,8 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     $scope.data.usedDistricts = [];
     $scope.data.usedWards = [];
     $scope.data.usedVillages = [];
+    $scope.data.report_type = "Coupon Summary";
+    $scope.data.category = "Regions"
     $scope.table = {};
 
     //getting districts
@@ -107,7 +109,6 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     //changing chart types
     $scope.data.chartType = 'column'
     $scope.changeChart = function(type){
-        alert('type');
         $scope.displayTable = false;
         if(type == "spider"){
             $scope.data.chartType = 'line';
@@ -140,7 +141,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                    serie1.push({name: value+" - "+ val , y: Math.random()*100 })
                });
                $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie});
-               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie1})
 
            }else{
                var serie = [];

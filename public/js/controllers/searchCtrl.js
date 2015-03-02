@@ -5,12 +5,15 @@ angular.module("malariaApp")
     .controller("searchCtrl",function ($scope, $http) {
         $scope.currentKaya = {};
         $scope.currentKaya.ward = null;
+        $scope.showtable = false;
         $scope.currentKaya.village = null;
         $scope.kaya =[];
         $scope.search = function(currentKaya){
+
             console.log(currentKaya);
             $http.post("index.php/search/kaya",currentKaya).success(function(data){
                 $scope.kaya = data ;
+                $scope.showtable = true;
             });
         }
 

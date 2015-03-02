@@ -204,7 +204,7 @@
         <td>{{ ++$k }}</td>
         <td style="text-align: left">{{ $kay['name'] }}</td>
         <td>{{ $kay['kaya'] }}</td>
-        <td>{{ intval(($kay['nets']) }}</td>
+        <td>{{ $kay['nets'] }}</td>
         <td></td>
     </tr>
     <?php

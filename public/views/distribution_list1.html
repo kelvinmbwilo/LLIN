@@ -43,13 +43,13 @@
 </md-button>
 
 <md-whiteframe class="md-whiteframe-z5">
-    <table class="table table-bordered table-striped sortable" ng-show="showDisList && data.onedistrict.villagelist != 0">
+    <table class="table table-bordered table-striped sortable" ng-if="showDisList && data.onedistrict.villagelist != 0">
         <thead>
-        <tr style="background-image: -webkit-gradient(linear, left top, left bottom, from(#7E8F7C), to(#3B3738))">
-            <th ng-click="changeOrder('name')">Village</th>
-            <th ng-click="changeOrder('people.kaya')">Number of Coupons</th>
-            <th ng-click="changeOrder('people.kaya')">Number of <br> Nets</th>
-            <th ng-click="changeOrder('people.kaya')">Buffer</th>
+        <tr>
+            <th>Village</th>
+            <th>Number of Coupons</th>
+            <th>Number of <br> Nets</th>
+            <th>Buffer</th>
             <!--<th></th>-->
         </tr>
         </thead>

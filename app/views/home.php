@@ -170,7 +170,7 @@
     <section style="min-height: 600px">
         <div ng-view></div>
     </section>
-<div class="row">
+<div class="row" style="margin-top: 10px">
     <div class="page-footer">
         <div class="page-footer-wrap">
             <div class="side text-center">
