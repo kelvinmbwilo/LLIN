@@ -84,6 +84,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
             });
         }
         $scope.chartConfig.xAxis.categories =$scope.area;
+        $scope.prepareSeries();
     }
 
     $scope.changeCats = function(){
@@ -104,7 +105,16 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     }
 
     $scope.prepareSeries = function(){
-
+        $scope.changeCats();
+        $scope.normalseries = [];
+        angular.forEach($scope.subCategory,function(value){
+            var serie = [];
+            angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                serie.push(Math.random()*100)
+            });
+            $scope.normalseries.push({type: 'column', name: value, data: serie})
+        });
+        $scope.chartConfig.series = $scope.normalseries;
     }
 
     $scope.getData = function(){
