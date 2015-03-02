@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::controller('password', 'RemindersController');
 Route::get('/', function()
 {
     return View::make('home');
@@ -38,6 +38,12 @@ Route::post('delete/user/{id}',array('uses'=>'UserController@destroy'));
 
 //Updating  user
 Route::post('user/{id}',array('uses'=>'UserController@update'));
+
+//validating user during login
+Route::post('login',array('as'=>'login', 'uses'=>'UserController@validate'));
+
+//logging a user out
+Route::get('logout',array('as'=>'logout', 'uses'=>'UserController@logout'));
 
 /**
  * Uploading the file with households

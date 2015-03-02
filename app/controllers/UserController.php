@@ -93,5 +93,38 @@ class UserController extends \BaseController {
 
 	}
 
+    /**
+     * authanticate user during login.
+     *
+     * @return view
+     */
+    public function validate()
+    {
+//        $user = User::where("email",Input::get('email'))->first();
+        $user = User::where("username",Input::get('email'))->first();
+        if($user && Input::get('password',$user->password)){
+                Auth::login($user,FALSE);
+
+            if(Auth::check()){
+
+                return Redirect::to("/");
+            }
+        }
+        else{
+            return View::make("login")->with("error","Incorrect Username or Password");
+        }
+    }
+
+    /**
+     * loging out a user
+     *
+     * @return view
+     */
+    public function logout(){
+        Auth::logout();
+        return Redirect::to("/");
+    }
+
+
 
 }

@@ -36,17 +36,25 @@
                     </div>
                 </div>
             </div>
+            @if(isset($error))
+            <div class="alert alert-danger alert-dismissable" style="padding: 5px">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>{{ $error }}!</strong>
+            </div>
+            @endif
             <div class="content controls npt">
                 <div class="form-row">
                     <div class="col-md-12 tac"><h3>LLIN MRC DATABASE</h3></div>
                 </div>
+
+                <form method="post" action="{{ url('login') }}" style="" autocomplete="off">
                 <div class="form-row user-change-row">
                     <div class="col-md-12">
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <span class="icon-user"></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Username"/>
+                            <input name="email" type="text" class="form-control" placeholder="Username"/>
                         </div>
                     </div>
                 </div>
@@ -56,18 +64,20 @@
                             <div class="input-group-addon">
                                 <span class="icon-key"></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password"/>
+                            <input name="password" type="password" class="form-control" placeholder="Password"/>
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-12">
-                        <a href="sample_login.html#" class="btn btn-default btn-block btn-clean">Log In</a>
+                        <button type="submit" class="btn btn-default btn-block btn-clean">Log In</button>
+
                     </div>
                 </div>
+                </form>
                 <div class="form-row">
                     <div class="col-md-12">
-                        <a href="sample_login.html#" class="btn btn-link btn-block">Forgot your password?</a>
+                        <a href="{{ url('password/remind/') }}" class="btn btn-link btn-block">Forgot your password?</a>
                     </div>
                 </div>
                 <div class="form-row">
