@@ -104,15 +104,52 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
 
     }
 
+    //changing chart types
+    $scope.data.chartType = 'column'
+    $scope.changeChart = function(type){
+        alert('type');
+        $scope.displayTable = false;
+        if(type == "spider"){
+            $scope.data.chartType = 'line';
+            $scope.data.chartType = true;
+        }else if(type == 'combined'){
+            $scope.data.chartType =false;
+        }else if(type == 'table'){
+            $scope.displayTable = true;
+        }else{
+            $scope.data.chartType = type;
+        }
+        $scope.prepareSeries();
+    };
+
     $scope.prepareSeries = function(){
         $scope.changeCats();
         $scope.normalseries = [];
         angular.forEach($scope.subCategory,function(value){
-            var serie = [];
-            angular.forEach($scope.chartConfig.xAxis.categories,function(val){
-                serie.push(Math.random()*100)
-            });
-            $scope.normalseries.push({type: 'column', name: value, data: serie})
+           if($scope.data.chartType == "pie"){
+               var serie = [];
+               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   serie.push({name: value+" - "+ val , y: Math.random()*100 })
+               });
+               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+           }else if($scope.data.chartType == "combined"){
+               var serie = [];
+               var serie1 = [];
+               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   serie.push(Math.random()*100)
+                   serie1.push({name: value+" - "+ val , y: Math.random()*100 })
+               });
+               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie});
+               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+
+           }else{
+               var serie = [];
+               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   serie.push(Math.random()*100)
+               });
+               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+           }
+
         });
         $scope.chartConfig.series = $scope.normalseries;
     }
@@ -134,24 +171,6 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         })
     }
 
-    //changing chart types
-    $scope.data.chartType = 'column'
-    $scope.changeChart = function(type){
-        $scope.displayTable = false;
-        if(type == "spider"){
-            $scope.chartConfig.options.chart.type = 'line';
-            $scope.chartConfig.options.chart.polar = true;
-        }else if(type == 'combined'){
-            $scope.chartConfig.options.chart.polar =false;
-        }else if(type == 'table'){
-            $scope.chartConfig.options.chart.polar = false;
-            $scope.displayTable = true;
-        }else{
-            $scope.chartConfig.options.chart.type = type;
-            $scope.chartConfig.options.chart.polar = false;
-        }
-
-    };
 
     //drawing some charts
     $scope.chartConfig = {
