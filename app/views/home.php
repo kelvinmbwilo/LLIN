@@ -15,7 +15,7 @@
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/globalize.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/plugins/bootstrap/bootstrap.min.js") ?>'></script>
 
-<!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
+    <script type='text/javascript' src='<?php echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
     <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
 
@@ -54,6 +54,7 @@
     <script src="<?php echo asset('js/controllers/userCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/importCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/settingsCtrl.js') ?>"></script>
     <style>
         @font-face {
             font-family: myBoldFont;
@@ -73,8 +74,8 @@
         }
     </style>
 </head>
-<body class="bg-img-num20" data-settings="open" ng-controller="malariaAppCtrl" style="min-height: 820px">
-<div class="container theme-black container-fixed">
+<body class="bg-img-num20" data-settings="close" ng-controller="malariaAppCtrl" style="min-height: 820px">
+<div class="container theme-white container-fixed">
 <div class="row">
     <div class="col-md-12">
         <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px">

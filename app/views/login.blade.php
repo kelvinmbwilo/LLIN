@@ -20,7 +20,7 @@
     <script type='text/javascript' src='<?php echo asset("js/actions.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/settings.js") ?>'></script>
 </head>
-<body class="bg-img-num20">
+<body class="bg-img-num15">
 
 <div class="container">
 

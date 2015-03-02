@@ -1010,7 +1010,7 @@ dd{padding: 5px 0px;}
 /* eof bootstrap file input */
 
 /* site settings */
-    .site-settings{position: fixed; right: 0px; top: 45px; z-index: 10;}        
+    .site-settings{position: fixed; right: 0px; top: 125px; z-index: 10;}
         .site-settings .site-settings-button{position: absolute; left: -36px; top: 5px; background: rgba(0,0,0,0.6); width: 36px; height: 36px; padding: 0px; text-align: center;
                                              -moz-border-radius: 5px 0px 0px 5px;-webkit-border-radius: 5px 0px 0px 5px;border-radius: 5px 0px 0px 5px; cursor: pointer;} 
             .site-settings .site-settings-button span{font-size: 18px; line-height: 36px;}

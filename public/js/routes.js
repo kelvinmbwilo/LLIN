@@ -80,12 +80,12 @@ angular.module("malariaApp")
         templateUrl: 'views/coupon_search.html',
         controller: 'searchCtrl'
     });
-//
-//    $routeProvider.when("/group_settings",{
-//        templateUrl: 'views/group_settings.html',
-//        controller: 'settingsCtrl'
-//    });
-//
+
+    $routeProvider.when("/settings",{
+        templateUrl: 'views/settings.html',
+        controller: 'settingsCtrl'
+    });
+
 //    $routeProvider.when("/meetings",{
 //        templateUrl: 'views/meetings.html',
 //        controller: 'settingsCtrl'
