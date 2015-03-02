@@ -86,6 +86,11 @@ angular.module("malariaApp")
         controller: 'settingsCtrl'
     });
 
+    $routeProvider.when("/statistics_distribution",{
+        templateUrl: 'views/statistics_distribution.html',
+        controller: 'statisticsCtrl'
+    });
+
 //    $routeProvider.when("/meetings",{
 //        templateUrl: 'views/meetings.html',
 //        controller: 'settingsCtrl'

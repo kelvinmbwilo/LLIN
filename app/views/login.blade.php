@@ -81,14 +81,19 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <a href="http://www.usaid.gov/" target="_blank">
-                            <img src="<?php echo asset("img/usaid.png") ?>" class="img-responsive img-thumbnail"/>
+                            <img src="<?php echo asset("img/Nembo.png") ?>" class="img-responsive  pull-left" style="height: 85px;width: 80px"/>
                         </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4 text-center">
                         <a href="http://www.theglobalfund.org/" target="_blank">
-                           <img src="<?php echo asset("img/globalfund.png") ?>" class="img-responsive img-thumbnail"/>
+                           <img src="<?php echo asset("img/malaria.png") ?>" class="img-responsive " style="height: 85px;width: 80px"/>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="http://www.theglobalfund.org/" target="_blank">
+                           <img src="<?php echo asset("img/REDCROSS.png") ?>" class="img-responsive  pull-right" style="height: 85px;width: 80px"/>
                         </a>
                     </div>
                 </div>

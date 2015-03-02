@@ -6,9 +6,9 @@
 <div class="col-sm-4"><input name="kayaId" ng-change="checkKaya(data.kayaId)" ng-model="data.kayaId" id="voucher_no" type="text" style="border: 0px;" required=""></div>
 
       <div class="col-sm-4">
-          <span ng-if="!currentKayaPresent"> <strong> {{ addTwo(currentKaya.male,currentKaya.female)/2 |number:0 }} Net(s)</strong>  </span>
-        <span ng-hide="currentKayaPresent">
-            <md-button ng-disabled="currentKayaPresent" class="md-fab md-hue-3 md-primary md-raised" ng-click="confirmVericationKaya(data.kayaId)" style="height: 40px;width:40px">
+          <span ng-if="!currentKayaVerified"> <strong> {{ currentKaya.nets }} Net(s)</strong>  </span>
+        <span ng-hide="currentKayaVerified">
+            <md-button ng-disabled="currentKayaVerified" class="md-fab md-hue-3 md-primary md-raised" ng-click="confirmVericationKaya(data.kayaId)" style="height: 40px;width:40px">
                 <i class="fa fa-check"></i>
 
             </md-button> Confirm Verification</span>

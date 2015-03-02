@@ -7,6 +7,7 @@ angular.module("malariaApp")
         $scope.checkingKaya = false;
         $scope.performingDistribution = false;
         $scope.currentKayaPresent = true;
+        $scope.currentKayaVerified = true;
         $scope.errorcheckingKaya = false;
         $scope.checkKaya = function(id){
             $scope.checkingKaya = true;
@@ -17,17 +18,23 @@ angular.module("malariaApp")
                   $scope.errorcheckingKaya = false;
                   $scope.currentKaya = kaya;
                   $scope.currentKayaPresent = false;
-
+                  if(kaya.verification_status == "imported"){
+                      $scope.currentKayaVerified = false;
+                  }else{
+                      $scope.currentKayaVerified = true;
+                  }
                }else{
                   $scope.currentKaya = {};
                   $scope.errorcheckingKaya = true;
                   $scope.currentKayaPresent = true;
+                  $scope.currentKayaVerified = true;
               }
             }).error(function(){
                 $scope.currentKaya = {};
                 $scope.errorcheckingKaya = true;
                 $scope.checkingKaya = false;
                 $scope.currentKayaPresent = true;
+                $scope.currentKayaVerified = true;
             })
         }
 

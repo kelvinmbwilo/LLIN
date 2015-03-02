@@ -48,7 +48,6 @@ angular.module("malariaApp")
         };
 
         $scope.getWards = function(id){
-
             $http.get("index.php/wards/district/"+id).success(function(distr){
                 $scope.data.disward = distr;
             });

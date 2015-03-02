@@ -8,6 +8,7 @@
     <link rel="icon" type="image/ico" href="http://aqvatarius.com/themes/taurus_v12/html/favicon.ico"/>
 
     <link href="<?php echo asset("css/stylesheets.css") ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
 
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery.min.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-ui.min.js") ?>'></script>
@@ -32,7 +33,7 @@
     <script src="<?php echo asset('bower_components/hammerjs/hammer.min.js') ?>"></script>
     <script src="<?php echo asset('bower_components/angular-material/angular-material.min.js') ?>"></script>
     <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
-
+    <script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
 
     <script src="<?php echo asset('js/abn_tree_directive.js') ?>"></script>
     <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
@@ -42,7 +43,7 @@
     <link href="<?php echo asset('font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo asset('bower_components/angular-material/angular-material.css') ?>">
     <script>
-        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload"]);
+        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select']);
     </script>
     <script src="<?php echo asset('js/routes.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>
@@ -55,6 +56,7 @@
     <script src="<?php echo asset('js/controllers/importCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/settingsCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/statisticsCtrl.js') ?>"></script>
     <style>
         @font-face {
             font-family: myBoldFont;
@@ -74,8 +76,8 @@
         }
     </style>
 </head>
-<body class="bg-img-num20" data-settings="close" ng-controller="malariaAppCtrl" style="min-height: 820px">
-<div class="container theme-white container-fixed">
+<body class="bg-img-num1" data-settings="close" ng-controller="malariaAppCtrl" style="min-height: 820px">
+<div class="container">
 <div class="row">
     <div class="col-md-12">
         <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px">
@@ -137,7 +139,7 @@
                     <li class="dropdown" ng-class="{ active: isActive('/distribution_list') || isActive('/distribution_list1') || isActive('/distribution') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#/distribution"><i class="fa fa-book"></i> Distribution </a></li>
+                            <li><a href="#/statistics_distribution"><i class="fa fa-book"></i> Distribution </a></li>
                             <li><a href="#/distribution_list1"><i class="fa fa-list"></i> Delivery </a></li>
                             <li><a href="#/distribution_list1"><i class="fa fa-list"></i> Households </a></li>
                             <li><a href="#/distribution_list"><i class="fa fa-th"></i> Coupons  Quality </a></li>
