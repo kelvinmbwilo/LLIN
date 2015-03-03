@@ -164,7 +164,6 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                    });
 
                    $scope.table.colums.push({name:val,values:seri});
-                   console.log(seri)
                });
            }else{
                delete $scope.chartConfig.chart;

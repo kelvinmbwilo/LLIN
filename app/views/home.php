@@ -21,7 +21,7 @@ else
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/globalize.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/plugins/bootstrap/bootstrap.min.js") ?>'></script>
 
-    <script type='text/javascript' src='<?php echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?>'></script>
+<!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
     <script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
     <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
 
@@ -62,6 +62,8 @@ else
     <script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/settingsCtrl.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/statisticsCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/messageCtrl.js') ?>"></script>
+    <script src="<?php echo asset('js/controllers/timelineCtrl.js') ?>"></script>
     <style>
         @font-face {
             font-family: myBoldFont;
@@ -88,7 +90,7 @@ else
         <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px">
             <div class="row">
                 <div class="col-md-2 hidden-sm">
-                    <img alt="Brand" src="<?php echo asset('img/Nembo.png') ?>" style="height: 70px;width: 70px" class="img-rounded pull-left">
+                    <img alt="Brand" src="<?php echo asset('img/red.png') ?>" style="height: 70px;width: 70px" class="img-rounded pull-left">
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <h4 class="text-center" style="letter-spacing: 1px;font-family: myBoldFont "> WIZARA YA AFYA NA USTAWI WA JAMII</h4>
@@ -106,7 +108,7 @@ else
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-reorder"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="padding: 0px;"><img src="<?php echo asset('img/malaria_haikubaliki.png') ?>" style="height: 40px;width: 40px" class="img-rounded"></a>
+                <a class="navbar-brand" href="#/home" style="padding: 0px;"><img src="<?php echo asset('img/Nembo.png') ?>" style="height: 40px;width: 40px" class="img-rounded"></a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
@@ -137,7 +139,7 @@ else
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#/supervisor"><i class="fa fa-list"></i> Activity Closing </a></li>
                             <li><a href="#/delivery"><i class="fa fa-th"></i> Net Delivery </a></li>
-                            <li><a href="#/delivery"><i class="fa fa-th"></i> Time Line </a></li>
+                            <li><a href="#/timeline_show"><i class="fa fa-th"></i> Time Line </a></li>
                             <li><a href="#/coupon_search"><i class="fa fa-th"></i> Coupon Search </a></li>
                         </ul>
                     </li>
@@ -145,18 +147,19 @@ else
                         <a href="#/statistics_distribution" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
 
                     </li>
-                    <li class="dropdown" ng-class="{ active: isActive('/stations') || isActive('/users') }">
+                    <li ng-if="loggedInUser.role == 'Administrator'" class="dropdown" ng-class="{ active: isActive('/stations') || isActive('/users') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Settings <span class="icon-cog"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#/stations">Administrative Units</a></li>
                             <li><a href="#/users"> Users </a></li>
-                            <li><a href="#/add_timeline"> Add Time Line </a></li>
+                            <li><a href="#/timeline"> Time Line </a></li>
+                            <li><a href="#/message_recipient"> Message Recipients </a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> User <span class="icon-user"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> {{ loggedInUser.first_name }} <span class="icon-user"></span></a>
                         <ul class="dropdown-menu" role="menu">
 <!--                            <li><a href="#/profile"><i class="fa fa-envelope"></i> Messages</a></li>-->
                             <li><a href="#/profile"><i class="fa fa-user"></i> profile</a></li>

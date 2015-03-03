@@ -33,6 +33,11 @@ angular.module("malariaApp")
             $scope.data.districts = data;
         });
 
+        //getting loggedin user details
+        $http.get("index.php/loggenInuser/").success(function(data){
+            $scope.loggedInUser = data;
+        });
+
         //setting active link on top menu
         $scope.isActive = function (viewLocation) {
             var active = (viewLocation === $location.path());

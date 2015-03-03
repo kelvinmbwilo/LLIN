@@ -40,7 +40,45 @@ Route::post('login',array('as'=>'login', 'uses'=>'UserController@validate'));
 //logging a user out
 Route::get('logout',array('as'=>'logout', 'uses'=>'UserController@logout'));
 
+//details of the logged in user
 Route::get('loggenInuser',array('as'=>'logout', 'uses'=>'UserController@show'));
+
+/**
+ * Messages
+ */
+//getting list of message recipients
+Route::get('messages_receivers',array('as'=>'logout', 'uses'=>'MessageController@index'));
+
+//getting list of message recipients
+Route::post('messages_receivers',array('as'=>'logout', 'uses'=>'MessageController@store'));
+
+//getting list of message recipients
+Route::post('messages_receivers/{id}',array('as'=>'logout', 'uses'=>'MessageController@update'));
+
+//getting list of message recipients
+Route::post('delete/recipients/{id}',array('as'=>'logout', 'uses'=>'MessageController@destroy'));
+
+/**
+ * Timeline
+ */
+//getting list of message recipients
+Route::get('timeline',array('as'=>'logout', 'uses'=>'TimelineController@index'));
+
+//getting list of message recipients
+Route::post('timeline',array('as'=>'logout', 'uses'=>'TimelineController@store'));
+
+//getting list of message recipients
+Route::post('timeline/{id}',array('as'=>'logout', 'uses'=>'TimelineController@update'));
+
+//getting list of message recipients
+Route::post('delete/timeline/{id}',array('as'=>'logout', 'uses'=>'TimelineController@destroy'));
+
+//getting list of message recipients
+Route::post('timeline/complete/{id}',array('as'=>'logout', 'uses'=>'TimelineController@complete'));
+
+//getting list of message recipients
+Route::post('timeline/incomplete/{id}',array('as'=>'logout', 'uses'=>'TimelineController@incomplete'));
+
 /**
  * Uploading the file with households
  */

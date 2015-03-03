@@ -30,6 +30,14 @@ angular.module("malariaApp")
                 $scope.kayaSavedSuccess = true;
                 $scope.currentSaving = false;
                 $scope.kayaSavedFalue = false;
+                $scope.repassword = "";
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content('User Created Successfully!')
+                        .position($scope.getToastPosition())
+                        .hideDelay(3000)
+                );
+                $scope.showEditAdd = false;
             }).error(function(){
                 $scope.kayaSavedSuccess = false;
                 $scope.currentSaving = false;
@@ -80,8 +88,8 @@ angular.module("malariaApp")
 
         }
         $scope.toastPosition = {
-            bottom: false,
-            top: true,
+            bottom: true,
+            top: false,
             left: false,
             right: true
         };

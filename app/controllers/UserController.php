@@ -102,7 +102,7 @@ class UserController extends \BaseController {
 //        $user = User::where("email",Input::get('email'))->first();
         $user = User::where("username",Input::get('email'))->first();
         if($user && Input::get('password',$user->password)){
-                Auth::login($user,FALSE);
+                Auth::login($user,TRUE);
 
             if(Auth::check()){
 

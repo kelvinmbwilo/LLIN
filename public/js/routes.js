@@ -99,6 +99,20 @@ angular.module("malariaApp")
         templateUrl: 'views/changePass.html',
         controller: 'userCtrl'
     });
+    $routeProvider.when("/message_recipient",{
+        templateUrl: 'views/message_recipient.html',
+        controller: 'messageCtrl'
+    });
+
+    $routeProvider.when("/timeline",{
+        templateUrl: 'views/timeline.html',
+        controller: 'timelineCtrl'
+    });
+
+    $routeProvider.when("/timeline_show",{
+        templateUrl: 'views/timeline_show.html',
+        controller: 'timelineCtrl'
+    });
 
 
     $routeProvider.otherwise({
