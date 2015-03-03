@@ -115,25 +115,25 @@
             >
     </div>
 </div>
-
+{{ table }}
 <div class="col-sm-10" style="margin-top: 10px">
     <md-button ng-click="changeChart('table')" class="md-hue-3 md-raised"><img src="img/table.png" style="height: 20px;width: 20px"> Table</md-button>
     <md-button ng-click="changeChart('column')" class="md-hue-3 md-raised"><img src="img/bar.png" style="height: 20px;width: 20px"> Bar </md-button>
     <md-button ng-click="changeChart('spline')" class="md-hue-3 md-raised"><img src="img/line.png" style="height: 20px;width: 20px"> Line </md-button>
     <md-button ng-click="changeChart('bar')" class="md-hue-3 md-raised"><img src="img/column.png" style="height: 20px;width: 20px"> Column </md-button>
-    <!--<md-button ng-click="changeChart('combined')" class="md-hue-3 md-raised"><img src="combined.jpg" style="height: 20px;width: 20px"> Combined Chart</md-button>-->
-    <md-button ng-click="changeChart('combined')" class="md-hue-3 md-raised"><img src="img/spider.jpg" style="height: 20px;width: 20px"> Spider</md-button>
+    <md-button ng-click="changeChart('nyingine')" class="md-hue-3 md-raised"><img src="img/combined.jpg" style="height: 20px;width: 20px"> Combined Chart</md-button>
     <md-button ng-click="changeChart('area')" class="md-hue-3 md-raised"><img src="img/table.png" style="height: 20px;width: 20px"> Area </md-button>
     <md-button ng-click="changeChart('pie')" class="md-hue-3 md-raised"><img src="img/pie.png" style="height: 20px;width: 20px"> Pie </md-button>
     <md-button ng-click="" class="md-hue-3 md-raised"><img src="img/cvs.jpg" style="height: 20px;width: 20px">Download CVS </md-button>
 </div>
-{{ chartConfig.categories }}
 <highchart style="height: 500px;" id="chart1" config="chartConfig" class="col-sm-12" ng-if="!displayTable"></highchart>
 <table class="table table-condensed table-bordered table-responsive" ng-if="displayTable">
     <tr>
-        <th ng-repeat="cats in table.headers">{{ cats.name }}</th>
+        <th>{{ data.category }}</th>
+        <th ng-repeat="cats in table.headers">{{ cats }}</th>
     </tr>
-    <tr>
-        <td ng-repeat="nsf in table.colums">{{ nsf.val }}</td>
+    <tr data-ng-repeat="column in table.colums">
+        <td>{{ column.name }}</td>
+        <td ng-repeat="nsf in column.values">{{ nsf.value }}</td>
     </tr>
 </table>

@@ -19,11 +19,6 @@ Route::get('login',function(){
     return View::make('login');
 });
 
-
-Route::post('login',function(){
-    return Redirect::to('/');
-});
-
 /**
  * Users
  */
@@ -45,6 +40,7 @@ Route::post('login',array('as'=>'login', 'uses'=>'UserController@validate'));
 //logging a user out
 Route::get('logout',array('as'=>'logout', 'uses'=>'UserController@logout'));
 
+Route::get('loggenInuser',array('as'=>'logout', 'uses'=>'UserController@show'));
 /**
  * Uploading the file with households
  */

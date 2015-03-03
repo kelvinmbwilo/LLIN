@@ -1,0 +1,28 @@
+<div class="col-xs-8" ng-hide="currentEditting">
+    <div class="col-xs-8"><b>Old Password</b>
+        <input type="password" class="entry" ng-model="oldPassword" required/></div>
+    <div class="col-xs-8"><b>Password</b>
+        <input type="password" class="entry" ng-model="password" ng-change="passwordNoMatch()" required/>
+    </div>
+    <div class="col-xs-8"><b>Re-password</b>
+        <input type="password" class="entry" ng-model="repassword" ng-change="passwordNoMatch()" required/>
+    </div>
+
+</div>
+<div class="col-xs-8" style="margin-top: 10px;margin-bottom: 10px">
+    <div class="col-xs-8">
+
+        <!--saving messages-->
+        <span class="pull-left" ng-if="currentSaving"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+        <span class="pull-left text-success" ng-if="kayaSavedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+        <span class="pull-left text-danger" ng-if="kayaSavedFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+        <span class="pull-left text-warning" ng-if="passcheck"><i class='fa fa-warning fa-2x'></i> Two Password Do not Match </span>
+
+        <!--updating message-->
+        <span class="pull-left" ng-if="currentUpdating"><i class='fa fa-cog fa-2x fa-spin '></i> Saving.... </span>
+        <span class="pull-left text-success" ng-if="kayaUpdatedSuccess"><i class='fa fa-check fa-2x'></i> Saved Successful </span>
+        <span class="pull-left text-danger" ng-if="kayaUpdateFalue"><i class='fa fa-times fa-2x'></i> Saving Failed </span>
+
+        <div class="btn btn-primary btn-sm pull-right" ng-click="updateUserPassword(password)">Update </div>
+    </div>
+</div>

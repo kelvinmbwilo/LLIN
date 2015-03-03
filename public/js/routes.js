@@ -91,14 +91,14 @@ angular.module("malariaApp")
         controller: 'statisticsCtrl'
     });
 
-//    $routeProvider.when("/meetings",{
-//        templateUrl: 'views/meetings.html',
-//        controller: 'settingsCtrl'
-//    });
-//    $routeProvider.when("/addMember",{
-//        templateUrl: 'views/addMember.html',
-//        controller: 'settingsCtrl'
-//    });
+    $routeProvider.when("/profile",{
+        templateUrl: 'views/profile.html',
+        controller: 'userCtrl'
+    });
+    $routeProvider.when("/changePass",{
+        templateUrl: 'views/changePass.html',
+        controller: 'userCtrl'
+    });
 
 
     $routeProvider.otherwise({

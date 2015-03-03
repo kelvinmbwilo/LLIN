@@ -38,12 +38,11 @@ class UserController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		return User::find($id);
+		return Auth::user();
 	}
 
 
@@ -122,7 +121,7 @@ class UserController extends \BaseController {
      */
     public function logout(){
         Auth::logout();
-        return Redirect::to("/");
+        return Redirect::to("login");
     }
 
 

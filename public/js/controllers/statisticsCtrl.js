@@ -110,13 +110,9 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     $scope.data.chartType = 'column'
     $scope.changeChart = function(type){
         $scope.displayTable = false;
-        if(type == "spider"){
-            $scope.data.chartType = 'line';
-            $scope.data.chartType = true;
-        }else if(type == 'combined'){
-            $scope.data.chartType =false;
-        }else if(type == 'table'){
+       if(type == 'table'){
             $scope.displayTable = true;
+           $scope.data.chartType = 'table';
         }else{
             $scope.data.chartType = type;
         }
@@ -126,33 +122,62 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     $scope.prepareSeries = function(){
         $scope.changeCats();
         $scope.normalseries = [];
-        angular.forEach($scope.subCategory,function(value){
            if($scope.data.chartType == "pie"){
+               delete $scope.chartConfig.chart;
                var serie = [];
-               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+               angular.forEach($scope.subCategory,function(value){
+                angular.forEach($scope.chartConfig.xAxis.categories,function(val){
                    serie.push({name: value+" - "+ val , y: Math.random()*100 })
-               });
-               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
-           }else if($scope.data.chartType == "combined"){
-               var serie = [];
+                });
+            });
+            $scope.normalseries.push({type: $scope.data.chartType, name: $scope.data.category, data: serie})
+            $scope.chartConfig.series = $scope.normalseries;
+           }else if($scope.data.chartType == "nyingine"){
+               delete $scope.chartConfig.chart;
                var serie1 = [];
-               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
-                   serie.push(Math.random()*100)
-                   serie1.push({name: value+" - "+ val , y: Math.random()*100 })
-               });
-               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie});
-               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie1})
+               angular.forEach($scope.subCategory,function(value){
+                   var serie = [];
 
-           }else{
-               var serie = [];
-               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
-                   serie.push(Math.random()*100)
+                   angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                       serie.push(Math.random()*100)
+                       serie1.push({name: value+" - "+ val , y: Math.random()*100 })
+                   });
+                   $scope.normalseries.push({type: 'column', name: value, data: serie});
+                   $scope.normalseries.push({type: 'spline', name: value, data: serie});
                });
-               $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+               $scope.normalseries.push({type: 'pie', name: $scope.data.category, data: serie1,center: [100, 80],size: 150,showInLegend: false,
+                   dataLabels: {
+                       enabled: false
+                   }})
+               $scope.chartConfig.series = $scope.normalseries;
+           }else if($scope.data.chartType == 'table'){
+               $scope.table.headers = [];
+               $scope.table.colums =[];
+               angular.forEach($scope.subCategory,function(value){
+                   var serie = [];
+                   $scope.table.headers.push(value);
+               });
+               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   var seri = [];
+                   angular.forEach($scope.subCategory,function(value){
+                       seri.push({name:value,value:parseInt(Math.random()*100)});
+                   });
+
+                   $scope.table.colums.push({name:val,values:seri});
+                   console.log(seri)
+               });
+           }else{
+               delete $scope.chartConfig.chart;
+               angular.forEach($scope.subCategory,function(value){
+                   var serie = [];
+                   angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                       serie.push(Math.random()*100)
+                   });
+                   $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
+               });
+               $scope.chartConfig.series = $scope.normalseries;
            }
 
-        });
-        $scope.chartConfig.series = $scope.normalseries;
     }
 
     $scope.getData = function(){

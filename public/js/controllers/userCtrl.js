@@ -17,6 +17,10 @@ angular.module("malariaApp")
             $scope.users = data;
         });
 
+        $http.get("index.php/loggenInuser/").success(function(data){
+            $scope.currentKaya = data;
+        });
+
 
         $scope.saveUser = function(user){
             $scope.currentSaving = true;
