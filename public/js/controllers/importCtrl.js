@@ -2,7 +2,7 @@
  * Created by kelvin on 3/2/15.
  */
 angular.module("malariaApp")
-    .controller("importCtrl",function ($scope, $upload) {
+    .controller("importCtrl",function ($scope, $upload,$mdDialog,$mdToast) {
         $scope.$watch('files', function () {
             $scope.upload($scope.files);
         });
@@ -32,8 +32,12 @@ angular.module("malariaApp")
                         $scope.data.imported = data;
                         $scope.data.duplicates = data.duplicates;
                         $scope.data.newValues = data.newValue;
-                        console.log('file ' + config.file.name + 'uploaded. Response: ' +
-                            JSON.stringify(data));
+                        $mdToast.show(
+                            $mdToast.simple()
+                                .content('Coupons Imported Successfully!')
+                                .position($scope.getToastPosition())
+                                .hideDelay(3000)
+                        );
                     });
                 }
             }

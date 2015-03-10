@@ -13,7 +13,8 @@ else
     <link rel="icon" type="image/ico" href="http://aqvatarius.com/themes/taurus_v12/html/favicon.ico"/>
 
     <link href="<?php echo asset("css/stylesheets.css") ?>" rel="stylesheet" type="text/css" />
-    <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet">
+    <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet"><link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css">
+
 
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery.min.js") ?>'></script>
     <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-ui.min.js") ?>'></script>
@@ -44,11 +45,14 @@ else
     <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
     <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
     <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
+    <script src="<?php echo asset('bower_components/moment/moment.js') ?>"></script>
+    <script src="<?php echo asset('bower_components/angular-bootstrap/ui-bootstrap.js') ?>"></script>
+    <script src="<?php echo asset('bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js') ?>"></script>
     <link href="<?php echo asset('css/abn_tree.css') ?>" rel="stylesheet" />
     <link href="<?php echo asset('font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo asset('bower_components/angular-material/angular-material.css') ?>">
     <script>
-        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select']);
+        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar']);
     </script>
     <script src="<?php echo asset('js/routes.js') ?>"></script>
     <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>

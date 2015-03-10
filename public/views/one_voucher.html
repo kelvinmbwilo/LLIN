@@ -23,21 +23,17 @@
                     <form name="kayaForm" novalidate>
                         <div class="col-xs-12">
                             <div class="col-xs-12"><b>Region:</b>
-                                <select class="entry" ng-model="currentKaya.region" disabled>
-                                    <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
-                                </select>
+                                <input readonly type="text" class="entry" ng-model="regionn"/>
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="col-xs-7"><b>Wilaya:</b>
-                                <select class="entry" ng-model="currentKaya.district" disabled>
-                                    <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
-                                </select>
+                                <input readonly type="text" class="entry" ng-model="districtt"/>
                             </div>
-                            <div class="col-xs-5"><b>Kata:</b> <input readonly type="text" class="entry" ng-model="currentKaya.ward" required/></div>
+                            <div class="col-xs-5"><b>Kata:</b> <input readonly type="text" class="entry" ng-model="wardd" required/></div>
                         </div>
                         <div class="col-xs-12">
-                            <div class="col-xs-12"><b>Kijiji/Mtaa:</b> <input readonly type="text" class="entry" ng-model="currentKaya.village" required/></div>
+                            <div class="col-xs-12"><b>Kijiji/Mtaa:</b> <input readonly type="text" class="entry" ng-model="villagee" required/></div>
                         </div>
                         <div class="col-xs-12">
                             <div class="col-xs-12"><b>Jina Mkuu wa Kaya:</b> <input readonly type="text" class="entry" ng-model="currentKaya.leader_name" required/></div>
@@ -80,11 +76,9 @@
                         <div class="col-xs-11">
                             <div class="col-xs-12">
                                 <div class="col-xs-7"><b>Wilaya:</b>
-                                    <select class="entry" ng-model="currentKaya.district" disabled>
-                                        <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
-                                    </select>
+                                    <input readonly type="text" class="entry" ng-model="districtt"/>
                                 </div>
-                                <div class="col-xs-5"><b>Kijiji/Mtaa:</b> <input readonly type="text" class="entry" ng-model="currentKaya.village"/></div>
+                                <div class="col-xs-5"><b>Kijiji/Mtaa:</b> <input readonly type="text" class="entry" ng-model="villagee"/></div>
                             </div>
                             <div class="col-xs-12">
                                 <div class="col-xs-12"><b>Mkuu wa Kaya:</b> <input readonly type="text" class="entry" ng-model="currentKaya.leader_name"/></div>

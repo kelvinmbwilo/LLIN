@@ -17,7 +17,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         $scope.data.districts = data;
         $scope.data.usedDistricts = [];
         angular.forEach(data,function(datta){
-            $scope.data.usedDistricts.push({name: datta.district, ticked: false });
+            $scope.data.usedDistricts.push({name: datta.district,id:datta.id, ticked: false });
         });
     });
 
@@ -26,7 +26,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         $scope.data.regions = data;
         $scope.data.usedRegions = [];
         angular.forEach(data,function(value){
-            $scope.data.usedRegions.push({name: value.region, ticked: false})
+            $scope.data.usedRegions.push({name: value.region,id:value.id, ticked: false})
         });
     });
 
@@ -36,7 +36,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         $http.get("index.php/wards/district/"+id).success(function(distr){
             $scope.data.usedWards = [];
             angular.forEach(distr,function(value){
-                $scope.data.usedWards.push({name: value.name, ticked: false})
+                $scope.data.usedWards.push({name: value.name,id:value.id, ticked: false})
             });
         });
     }
@@ -54,7 +54,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         $http.get("index.php/village/ward/"+id).success(function(distr){
             $scope.data.usedVillages = [];
             angular.forEach(distr,function(value){
-                $scope.data.usedVillages.push({name: value.name, ticked: false})
+                $scope.data.usedVillages.push({name: value.name,id:value.id, ticked: false})
             });
         });
     }
@@ -67,22 +67,26 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
 
     $scope.prepareDropdown = function(){
         $scope.area = [];
+        $scope.area1 = [];
         if($scope.data.category == "Regions"){
             angular.forEach($scope.data.selectedRegions,function(value){
                 $scope.area.push(value.name);
+                $scope.area1.push({name:value.name,id:value.id});
             });
         }if($scope.data.category == "Districts"){
             angular.forEach($scope.data.selectedDistricts,function(value){
                 $scope.area.push(value.name);
+                $scope.area1.push({name:value.name,id:value.id});
             });
         }if($scope.data.category == "Wards"){
-
             angular.forEach($scope.data.selectedWards,function(value){
                 $scope.area.push(value.name);
+                $scope.area1.push({name:value.name,id:value.id});
             });
         }if($scope.data.category == "Village"){
             angular.forEach($scope.data.selectedVillages,function(value){
                 $scope.area.push(value.name);
+                $scope.area1.push({name:value.name,id:value.id});
             });
         }
         $scope.chartConfig.xAxis.categories =$scope.area;
@@ -91,7 +95,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
 
     $scope.changeCats = function(){
         if($scope.data.report_type == "Coupon Summary"){
-            $scope.subCategory = ["Redeemed Coupons","Non Redeemed Coupons"]
+            $scope.subCategory = ["All Coupons","Redeemed Coupons","Non Redeemed Coupons"]
         }if($scope.data.report_type == "Distribution Summary"){
             $scope.subCategory = ["Coupons","Nets"]
         }if($scope.data.report_type == "Population"){
@@ -99,9 +103,25 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
         }if($scope.data.report_type == "Coupon Quality"){
             $scope.subCategory = ["Imported","Verified"]
         }if($scope.data.report_type == "Administrative Units"){
-
+            $scope.subCategory =[];
+            if($scope.data.category == "Regions"){
+                angular.forEach($scope.data.usedDistricts,function(value){
+                    $scope.area.push(value.name);
+                    $scope.area1.push({name:value.name,id:value.id});
+                });
+            }if($scope.data.category == "Districts"){
+                angular.forEach($scope.data.selectedWards,function(value){
+                    $scope.area.push(value.name);
+                    $scope.area1.push({name:value.name,id:value.id});
+                });
+            }if($scope.data.category == "Wards"){
+                angular.forEach($scope.data.selectedWards,function(value){
+                    $scope.area.push(value.name);
+                    $scope.area1.push({name:value.name,id:value.id});
+                });
+            }
         }if($scope.data.report_type == "Delivery Summary"){
-            $scope.subCategory = ["Delivered Nets"]
+            $scope.subCategory = ["Delivered Nets","Required Nets"]
         }
 
     }
@@ -127,6 +147,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                var serie = [];
                angular.forEach($scope.subCategory,function(value){
                 angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                    $http.post("getStatistics/")
                    serie.push({name: value+" - "+ val , y: Math.random()*100 })
                 });
             });
@@ -169,8 +190,9 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                delete $scope.chartConfig.chart;
                angular.forEach($scope.subCategory,function(value){
                    var serie = [];
-                   angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   angular.forEach($scope.area1,function(val){
                        serie.push(Math.random()*100)
+                       $scope.getData(value,val.id);
                    });
                    $scope.normalseries.push({type: $scope.data.chartType, name: value, data: serie})
                });
@@ -179,20 +201,9 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
 
     }
 
-    $scope.getData = function(){
-        $scope.chartConfig.series = [{
-            name: 'Motor Vehicle',
-            data: []
-        }];
-        $scope.table.headers = [];
-        $scope.table.colums = [];
-        angular.forEach($scope.chartConfig.xAxis.categories,function(value){
-            $scope.table.headers.push({name:value});
-//                $scope.chartConfig.series[0].data.push(Math.floor(Math.random() * 30))
-            $http.get('../../vehicle/'+$scope.column+'/'+value).success(function(data){
-                $scope.table.colums.push({val:data});
-                $scope.chartConfig.series[0].data.push(parseInt(data));
-            });
+    $scope.getData = function(value,val){
+        $http.post("index.php/getReportValue",{category:$scope.report_type, area:$scope.data.category, categoryValue:value,areaValue:val}).success(function(data){
+            return data;
         })
     }
 

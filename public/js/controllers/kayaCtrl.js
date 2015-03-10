@@ -2,7 +2,7 @@
  * Created by kelvin on 1/13/15.
  */
 angular.module("malariaApp")
-    .controller("kayaCtrl",function($scope,$http){
+    .controller("kayaCtrl",function($scope,$http,$mdDialog,$mdToast){
        $scope.currentKaya = {};
         $scope.currentSaving = false;
         $scope.currentUpdating = false;
@@ -30,6 +30,12 @@ angular.module("malariaApp")
                 $scope.kayaSavedSuccess = true;
                 $scope.currentSaving = false;
                 $scope.kayaSavedFalue = false;
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content('Coupons Registered Successfully!')
+                        .position($scope.getToastPosition())
+                        .hideDelay(3000)
+                );
             }).error(function(){
                 $scope.kayaSavedSuccess = false;
                 $scope.currentSaving = false;

@@ -1506,11 +1506,12 @@
       <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12" def="J25vcm1hbCc="/>
       <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="verification_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="verified_by" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>

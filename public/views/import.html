@@ -73,3 +73,62 @@
     </div>
 
  </md-whiteframe>
+<div ng-if="data.imported.length != 0 && currentKaya.village">
+    <h3>Import Summary</h3>
+</div>
+<table datatable="ng" class="table table-striped table-hover table-condensed table-bordered" ng-if="data.newValues && data.newValues.length != 0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Jina la Mkuu wa kaya</th>
+        <th>Simu</th>
+        <th>Wanaume</th>
+        <th>Wanawake</th>
+        <th>Kituo cha Ugawaji</th>
+        <th>Jina La VEO</th>
+        <th>Mwandishi</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="requi in data.newValues">
+        <td>{{ requi.id }}</td>
+        <td>{{ requi.jina_la_mkuu_wa_kaya }}</td>
+        <td>{{ requi.simu }}</td>
+        <td>{{ requi.me }}</td>
+        <td>{{ requi.ke }}</td>
+        <td>{{ requi.kituo_cha_ugawaji }}</td>
+        <td>{{ requi.jina_la_veo }}</td>
+        <td>{{ requi.mwandishi }}</td>
+        <td>New Value</td>
+    </tr>
+    </tbody>
+</table>
+<table datatable="ng" class="table table-striped table-hover table-condensed table-bordered" ng-if="data.duplicates && data.imported.duplicates.length != 0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Jina la Mkuu wa kaya</th>
+        <th>Simu</th>
+        <th>Wanaume</th>
+        <th>Wanawake</th>
+        <th>Kituo cha Ugawaji</th>
+        <th>Jina La VEO</th>
+        <th>Mwandishi</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="requi in data.duplicates">
+        <td>{{ requi.id }}</td>
+        <td>{{ requi.jina_la_mkuu_wa_kaya }}</td>
+        <td>{{ requi.simu }}</td>
+        <td>{{ requi.me }}</td>
+        <td>{{ requi.ke }}</td>
+        <td>{{ requi.kituo_cha_ugawaji }}</td>
+        <td>{{ requi.jina_la_veo }}</td>
+        <td>{{ requi.mwandishi }}</td>
+        <td>Updates</td>
+    </tr>
+    </tbody>
+</table>

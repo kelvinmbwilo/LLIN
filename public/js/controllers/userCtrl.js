@@ -77,6 +77,13 @@ angular.module("malariaApp")
                         break;
                     }
                 }
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content('User Updated Successfully!')
+                        .position($scope.getToastPosition())
+                        .hideDelay(3000)
+                );
+                $scope.showEditAdd = false;
                 $scope.kayaUpdatedSuccess = true;
                 $scope.currentUpdating = false;
                 $scope.kayaUpdateFalue = false;

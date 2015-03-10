@@ -114,6 +114,9 @@ Route::post('kaya/{id}',array('uses'=>'kayaController@update'));
 //updating kaya distribution status
 Route::post('kaya/{id}/distribute',array('uses'=>'kayaController@updateStatus'));
 
+//updating kaya verification status
+Route::post('kaya/{id}/verify',array('uses'=>'kayaController@updateVerification'));
+
 //getting single kaya Information
 Route::get('kaya/{id}',array('uses'=>'kayaController@show'));
 
@@ -205,8 +208,24 @@ Route::post('delete/village/{id}',array('uses'=>'kayaController@destroyVillage')
 
 //////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////generating pdf /////////////////////////////////
-//getting village details ---taking ward ID----(Distribution List)
+//getting distribution list
 Route::get('distribution_list1/{regid}/{disid}',array('uses'=>'kayaController@generatePdf1'));
 
-//getting village details ---taking ward ID----(Issuing List)
+//getting issuing list
 Route::get('distribution_list/{regid}/{disid}/{wardid}/{villid}',array('uses'=>'kayaController@generatePdf'));
+
+//getting ward details
+Route::get('warddd/{id}',array('uses'=>'kayaController@wardd'));
+
+//getting ward details
+Route::get('regionn/{id}',array('uses'=>'kayaController@regionn'));
+
+//getting ward details
+Route::get('districtss/{id}',array('uses'=>'kayaController@districtss'));
+
+//getting ward details
+Route::get('villagee/{id}',array('uses'=>'kayaController@villagee'));
+
+//getting ward details
+Route::post('getReportValue',array('uses'=>'ReportController@index'));
+

@@ -420,7 +420,24 @@ class kayaController extends \BaseController {
 	{
         $kaya = Kaya::where('uid',$id)->first();
         $kaya->status = 1;
-        $kaya->distribution_date = date("d-m-Y");
+        $kaya->confirmation_date = date("d-m-Y");
+        $kaya->comfirmed_by = Auth::user()->first_name." ".Auth::user()->last_name;
+        $kaya->save();
+        return $kaya;
+	}
+
+    /**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function updateVerification($id)
+	{
+        $kaya = Kaya::where('uid',$id)->first();
+        $kaya->verification_status = 1;
+        $kaya->verified_by = Auth::user()->first_name." ".Auth::user()->last_name;
+        $kaya->verification_date = date("d-m-Y");
         $kaya->save();
         return $kaya;
 	}
@@ -709,6 +726,22 @@ class kayaController extends \BaseController {
             $pdf = PDF::loadView('distribution',compact('kaya','district','ward','village'));
             return $pdf->download('Distribution List.pdf'); //Download file
 
+    }
+
+    public function wardd($id){
+        return Ward::find($id);
+    }
+
+    public function villagee($id){
+        return Village::find($id);
+    }
+
+    public function districtss($id){
+        return District::find($id);
+    }
+
+    public function regionn($id){
+        return Region::find($id);
     }
 
 }

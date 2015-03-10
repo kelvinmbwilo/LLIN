@@ -15,7 +15,7 @@
         <!--<md-button class="md-hue-3 md-primary md-raised" ng-click="activatecheckKaya()">Check Again</md-button>-->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span ng-if="checkingKaya"><i class="fa fa-spin fa-spinner fa-2x"></i> Checking... </span>
-        <span ng-if="currentKaya.verified == 1" class="text-success"><i class="fa fa-check fa-2x"></i> This coupon is already confirmed </span>
+        <span ng-if="currentKaya.verification_status == 1" class="text-success"><i class="fa fa-check fa-2x"></i> This coupon has been verified </span>
         <span ng-if="performingDistribution"><i class="fa fa-spin fa-spinner fa-2x"></i> Confirming Distribution... </span>
         <span ng-if="errorcheckingKaya && !scaningForm.kayaId.$error.required" class="text-danger"><i class="fa fa-exclamation"></i> Incorrect Coupon Number Try Again </span>
 
