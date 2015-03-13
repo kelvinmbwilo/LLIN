@@ -74,7 +74,7 @@ class kayaController extends \BaseController {
                                 'region' => Input::get('region'),
                                 'district' => Input::get('district'),
                                 'ward' => Input::get('ward'),
-                                'verification_status' => 'imported',
+                                'entry' => 'imported',
                                 'village' => Input::get('village')
                             ));
                         }
