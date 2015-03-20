@@ -133,6 +133,9 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
        if(type == 'table'){
             $scope.displayTable = true;
            $scope.data.chartType = 'table';
+        }else if(type == 'excel'){
+            $scope.displayTable = true;
+           $scope.data.chartType = 'excel';
         }else{
             $scope.data.chartType = type;
         }
@@ -154,6 +157,25 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
             });
             $scope.normalseries.push({type: $scope.data.chartType, name: $scope.data.category, data: serie})
             $scope.chartConfig.series = $scope.normalseries;
+           }else if($scope.data.chartType == "excel"){
+               $scope.table.headers = [];
+               $scope.table.colums =[];
+               angular.forEach($scope.subCategory,function(value){
+                   var serie = [];
+                   $scope.table.headers.push(value);
+               });
+               angular.forEach($scope.chartConfig.xAxis.categories,function(val){
+                   var seri = [];
+                   angular.forEach($scope.subCategory,function(value){
+                       seri.push({name:value,value:parseInt(Math.random()*100)});
+                   });
+
+                   $scope.table.colums.push({name:val,values:seri});
+
+               });
+               window.location.assign("index.php/excel?data="+JSON.stringify($scope.table));
+               alert("drawing excel");
+
            }else if($scope.data.chartType == "nyingine"){
                delete $scope.chartConfig.chart;
                var serie1 = [];

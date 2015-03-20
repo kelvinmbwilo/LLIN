@@ -227,5 +227,11 @@ Route::get('districtss/{id}',array('uses'=>'kayaController@districtss'));
 Route::get('villagee/{id}',array('uses'=>'kayaController@villagee'));
 
 //getting ward details
+Route::get('excel',array('uses'=>'ReportController@downloadExcel'));
+
+//getting ward details
+Route::post('excel',array('uses'=>'ReportController@downloadExcel'));
+
+//getting ward details
 Route::post('getReportValue',array('uses'=>'ReportController@index'));
 

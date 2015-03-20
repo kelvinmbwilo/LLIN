@@ -121,12 +121,20 @@ class ReportController extends \BaseController {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function downloadExcel()
 	{
-		//
+        Excel::create('New file', function($excel) {
+
+            $excel->sheet('New sheet', function($sheet) {
+
+                $sheet->loadView('excel')->with('key', 'value');
+
+            });
+
+//        })->download('xls');
+        })->export('pdf');
 	}
 
 
