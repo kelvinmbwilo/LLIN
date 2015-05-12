@@ -15,59 +15,12 @@ else
     <link href="<?php echo asset("css/stylesheets.css") ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo asset('css/angular-multi-select.css') ?>" rel="stylesheet"><link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css">
 
-
-    <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery.min.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-ui.min.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-migrate.min.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/globalize.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/plugins/bootstrap/bootstrap.min.js") ?>'></script>
-
-<!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
-    <script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
-    <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
-
-    <script type='text/javascript' src='<?php echo asset("js/plugins.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/actions.js") ?>'></script>
-    <script type='text/javascript' src='<?php echo asset("js/settings.js") ?>'></script>
-
-    <script src="<?php echo asset('js/angular.js') ?>"></script>
-    <script src="<?php echo asset('js/angular-route.js') ?>"></script>
-    <script src="<?php echo asset('js/angular-resource.js') ?>"></script>
-    <script src="<?php echo asset('js/angular-animate.js') ?>"></script>
-    <script src="<?php echo asset('angular-ui-date/src/date.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/angular-aria/angular-aria.min.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/hammerjs/hammer.min.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/angular-material/angular-material.min.js') ?>"></script>
-    <script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
-    <script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
-
-    <script src="<?php echo asset('js/abn_tree_directive.js') ?>"></script>
-    <script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
-    <script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
-    <script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/moment/moment.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/angular-bootstrap/ui-bootstrap.js') ?>"></script>
-    <script src="<?php echo asset('bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js') ?>"></script>
     <link href="<?php echo asset('css/abn_tree.css') ?>" rel="stylesheet" />
     <link href="<?php echo asset('font-awesome/css/font-awesome.css') ?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo asset('bower_components/angular-material/angular-material.css') ?>">
-    <script>
-        angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar']);
-    </script>
-    <script src="<?php echo asset('js/routes.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/kayaCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/distributionCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/distributeCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/stationsCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/listCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/userCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/importCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/settingsCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/statisticsCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/messageCtrl.js') ?>"></script>
-    <script src="<?php echo asset('js/controllers/timelineCtrl.js') ?>"></script>
+
+    <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery.min.js") ?>'></script>
+
     <style>
         @font-face {
             font-family: myBoldFont;
@@ -204,5 +157,53 @@ else
 </div>
 </div>
 
+<script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-ui.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/plugins/jquery/jquery-migrate.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/plugins/jquery/globalize.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/plugins/bootstrap/bootstrap.min.js") ?>'></script>
+
+<!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
+<script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
+<script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
+
+<script type='text/javascript' src='<?php echo asset("js/plugins.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/actions.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/settings.js") ?>'></script>
+
+<script src="<?php echo asset('js/angular.js') ?>"></script>
+<script src="<?php echo asset('js/angular-route.js') ?>"></script>
+<script src="<?php echo asset('js/angular-resource.js') ?>"></script>
+<script src="<?php echo asset('js/angular-animate.js') ?>"></script>
+<script src="<?php echo asset('angular-ui-date/src/date.js') ?>"></script>
+<script src="<?php echo asset('bower_components/angular-aria/angular-aria.min.js') ?>"></script>
+<script src="<?php echo asset('bower_components/hammerjs/hammer.min.js') ?>"></script>
+<script src="<?php echo asset('bower_components/angular-material/angular-material.min.js') ?>"></script>
+<script src="<?php echo asset('js/angular-file-upload.min.js')?>"></script>
+<script src="<?php echo asset('js/angular-multi-select.js') ?>"></script>
+
+<script src="<?php echo asset('js/abn_tree_directive.js') ?>"></script>
+<script src="<?php echo asset('angular-datatables/dist/angular-datatables.js') ?>"></script>
+<script src="<?php echo asset('highcharts-ng/src/highcharts-custom.js') ?>"></script>
+<script src="<?php echo asset('highcharts-ng/src/highcharts-ng.js') ?>"></script>
+<script src="<?php echo asset('bower_components/moment/moment.js') ?>"></script>
+<script src="<?php echo asset('bower_components/angular-bootstrap/ui-bootstrap.js') ?>"></script>
+<script src="<?php echo asset('bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js') ?>"></script>
+<script>
+    angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar']);
+</script>
+<script src="<?php echo asset('js/routes.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/kayaCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/distributionCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/distributeCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/stationsCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/listCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/userCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/importCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/searchCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/settingsCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/statisticsCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/messageCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/controllers/timelineCtrl.js') ?>"></script>
 </body>
 </html>
