@@ -6,12 +6,16 @@ angular.module("malariaApp")
         $scope.$watch('files', function () {
             $scope.upload($scope.files);
         });
+        $scope.summaryReady = false;
+        $scope.proccessing  = false;
         $scope.progressParcent = 0;
+        $scope.data.imported = [];
         $scope.upload = function (files) {
             $scope.data.imported = [];
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
+                    $scope.proccessing = true;
                     $upload.upload({
                         url: 'index.php/upload',
                         file: file,
@@ -20,18 +24,32 @@ angular.module("malariaApp")
                             ward:$scope.currentKaya.ward,
                             district:$scope.currentKaya.district,
                             village:$scope.currentKaya.village
+                        },
+                        xhr: function()
+                        {
+                            var xhr = new window.XMLHttpRequest();
+                            xhr.addEventListener("progress", function(evt){
+                                if (evt.lengthComputable) {
+                                    var percentComplete = evt.loaded / evt.total;
+                                    //Do something with download progress
+                                    console.log(percentComplete);
+                                }
+                            }, false);
+                            return xhr;
                         }
                     }).progress(function (evt) {
                         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                         $scope.progressParcent = progressPercentage;
-                        console.log('progress: ' + progressPercentage + '% ' +
-                            evt.config.file.name);
                     }).success(function (data, status, headers, config) {
+                        $scope.files = null;
+                        $scope.currentKaya = {};
                         $scope.progressParcent = 0;
                         $scope.data.toImport = data.length;
                         $scope.data.imported = data;
                         $scope.data.duplicates = data.duplicates;
                         $scope.data.newValues = data.newValue;
+                        $scope.summaryReady = true;
+                        $scope.proccessing  = false;
                         $mdToast.show(
                             $mdToast.simple()
                                 .content('Coupons Imported Successfully!')

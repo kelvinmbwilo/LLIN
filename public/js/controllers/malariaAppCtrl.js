@@ -16,6 +16,19 @@ angular.module("malariaApp")
                     $rootScope.showLoader = false;
 
             });
+        $scope.toastPosition = {
+            bottom: true,
+            top: false,
+            left: false,
+            right: true
+        };
+
+        $scope.getToastPosition = function() {
+            return Object.keys($scope.toastPosition)
+                .filter(function(pos) { return $scope.toastPosition[pos]; })
+                .join(' ');
+        };
+
         $scope.events = [
             {
                 title: 'Event 1',
@@ -89,15 +102,29 @@ angular.module("malariaApp")
             return function(friend) { return friend.region_id == query; }
         };
 
-        $scope.getWards = function(id){
-            $http.get("index.php/wards/district/"+id).success(function(distr){
-                $scope.data.disward = distr;
-            });
+        $scope.changeRegion = function(){
+            $scope.data.disward ={};
+            $scope.data.disvillage = {};
         }
 
+        $scope.loadingWards = false;
+        $scope.getWards = function(id){
+            $scope.loadingWards = true;
+            $scope.data.disward ={};
+            $scope.data.disvillage = {};
+            $http.get("index.php/wards/district/"+id).success(function(distr){
+                $scope.data.disward = distr;
+                $scope.loadingWards = false;
+
+            });
+        }
+        $scope.loadingVillages = false;
         $scope.getVillages = function(id){
+            $scope.data.disvillage = {};
+            $scope.loadingVillages = true;
             $http.get("index.php/village/ward/"+id).success(function(distr){
                 $scope.data.disvillage = distr;
+                $scope.loadingVillages = false;
             });
         }
 

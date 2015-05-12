@@ -60,17 +60,17 @@ class kayaController extends \BaseController {
                             array_push($duplicate,$kaya);
                         }else{
                             array_push($newVals,$kaya);
-                            $nets = intval(($kaya['me'] + $kaya['ke'])/2);
+                            $nets = intval(round((($kaya['me'] + $kaya['ke'])/2), 0, PHP_ROUND_HALF_UP));
                              Kaya::create(array(
-                                'uid' => $kaya['id'],
-                                'leader_name' => $kaya['jina_la_mkuu_wa_kaya'],
-                                'phone' => $kaya['simu'],
-                                'male' => $kaya['me'],
-                                'female' => $kaya['ke'],
-                                'nets'   => ($nets > 5)?5:$nets,
-                                'station' => $kaya['kituo_cha_ugawaji'],
-                                'name_of_veo' => $kaya['jina_la_veo'],
-                                'writer' => $kaya['mwandishi'],
+                                'uid' => trim($kaya['id']),
+                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
+                                'phone' => trim($kaya['simu']),
+                                'male' => trim($kaya['me']),
+                                'female' => trim($kaya['ke']),
+                                'nets'   => $nets,
+                                'station' => trim($kaya['kituo_cha_ugawaji']),
+                                'name_of_veo' => trim($kaya['jina_la_veo']),
+                                'writer' => trim($kaya['mwandishi']),
                                 'region' => Input::get('region'),
                                 'district' => Input::get('district'),
                                 'ward' => Input::get('ward'),
