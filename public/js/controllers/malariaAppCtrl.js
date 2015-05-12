@@ -2,10 +2,20 @@
  * Created by kelvin on 1/13/15.
  */
 angular.module("malariaApp")
-    .controller("malariaAppCtrl",function($scope,$http,$location){
+    .controller("malariaAppCtrl",function($rootScope,$scope,$http,$location,$timeout){
         var currentYear = moment().year();
         var currentMonth = moment().month();
+        $rootScope.$on("$routeChangeStart",
+            function (event, current, previous, rejection) {
+                console.log("Starting to load" );
+                $rootScope.showLoader = true;
+            });
+        $rootScope.$on("$routeChangeSuccess",
+            function (event, current, previous, rejection) {
+                console.log("Done Loading" );
+                    $rootScope.showLoader = false;
 
+            });
         $scope.events = [
             {
                 title: 'Event 1',

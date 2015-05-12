@@ -9,9 +9,7 @@ angular.module("malariaApp")
             $rootScope.showLoader = true;
         });
         // register listener to watch route changes successful
-        $rootScope.$on( "$locationChangeSuccess", function(event, next, current) {
-            $rootScope.showLoader = false;
-        });
+
     })
     .config( function($routeProvider){
     $routeProvider.when("/registration",{
