@@ -4,7 +4,7 @@ if(Auth::guest())
   echo Redirect::to("login");
 else
 ?>
-<html lang="en" ng-app="malariaApp">
+<html lang="en" ng-app="malariaApp" ng-controller="malariaAppCtrl">
 <head>
     <title>LLIN MRC DATABASE</title>
 
@@ -85,10 +85,21 @@ else
         .dropdown:hover .dropdown-menu {
             display: block;
         }
+        #load-screen {
+            width: 100%;
+            height: 100%;
+            background: url("loader.gif") no-repeat center center #fff;
+            position: fixed;
+            opacity: 0.7;
+            z-index: 1111;
+        }
     </style>
 </head>
-<body class="bg-img-num1" data-settings="close" ng-controller="malariaAppCtrl" style="min-height: 820px">
+<div id="load-screen" ng-if="showLoader"></div>
+<body class="bg-img-num1" data-settings="close"  style="min-height: 820px">
+{{ showLoader }}
 <div class="container">
+
 <div class="row">
     <div class="col-md-12">
         <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px">

@@ -704,6 +704,7 @@ class kayaController extends \BaseController {
         sort($villag);
             $pdf = PDF::loadView('distribution1',compact('region','district','villag'));
             return $pdf->download('Distribution List.pdf'); //Download file
+        //return View::make('distribution1',compact('region','district','villag'));
 
 
     }

@@ -198,7 +198,7 @@
     @foreach($villag as $kay)
     <?php $j++;
     $kayatotal += $kay['kaya'];
-    $total += intval(($kay['male'] + $kay['female'])/2)
+    $total += intval($kay['nets'])
     ?>
     <tr>
         <td>{{ ++$k }}</td>
@@ -209,6 +209,7 @@
     </tr>
     <?php
     if($j % 33 == 0){
+
         ?>
     <tr style="background-color: #7E8F7C">
         <td></td>

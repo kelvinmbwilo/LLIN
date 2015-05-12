@@ -13,11 +13,11 @@ angular.module("malariaApp")
         $scope.kayaUpdateFalue = false;
         $scope.showEditAdd = false;
 
-        $http.get("index.php/users/").success(function(data){
+        $http.get("index.php/users").success(function(data){
             $scope.users = data;
         });
 
-        $http.get("index.php/loggenInuser/").success(function(data){
+        $http.get("index.php/loggenInuser").success(function(data){
             $scope.currentKaya = data;
         });
 

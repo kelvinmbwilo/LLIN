@@ -18,7 +18,7 @@ angular.module("malariaApp")
         $scope.kayaUpdateFalue = false;
         $scope.showEditAdd = false;
 
-        $http.get("index.php/timeline/").success(function(data){
+        $http.get("index.php/timeline").success(function(data){
             $scope.timelineactivity = data;
         });
 

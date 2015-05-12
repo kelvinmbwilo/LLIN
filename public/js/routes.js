@@ -2,21 +2,17 @@
  * Created by kelvin on 1/9/15.
  */
 angular.module("malariaApp")
-//    .run( function($rootScope, $location) {
-//
-//        // register listener to watch route changes
-//        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-//            if (!$rootScope.loggedUser) {
-//                // no logged user, we should be going to #login
-//                if ( next.templateUrl == "partials/login.html" ) {
-//                    // already going to #login, no redirect needed
-//                } else {
-//                    // not going to #login, we should redirect now
-//                    $location.path( "/login" );
-//                }
-//            }
-//        });
-//    })
+    .run( function($rootScope, $location) {
+        $rootScope.showLoader = false;
+        // register listener to watch route changes
+        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+            $rootScope.showLoader = true;
+        });
+        // register listener to watch route changes successful
+        $rootScope.$on( "$locationChangeSuccess", function(event, next, current) {
+            $rootScope.showLoader = false;
+        });
+    })
     .config( function($routeProvider){
     $routeProvider.when("/registration",{
         templateUrl: 'views/registration.html',

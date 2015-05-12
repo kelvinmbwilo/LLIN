@@ -24,7 +24,7 @@ angular.module("malariaApp")
                 type: 'important',
                 starts_at: new Date(currentYear,currentMonth,25,6,30),
                 ends_at: new Date(currentYear,currentMonth,25,6,60)
-            },
+            }
         ];
 
         $scope.calendarView = 'month';
@@ -61,7 +61,7 @@ angular.module("malariaApp")
         });
 
         //getting loggedin user details
-        $http.get("index.php/loggenInuser/").success(function(data){
+        $http.get("index.php/loggenInuser").success(function(data){
             $scope.loggedInUser = data;
         });
 
