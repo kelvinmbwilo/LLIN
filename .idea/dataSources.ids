@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source source="LOCAL" name="MySQL - malaria@localhost" uuid="fca729de-26ac-4f2e-93c8-d11bae9bb309">
-    <database-info product="MySQL" version="5.5.41-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -1544,9 +1544,8 @@
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="ward" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="head_of_station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="contacts" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>

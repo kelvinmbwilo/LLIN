@@ -7,12 +7,10 @@ angular.module("malariaApp")
         var currentMonth = moment().month();
         $rootScope.$on("$routeChangeStart",
             function (event, current, previous, rejection) {
-                console.log("Starting to load" );
                 $rootScope.showLoader = true;
             });
         $rootScope.$on("$routeChangeSuccess",
             function (event, current, previous, rejection) {
-                console.log("Done Loading" );
                     $rootScope.showLoader = false;
 
             });
@@ -153,4 +151,4 @@ angular.module("malariaApp")
             }
         }
 
-    })
+    });

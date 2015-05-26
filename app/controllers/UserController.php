@@ -10,6 +10,47 @@ class UserController extends \BaseController {
 	public function index()
 	{
         return User::all();
+//        foreach(Region::all() as $region){
+//            if (!Schema::hasTable(str_replace(" ","_",$region->region)))
+//            {
+//                Schema::create(str_replace(" ","_",$region->region), function($table)
+//                {
+//                    $table->increments('id');
+//                    $table->integer('uid');
+//                    $table->integer('region');
+//                    $table->integer('district');
+//                    $table->integer('ward');
+//                    $table->integer('village');
+//                    $table->integer('male');
+//                    $table->integer('female');
+//                    $table->integer('nets');
+//                    $table->string('station');
+//                    $table->string('name_of_veo');
+//                    $table->string('writer');
+//                    $table->integer('status');
+//                    $table->string('entry');
+//                    $table->string('comfirmed_by');
+//                    $table->string('confirmation_date');
+//                    $table->string('verification_status');
+//                    $table->string('verified_by');
+//                    $table->timestamps();
+//                    $table->index('uid');
+//                    $table->index('region');
+//                    $table->index('district');
+//                    $table->index('ward');
+//                    $table->index('village');
+//                    $table->index('male');
+//                    $table->index('female');
+//                    $table->index('nets');
+//                    $table->index('station');
+//                    $table->index('name_of_veo');
+//                    $table->index('writer');
+//                    $table->index('status');
+//                    $table->index('entry');
+//                });
+//            }
+//
+//        }
 	}
 
 

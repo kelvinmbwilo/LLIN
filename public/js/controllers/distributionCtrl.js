@@ -28,7 +28,6 @@ angular.module("malariaApp")
             $scope.districtVisible=[];
             $scope.villageVisible = [];
             $scope.wardVisible = [];
-            if(region.districts == null){
                 $http.get("index.php/districts/region/"+region.id).success(function(distr){
                     region.districts = distr;
                     angular.forEach(region.districts,function(val){
@@ -38,7 +37,6 @@ angular.module("malariaApp")
                         });
                     });
                 });
-            }
             $scope.districtVisible[region.id] = true;
         }
 
@@ -50,7 +48,6 @@ angular.module("malariaApp")
         $scope.showWardDetails = function(district){
             $scope.wardVisible = [];
             $scope.villageVisible = [];
-            if(district.wards == null){
                 $http.get("index.php/wards/district/"+district.id).success(function(distr){
                     district.ward = distr;
                     angular.forEach(district.ward,function(val){
@@ -60,7 +57,6 @@ angular.module("malariaApp")
                         });
                     });
                 });
-            }
             $scope.wardVisible[district.id] = true;
         }
 
@@ -71,7 +67,6 @@ angular.module("malariaApp")
 
         $scope.showVillageDetails = function(ward){
             $scope.villageVisible = [];
-            if(ward.village == null){
                 $http.get("index.php/village/ward/"+ward.id).success(function(distr){
                     ward.village = distr;
                     angular.forEach(ward.village,function(val){
@@ -81,7 +76,6 @@ angular.module("malariaApp")
                         });
                     });
                 });
-            }
             $scope.villageVisible[ward.id] = true;
         }
 

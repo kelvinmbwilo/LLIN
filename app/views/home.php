@@ -150,7 +150,7 @@ else
     <div class="page-footer">
         <div class="page-footer-wrap">
             <div class="side text-center">
-                Copyirght &COPY; LLIN MRC DATABASE <?php echo date('Y') ?>. All rights reserved.
+                Copyright &COPY; LLIN MRC DATABASE <?php echo date('Y') ?>. All rights reserved.
             </div>
         </div>
     </div>
@@ -162,6 +162,7 @@ else
 <script type='text/javascript' src='<?php echo asset("js/plugins/jquery/globalize.js") ?>'></script>
 <script type='text/javascript' src='<?php echo asset("js/plugins/bootstrap/bootstrap.min.js") ?>'></script>
 
+
 <!--    <script type='text/javascript' src='--><?php //echo asset("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js") ?><!--'></script>-->
 <script type='text/javascript' src='<?php echo asset("js/plugins/uniform/jquery.uniform.min.js") ?>'></script>
 <script src="<?php echo asset('DataTables/media/js/jquery.dataTables.js') ?>"></script>
@@ -171,6 +172,31 @@ else
 <script type='text/javascript' src='<?php echo asset("js/settings.js") ?>'></script>
 
 <script src="<?php echo asset('js/angular.js') ?>"></script>
+
+
+<script type='text/javascript' src='<?php echo asset("js/jszip.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/c1xlsx.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/wijmo.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/wijmo.grid.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/wijmo.angular.min.js") ?>'></script>
+<script type='text/javascript' src='<?php echo asset("js/ExcelConverter.js") ?>'></script>
+
+<script type="text/javascript" charset="utf-8" src="jspdf/build/pdf.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/build/pdf.worker.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/web/compatibility.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jquery.base64.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/tableExport.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf/libs/base64.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf/libs/sprintf.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.htmltable.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/html2canvas.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.debug.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.addhtml.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.cell.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+<script type="text/javascript" charset="utf-8" src="jspdf/jspdf.plugin.autotable.js"></script>
 <script src="<?php echo asset('js/angular-route.js') ?>"></script>
 <script src="<?php echo asset('js/angular-resource.js') ?>"></script>
 <script src="<?php echo asset('js/angular-animate.js') ?>"></script>
@@ -188,11 +214,13 @@ else
 <script src="<?php echo asset('bower_components/moment/moment.js') ?>"></script>
 <script src="<?php echo asset('bower_components/angular-bootstrap/ui-bootstrap.js') ?>"></script>
 <script src="<?php echo asset('bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js') ?>"></script>
+
 <script>
-    angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar']);
+    angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar','wj']);
 </script>
 <script src="<?php echo asset('js/routes.js') ?>"></script>
 <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>
+<script src="<?php echo asset('js/xlsxcontroller.js') ?>"></script>
 <script src="<?php echo asset('js/controllers/kayaCtrl.js') ?>"></script>
 <script src="<?php echo asset('js/controllers/distributionCtrl.js') ?>"></script>
 <script src="<?php echo asset('js/controllers/distributeCtrl.js') ?>"></script>

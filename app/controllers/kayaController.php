@@ -9,7 +9,10 @@ class kayaController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
+        $region = Region::find(Input::get('region'));
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
+		return DB::table($table)->where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
 	}
 
     /**
@@ -19,14 +22,17 @@ class kayaController extends \BaseController {
 	 */
 	public function searchResult()
 	{
+        $region = Region::find(Input::get('region'));
+        $table = str_replace(" ","_",$region->region);
+        //return DB::table($table)->where('region',$regid)->get();
         if(Input::get('ward') == NULL){
-            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->get();
+            return DB::table($table)->where('region',Input::get('region'))->where('district',Input::get('district'))->get();
 
         }elseif(Input::get('village') == NULL){
-            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->get();
+            return DB::table($table)->where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->get();
 
         }else{
-            return Kaya::where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
+            return DB::table($table)->where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
         }
 	}
 
@@ -39,6 +45,8 @@ class kayaController extends \BaseController {
 	{
         if (Input::hasFile('file'))
         {
+            $region = Region::find(Input::get('region'));
+            $GLOBALS['table'] = str_replace(" ","_",$region->region);
             $file = Input::file('file'); // your file upload input field in the form should be named 'file'
             $destinationPath = public_path().'/uploads';
             $filename = $file->getClientOriginalName();
@@ -46,42 +54,73 @@ class kayaController extends \BaseController {
             $uploadSuccess = Input::file('file')->move($destinationPath, $filename);
             chmod($destinationPath ."/".$filename , 0777);
             if($uploadSuccess ){
-                Excel::load($destinationPath ."/".$filename, function($reader) {
-                    $reader->toArray();
-                    $arr = $reader->get(array(
-                        'id','simu','jina_la_mkuu_wa_kaya','me','ke','kituo_cha_ugawaji','jina_la_veo','mwandishi'
-                    ))->toArray();
-                    //json_encode($arr);exit;
+                $GLOBALS['i'] = 0;
+                $GLOBALS['duplicate'] = array();
+                $GLOBALS['newVals']  = array();
+                Excel::filter('chunk')->load($destinationPath ."/".$filename)->chunk(250, function($results)
+                {
                     $duplicate = array();
                     $newVals   = array();
-//                    echo json_encode($reader->get(array('surname', 'other_names','national_id','phone_number','gender','date_of_birth','gender','date_of_birth','national','driving_license_id','occupation','driving _class','expiry_date'))->toArray());
-                    foreach($arr as $kaya){
-                        if(Kaya::where('uid',$kaya['id'])->first()){
-                            array_push($duplicate,$kaya);
+                    foreach($results as $row)
+                    {
+                        $row->toArray();
+                        $pieces = explode("(", trim($row->kituo_cha_ugawaji));
+                        $pieces1 = explode("\\", trim($pieces[0]));
+                        $pieces2 = explode("_", trim(end($pieces1)));
+                        if(User::where('email', '=', Input::get('email'))->exists()){
+                            // user found
+                        }
+                        if(Station::where('village', Input::get('village'))->where('name',trim($pieces2[1]))->first()){
+
                         }else{
-                            array_push($newVals,$kaya);
-                            $nets = intval(round((($kaya['me'] + $kaya['ke'])/2), 0, PHP_ROUND_HALF_UP));
-                             Kaya::create(array(
-                                'uid' => trim($kaya['id']),
-                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
-                                'phone' => trim($kaya['simu']),
-                                'male' => trim($kaya['me']),
-                                'female' => trim($kaya['ke']),
-                                'nets'   => $nets,
-                                'station' => trim($kaya['kituo_cha_ugawaji']),
-                                'name_of_veo' => trim($kaya['jina_la_veo']),
-                                'writer' => trim($kaya['mwandishi']),
+                            Station::create(array(
+                                'name' => trim($pieces2[1]),
                                 'region' => Input::get('region'),
                                 'district' => Input::get('district'),
                                 'ward' => Input::get('ward'),
-                                'entry' => 'imported',
-                                'village' => Input::get('village')
+                                'village' => Input::get('village'),
                             ));
                         }
+                        $kaya = array(
+                          'id'                      => trim($row->id),
+//                          'simu'                    => trim($row->simu),
+//                          'jina_la_mkuu_wa_kaya'    => trim($row->jina_la_mkuu_wa_kaya),
+                          'me'                      => trim($row->me),
+                          'ke'                      => trim($row->ke),
+                          'kituo_cha_ugawaji'       => trim($pieces2[1]),
+                          'jina_la_veo'             => trim($pieces2[2]),
+//                          'mwandishi'             => trim($row->mwandishi)
+                        );
+
+                       if(DB::table($GLOBALS['table'])->where('uid',trim($row->id))->first()){
+                           array_push($GLOBALS['duplicate'],$kaya);
+                        }else{
+                           $nets = intval(round((($kaya['me'] + $kaya['ke'])/2), 0, PHP_ROUND_HALF_UP));
+                           array_push($GLOBALS['newVals'],$kaya);
+                            DB::table($GLOBALS['table'])->insert(array(
+                               'uid' => trim($kaya['id']),
+//                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
+//                                'phone' => trim($kaya['simu']),
+                               'male' => trim($kaya['me']),
+                               'female' => trim($kaya['ke']),
+                               'nets'   => $nets,
+                               'station' => $kaya['kituo_cha_ugawaji'],
+                               'name_of_veo' => $kaya['jina_la_veo'],
+//                                'writer' => trim($kaya['mwandishi']),
+                               'region' => Input::get('region'),
+                               'district' => Input::get('district'),
+                               'ward' => Input::get('ward'),
+                               'entry' => 'imported',
+                               'village' => Input::get('village')
+                           ));
+                       }
                     }
-                    $retunArr = array("duplicates"=>$duplicate,"newValue"=>$newVals);
-                    echo json_encode($retunArr);
+//
                 });
+                $retunArr = array("duplicates"=>$GLOBALS['duplicate'],"newValue"=>$GLOBALS['newVals']);
+                    echo json_encode($retunArr);
+
+
             }
         }else{
             echo "no file";
@@ -149,7 +188,10 @@ class kayaController extends \BaseController {
 	 */
 	public function getregKaya($regid)
 	{
-		return Kaya::where('region',$regid)->get();
+        $region = Region::find(Input::get('region'));
+        $table = str_replace(" ","_",$region->region);
+        return DB::table($table)->where('region',$regid)->get();
+
 	}
 
     /**
@@ -160,7 +202,9 @@ class kayaController extends \BaseController {
 	 */
 	public function getdisKaya($disid)
 	{
-		return Kaya::where('district',$disid)->get();
+        $region = District::get($disid)->region;
+        $table = str_replace(" ","_",$region->region);
+        return DB::table($table)->where('district',$disid)->get();
 	}
 
     /**
@@ -171,14 +215,17 @@ class kayaController extends \BaseController {
 	 */
 	public function getpeopleInkaya($disid)
 	{
+        $region = Region::find(District::find($disid)->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $array = array();
         $array['name'] = District::find($disid)->district;
-		$array['male'] =  Kaya::where('district',$disid)->sum('male');
-        $array['female'] =  Kaya::where('district',$disid)->sum('female');
-        $array['nets'] =  Kaya::where('district',$disid)->sum('nets');
-        $array['kaya'] =  Kaya::where('district',$disid)->count();
-        $array['done'] =  Kaya::where('district',$disid)->where('status',1)->count();
-        $array['not_done'] =  Kaya::where('district',$disid)->where('status',0)->count();
+		$array['male'] =  DB::table($table)->where('district',$disid)->sum('male');
+        $array['female'] =  DB::table($table)->where('district',$disid)->sum('female');
+        $array['nets'] =  DB::table($table)->where('district',$disid)->sum('nets');
+        $array['kaya'] =  DB::table($table)->where('district',$disid)->count();
+        $array['done'] =  DB::table($table)->where('district',$disid)->where('status',1)->count();
+        $array['not_done'] =  DB::table($table)->where('district',$disid)->where('status',0)->count();
         $array['total'] = $array['male'] + $array['female'];
         return json_encode($array);
 	}
@@ -191,13 +238,15 @@ class kayaController extends \BaseController {
 	 */
 	public function getpeopleInRegion($regid)
 	{
+        $region = Region::find($regid);
+        $table = str_replace(" ","_",$region->region);
         $array = array();
-		$array['male'] =  Kaya::where('region',$regid)->sum('male');
-        $array['female'] =  Kaya::where('region',$regid)->sum('female');
-        $array['nets'] =  Kaya::where('region',$regid)->sum('nets');
-        $array['kaya'] =  Kaya::where('region',$regid)->count();
-        $array['done'] =  Kaya::where('region',$regid)->where('status',1)->count();
-        $array['not_done'] =  Kaya::where('region',$regid)->where('status',0)->count();
+		$array['male'] =  DB::table($table)->where('region',$regid)->sum('male');
+        $array['female'] =  DB::table($table)->where('region',$regid)->sum('female');
+        $array['nets'] =  DB::table($table)->where('region',$regid)->sum('nets');
+        $array['kaya'] =  DB::table($table)->where('region',$regid)->count();
+        $array['done'] =  DB::table($table)->where('region',$regid)->where('status',1)->count();
+        $array['not_done'] =  DB::table($table)->where('region',$regid)->where('status',0)->count();
         $array['total'] = $array['male'] + $array['female'];
         return json_encode($array);
 	}
@@ -210,13 +259,16 @@ class kayaController extends \BaseController {
 	 */
 	public function getpeopleInWard($wardId)
 	{
+        $region = Region::find(District::find((Ward::find($wardId)->district_id))->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $array = array();
-		$array['male'] =  Kaya::where('ward',$wardId)->sum('male');
-        $array['female'] =  Kaya::where('ward',$wardId)->sum('female');
-        $array['nets'] =  Kaya::where('ward',$wardId)->sum('nets');
-        $array['kaya'] =  Kaya::where('ward',$wardId)->count();
-        $array['done'] =  Kaya::where('ward',$wardId)->where('status',1)->count();
-        $array['not_done'] =  Kaya::where('ward',$wardId)->where('status',0)->count();
+		$array['male'] =  DB::table($table)->where('ward',$wardId)->sum('male');
+        $array['female'] =  DB::table($table)->where('ward',$wardId)->sum('female');
+        $array['nets'] =  DB::table($table)->where('ward',$wardId)->sum('nets');
+        $array['kaya'] =  DB::table($table)->where('ward',$wardId)->count();
+        $array['done'] =  DB::table($table)->where('ward',$wardId)->where('status',1)->count();
+        $array['not_done'] =  DB::table($table)->where('ward',$wardId)->where('status',0)->count();
         $array['total'] = $array['male'] + $array['female'];
         return json_encode($array);
 	}
@@ -230,13 +282,16 @@ class kayaController extends \BaseController {
 	 */
 	public function getpeopleInVillage($vilId)
 	{
+        $region = Region::find(District::find((Ward::find(Village::find($vilId)->ward_id)->district_id))->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $array = array();
-		$array['male'] =  Kaya::where('village',$vilId)->sum('male');
-        $array['female'] =  Kaya::where('village',$vilId)->sum('female');
-        $array['nets'] =  Kaya::where('village',$vilId)->sum('nets');
-        $array['kaya'] =  Kaya::where('village',$vilId)->count();
-        $array['done'] =  Kaya::where('village',$vilId)->where('status',1)->count();
-        $array['not_done'] =  Kaya::where('village',$vilId)->where('status',0)->count();
+		$array['male'] =  DB::table($table)->where('village',$vilId)->sum('male');
+        $array['female'] =  DB::table($table)->where('village',$vilId)->sum('female');
+        $array['nets'] =  DB::table($table)->where('village',$vilId)->sum('nets');
+        $array['kaya'] =  DB::table($table)->where('village',$vilId)->count();
+        $array['done'] =  DB::table($table)->where('village',$vilId)->where('status',1)->count();
+        $array['not_done'] =  DB::table($table)->where('village',$vilId)->where('status',0)->count();
         $array['total'] = $array['male'] + $array['female'];
         return json_encode($array);
 	}
@@ -264,16 +319,19 @@ class kayaController extends \BaseController {
 	{
         $arr = array();
         $village = Village::find($id);
+        $region = Region::find(District::find((Ward::find(Village::find($id)->ward_id)->district_id))->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $arr['id'] = $village->id;
         $arr['village'] = $village->name;
         $arr['derlivery_status'] = $village->derlivery_status;
         $arr['derlivery_date'] = $village->derlivery_date;
         $arr['derlivery_name'] = $village->derlivery_name;
         $arr['net_derlivered'] = $village->net_derlivered;
-        $arr['households'] = (Kaya::where('village',$village->id)->get()->count() != 0)?Kaya::where('village',$village->id)->count():0;
-        $arr['me'] = (Kaya::where('village',$village->id)->get()->count() != 0)?Kaya::where('village',$village->id)->sum('male'):0;
-        $arr['ke'] = (Kaya::where('village',$village->id)->get()->count() != 0)?Kaya::where('village',$village->id)->sum('female'):0;
-        $arr['leader_name'] = (Kaya::where('village',$village->id)->get()->count() != 0)?Kaya::where('village',$village->id)->first()->leader_name:"";
+        $arr['households'] = (DB::table($table)->where('village',$village->id)->get()->count() != 0)?DB::table($table)->where('village',$village->id)->count():0;
+        $arr['me'] = (DB::table($table)->where('village',$village->id)->get()->count() != 0)?DB::table($table)->where('village',$village->id)->sum('male'):0;
+        $arr['ke'] = (DB::table($table)->where('village',$village->id)->get()->count() != 0)?DB::table($table)->where('village',$village->id)->sum('female'):0;
+        $arr['leader_name'] = (DB::table($table)->where('village',$village->id)->get()->count() != 0)?DB::table($table)->where('village',$village->id)->first()->leader_name:"";
         return json_encode($arr);
 	}
 
@@ -285,11 +343,14 @@ class kayaController extends \BaseController {
 	 */
 	public function saveDelivery()
 	{
+        $region = Region::find(District::find((Ward::find(Village::find(Input::get('village'))->ward_id)->district_id))->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
 		$kaya = Village::find(Input::get('village'));
         $kaya->derlivery_status = 1;
-        $kaya->derlivery_date = Input::get('derlivery_date');
-        $kaya->derlivery_name = Input::get('derlivery_name');
-        $kaya->net_derlivered = Input::get('net_derlivered');
+        DB::table($table)->where('id', 1)->update(array('derlivery_date' => Input::get('derlivery_date')));
+        DB::table($table)->where('id', 1)->update(array('derlivery_name' => Input::get('derlivery_name')));
+        DB::table($table)->where('id', 1)->update(array('net_derlivered' => Input::get('net_derlivered')));
 //        $kaya->save();
         return $kaya;
 	}
@@ -684,7 +745,9 @@ class kayaController extends \BaseController {
      */
     public function generatePdf1($regid,$disid){
 
-
+        $region = Region::find(District::find($disid)->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $district = District::find($disid);
         $region  = Region::find($regid);
         $villag = array();
@@ -693,17 +756,18 @@ class kayaController extends \BaseController {
             foreach(Village::where('ward_id',$ward->id)->get() as $village){
                 $array = array();
                 $villag[$j]['name'] = $village->name;
-                $villag[$j]['male'] =  Kaya::where('village',$village->id)->sum('male');
-                $villag[$j]['female'] =  Kaya::where('village',$village->id)->sum('female');
-                $villag[$j]['nets'] =  Kaya::where('village',$village->id)->sum('nets');
-                $villag[$j]['kaya'] =  Kaya::where('village',$village->id)->count();
+                $villag[$j]['male'] =  DB::table($table)->where('village',$village->id)->sum('male');
+                $villag[$j]['female'] =  DB::table($table)->where('village',$village->id)->sum('female');
+                $villag[$j]['nets'] =  DB::table($table)->where('village',$village->id)->sum('nets');
+                $villag[$j]['kaya'] =  DB::table($table)->where('village',$village->id)->count();
                 $villag[$j]['total'] = $villag[$j]['male'] + $villag[$j]['female'];
                 $j++;
             }
         }
         sort($villag);
-            $pdf = PDF::loadView('distribution1',compact('region','district','villag'));
-            return $pdf->download('Distribution List.pdf'); //Download file
+        //return View::make('distribution1',compact('region','district','villag'));
+         $pdf = PDF::loadView('distribution1',compact('region','district','villag'));
+         return $pdf->download('Distribution List.pdf'); //Download file
         //return View::make('distribution1',compact('region','district','villag'));
 
 
@@ -719,13 +783,104 @@ class kayaController extends \BaseController {
      */
     public function generatePdf($regid,$disid,$wardid,$villid){
 
-
+        $region = Region::find(District::find($disid)->region_id);
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
         $district = District::find($disid);
         $ward     = Ward::find($wardid);
         $village  = Village::find($villid);
-        $kaya =  Kaya::where('region',$regid)->where('district',$disid)->where('ward',$wardid)->where('village',$villid)->get();
-            $pdf = PDF::loadView('distribution',compact('kaya','district','ward','village'));
-            return $pdf->download('Distribution List.pdf'); //Download file
+        $kaya =  DB::table($table)->where('region',$regid)->where('district',$disid)->where('ward',$wardid)->where('village',$villid)->orderBy('uid','ASC')->get();
+        $pdf = new TCPDF();
+
+//        $pdf->SetFont('dejavusans', '', 10);
+
+// add a page
+        $pdf->AddPage();
+
+// writeHTML($html, $ln=true, $fill=false, $reseth=false, $cell=false, $align='')
+// writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=0, $reseth=true, $align='', $autopadding=true)
+
+// create some HTML content
+
+        $html = '<div class="row" style="margin-bottom: 25px">
+    <table>
+        <tr>
+            <td style="width:90px">
+                <img alt="Brand" src="'. asset('img/Nembo.png').'" style="height: 80px;width: 70px" class="img-rounded pull-left">
+            </td>
+            <td style="width: 340px">
+                <h4  style="text-align:center;font-size: 12px"> WIZARA YA AFYA NA USTAWI WA JAMII</h4>
+                <h4 style="text-align:center;font-size: 12px"> MPANGO WA TAIFA WA KUDHIBITI MALARIA</h4>
+            </td>
+            <td style="width:90px">
+                <img alt="Brand" src="'. asset('img/malaria.png').'" style="height: 80px;width: 70px" class="img-rounded pull-right">
+            </td>
+        </tr>
+    </table>
+    </div>';
+
+$html .= '<table  style="width: 100%;margin-bottom: 10px;" cellspacing="0" cellpadding="2" >
+    <tr>
+        <td><b>Wilaya</b></td>
+        <td style="text-decoration:underline">'. $district->district .'</td>
+        <td ><b>Kata</b></td>
+        <td style="text-decoration:underline">'. $ward->name .'</td>
+        <td><b>Kijiji</b></td>
+        <td style="text-decoration:underline">'. $village->name .'</td>
+    </tr>
+    <tr style="font-size:8px;">
+        <td><b>Jina la VEO:</b></td>
+        <td style="text-decoration:underline">'. $kaya[0]->name_of_veo .'</td>
+        <td colspan="2"><b>Jina la kituo cha ugawaji:</b></td>
+        <td colspan="2" style="text-decoration:underline">'.$kaya[0]->station .'</td>
+    </tr>
+</table>
+<p style="height:20px"></p>
+<table class="table table-striped table-bordered table-condensed"  cellspacing="0" cellpadding="2" border="1" >
+        <thead >
+        <tr>
+            <th><b>ID</b></th>
+            <th style="width:100px"><b>Idadi ya Wanakaya</b></th>
+            <th style="width:100px"><b>Idadi ya Vyandarua</b></th>
+            <th style="width:140px"><b>Jina la mpokeaji</b></th>
+            <th style="width:60px"><b>Sahihi</b></th>
+        </tr>
+        </thead>
+        <tbody>';
+        $index=0;
+        $j = 0; $total = 0; $total1 = 0;
+foreach($kaya as $kay){
+        $total += ($kay->male + $kay->female);
+        $total1 += $kay->nets;
+        $total2 = $kay->male + $kay->female;
+        $html.='<tr style="font-size:8px;">
+    <td>'. $kay->uid .'</td>
+    <td style="width:100px;text-align:center">'. $total2 .'</td>
+    <td style="width:100px;text-align:center">'. $kay->nets .'</td>
+    <td style="width:140px;text-align:center">____________</td>
+    <td style="width:60px;text-align:center">_______</td>
+</tr>';
+}
+ $html .= '
+<tr style="background-color: #5B9BD5;">
+    <td>Jumla</td>
+    <td>'. $total .'</td>
+    <td>'. $total1 .'</td>
+    <td></td>
+    <td></td>
+</tr></tbody>
+</table>';
+// output the HTML content
+        $pdf->setFontSubsetting(false);
+        $pdf->writeHTML($html, true, false, true, false, '');
+
+        $filename = storage_path() . '/test.pdf';
+        $pdf->output($filename, 'F');
+
+
+        return Response::download($filename);
+//        $pdf = PDF::loadView('distribution',compact('kaya','district','ward','village'));
+//        return $pdf->download('Distribution List.pdf'); //Download file
 
     }
 

@@ -15,25 +15,25 @@
 <div class="col-md-12">
     <div class="col-xs-3">
         Mkoa
-        <select class="entry" ng-model="currentKaya.region"  ng-change="changeRegion()">
+        <select id="mkoa" class="entry" ng-model="currentKaya.region"  ng-change="changeRegion()">
             <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
         </select>
     </div>
     <div class="col-xs-3">
         Wilaya
-        <select class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
+        <select id="wilaya" class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
             <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
         </select>
     </div>
     <div class="col-xs-3">
         Kata <span ng-if="loadingWards"><i class="fa fa-spin fa-spinner"></i>... </span>
-        <select class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
+        <select id="kata" class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
             <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
         </select>
     </div>
     <div class="col-xs-3">
         Kijiji/Mtaa <span ng-if="loadingVillages"><i class="fa fa-spin fa-spinner"></i>... </span>
-        <select class="entry" ng-model="currentKaya.village" >
+        <select id="kijiji" class="entry" ng-model="currentKaya.village" >
             <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
         </select>
     </div>
@@ -47,13 +47,16 @@
     <md-button title="Display The list" class="pull-right md-primary md-hue-3 md-raised" ng-click="getList(currentKaya)" style="margin: 15px">Get List
 
     </md-button>
-   <md-button title="Print The list" href="index.php/distribution_list/{{ currentKaya.region }}/{{ currentKaya.district }}/{{ currentKaya.ward }}/{{ currentKaya.village }}" target="_blank" ng-show="showList && data.kaya.length != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_print_24px.svg">
+   <!--<md-button title="Print The list" href="index.php/distribution_list/{{ currentKaya.region }}/{{ currentKaya.district }}/{{ currentKaya.ward }}/{{ currentKaya.village }}" target="_blank" ng-show="showList && data.kaya.length != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_print_24px.svg">-->
+
+   <!--</md-button>-->
+<md-button title="Print The list" ng-click="downloadData()" target="_blank" ng-show="showList && data.kaya.length != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_print_24px.svg">
 
    </md-button>
 
 <md-whiteframe class="md-whiteframe-z5" ng-if="showList">
     <div>
-    <table datatable="" class="table table-striped table-hover table-condensed table-bordered" >
+    <table datatable="" class="table table-striped table-hover table-condensed table-bordered mytable" >
         <thead >
         <tr>
             <th>Na</th>

@@ -1,6 +1,7 @@
 /**
  * Created by kelvin on 3/2/15.
  */
+
 angular.module("malariaApp")
     .controller("importCtrl",function ($scope, $upload,$mdDialog,$mdToast) {
         $scope.$watch('files', function () {
@@ -24,18 +25,6 @@ angular.module("malariaApp")
                             ward:$scope.currentKaya.ward,
                             district:$scope.currentKaya.district,
                             village:$scope.currentKaya.village
-                        },
-                        xhr: function()
-                        {
-                            var xhr = new window.XMLHttpRequest();
-                            xhr.addEventListener("progress", function(evt){
-                                if (evt.lengthComputable) {
-                                    var percentComplete = evt.loaded / evt.total;
-                                    //Do something with download progress
-                                    console.log(percentComplete);
-                                }
-                            }, false);
-                            return xhr;
                         }
                     }).progress(function (evt) {
                         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

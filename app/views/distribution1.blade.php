@@ -218,6 +218,7 @@
         <td>{{ $total }}</td>
         <td></td>
     </tr>
+
     <p style="page-break-before: always">
     <?php
     }
