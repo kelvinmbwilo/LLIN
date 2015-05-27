@@ -9,6 +9,9 @@
             <span class="help-block" ng-if="!orgUnitForm.orgUnit.$error.required && !addingOrg">Add {{ data.addedOrgUnit }} to {{ data.currentOrgUnit }}</span>
             <span class="help-block" ng-if="addingOrg"><i class="fa fa-spinner fa-spin"></i> Adding {{ data.addedOrgUnit }} to {{ data.currentOrgUnit }}</span>
         </form>
+
+        <h2 ng-if="showloader" class="text-center"> <i class="fa fa-spin fa-spinner" ></i> Loading data... </h2>
+
         <div ng-include="currentListing" style="margin-right: 25px"></div>
     </div>
     <div flex="5">

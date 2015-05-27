@@ -6,6 +6,7 @@ angular.module("malariaApp")
         $scope.districtVisible = [];
         $scope.villageVisible = [];
         $scope.wardVisible = [];
+        $scope.showloader = false;
         angular.forEach($scope.data.regions,function(value,index){
             var region = value;
 ////            $http.get("index.php/districts/region/"+value.id).success(function(distr){
@@ -85,24 +86,35 @@ angular.module("malariaApp")
         $scope.showDisList = false;
         $scope.getList = function(currentKaya){
             $scope.showDisList = false;
+            $scope.showloader = true;
             $http.get("index.php/warddetails/"+currentKaya.district).success(function(distr){
                 $scope.showDisList = true;
                 $scope.data.onedistrict = {};
                 $http.get("index.php/wards/district/"+currentKaya.district).success(function(distr){
                     $scope.data.onedistrict.wardlist = distr;
                     $scope.data.onedistrict.villagelist = [];
+                    var i = 0;
                     angular.forEach($scope.data.onedistrict.wardlist,function(val){
+
                         var ward = val;
                         $http.get("index.php/people/ward/"+val.id).success(function(ppl){
+
                             ward.people = ppl;
                         });
                         $http.get("index.php/village/ward/"+ward.id).success(function(distr){
                             ward.villagelist = distr;
-                            ;
+                            var j = 0;
                             angular.forEach(ward.villagelist,function(val){
                                 var vill = val;
                                 $scope.data.onedistrict.villagelist.push(val);
                                 $http.get("index.php/people/village/"+val.id).success(function(ppl){
+                                    j++;
+                                    if(j == ward.villagelist.length){
+                                        i++;
+                                        if(i == $scope.data.onedistrict.wardlist.length){
+                                            $scope.showloader = false;
+                                        }
+                                    }
                                     vill.people = ppl;
                                 });
                             });

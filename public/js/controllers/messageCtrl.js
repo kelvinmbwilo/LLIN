@@ -16,7 +16,7 @@ angular.module("malariaApp")
         $scope.kayaUpdateFalue = false;
         $scope.showEditAdd = false;
 
-        $http.get("index.php/messages_receivers/").success(function(data){
+        $http.get("index.php/messages_receivers").success(function(data){
             $scope.recipients = data;
         });
 
@@ -31,7 +31,7 @@ angular.module("malariaApp")
                 $scope.kayaSavedFalue = false;
                 $mdToast.show(
                     $mdToast.simple()
-                        .content('User Created Successfully!')
+                        .content('Item Created Successfully!')
                         .position($scope.getToastPosition())
                         .hideDelay(3000)
                 );
@@ -114,7 +114,7 @@ angular.module("malariaApp")
                     $scope.deletedUser[id] = true;
                     $mdToast.show(
                         $mdToast.simple()
-                            .content('User Deleted Successfully!')
+                            .content('Item Deleted Successfully!')
                             .position($scope.getToastPosition())
                             .hideDelay(3000)
                     );

@@ -5,6 +5,7 @@ angular.module("malariaApp")
     .controller('stationsCtrl',function($scope,$http,$mdDialog){
         var  tree;
         $scope.showLoading = false;
+        $scope.showloader = false;
         $scope.getRegionChildren = function(id){
             var child = [];
             var regionId = id;
@@ -87,10 +88,17 @@ angular.module("malariaApp")
         $scope.currentListing = "";
         //list ya mikoa
         $scope.listRegions =function(){
+
+            $scope.showloader = true;
             $scope.currentListing = "views/region_list.html";
+            var i = 0;
             angular.forEach($scope.data.regions,function(value){
                 var region = value;
                 $http.get("index.php/regiondetails/"+value.id).success(function(data){
+                    i++;
+                    if(i == $scope.data.regions.length){
+                        $scope.showloader = false;
+                    }
                     region.details = data;
                 });
             });
@@ -98,23 +106,38 @@ angular.module("malariaApp")
         }
         //list ya wilaya
         $scope.listDistrict =function(id){
+            $scope.showloader = true;
             $scope.currentListing = "views/district_list.html";
             $http.get("index.php/districtdetails/"+id).success(function(data){
                 $scope.data.distictss =  data;
+                $scope.showloader = false;
             });
         }
         //list ya kata
         $scope.listWards =function(id){
+            $scope.showloader = true;
             $scope.currentListing = "views/ward_list.html";
             $http.get("index.php/warddetails/"+id).success(function(data){
                 $scope.data.wardss =  data;
+                $scope.showloader = false;
             });
         }
         //list ya vijiji
         $scope.listVillage =function(id){
+            $scope.showloader = true;
             $scope.currentListing = "views/village_list.html";
             $http.get("index.php/villagedetails/"+id).success(function(data){
                 $scope.data.villagess =  data;
+                $scope.showloader = false;
+            });
+        }
+        //list ya vijiji
+        $scope.listStations =function(id){
+            $scope.showloader = true;
+            $scope.currentListing = "views/village_list.html";
+            $http.get("index.php/villagedetails/"+id).success(function(data){
+                $scope.data.villagess =  data;
+                $scope.showloader = false;
             });
         }
 

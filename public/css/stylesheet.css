@@ -90,8 +90,10 @@ a:hover,a:focus,a:active{color: #FFF; text-decoration: none;}
         .navbar-brand{padding: 6px 15px;}
         .navbar button{color: #FFF;}
         .navbar-toggle{padding: 8px 10px 7px; margin: 3px;}
-        
-        .dropdown-menu, .dropdown-submenu{background: url('../img/background/bt_cubs.png') left top repeat #172E0B; border: 0px; padding: 5px; font-size: 12px;}
+        /*baner*/
+         .mainmenu{background: url('../img/background/bt_cubs.png') left top repeat #1F4361; border: 0px; padding: 5px; font-size: 12px;}
+
+.dropdown-menu, .dropdown-submenu{background: url('../img/background/bt_cubs.png') left top repeat #1F4361; border: 0px; padding: 5px; font-size: 12px;}
             .dropdown-menu li{position: relative;}
             .dropdown-menu > li > a,.dropdown-submenu > li > a{padding: 8px 10px; color: #FFF; position: relative;}       
                 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,

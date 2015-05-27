@@ -12,7 +12,8 @@
             <div class="timeline">
                 <div class="timeline-item" ng-repeat="timeline in timelineactivity | filter:search">
                     <div class="timeline-icon">
-                        <span class="icon-comment"></span>
+                        <span ng-if="timeline.status == 1" class="icon-ok text-success"></span>
+                        <span ng-if="timeline.status == 0" class="icon-comment text-primary"></span>
                     </div>
                     <div class="timeline-info">
                         <div class="timeline-info-content">

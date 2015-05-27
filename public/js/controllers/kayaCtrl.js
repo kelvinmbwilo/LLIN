@@ -1,9 +1,11 @@
 /**
  * Created by kelvin on 1/13/15.
  */
+
 angular.module("malariaApp")
     .controller("kayaCtrl",function($scope,$http,$mdDialog,$mdToast){
-       $scope.currentKaya = {};
+
+        $scope.currentKaya = {};
         $scope.currentSaving = false;
         $scope.currentUpdating = false;
         $scope.currentEditting = false;
@@ -27,7 +29,7 @@ angular.module("malariaApp")
                 $scope.currentKaya = {};
 //                $scope.currentKaya.uid = parseInt(Math.random()*1000000);
                 $scope.currentKaya.uid = 0;
-                $scope.kayaSavedSuccess = true;
+                $scope.kayaSavedSuccess = false;
                 $scope.currentSaving = false;
                 $scope.kayaSavedFalue = false;
                 $mdToast.show(

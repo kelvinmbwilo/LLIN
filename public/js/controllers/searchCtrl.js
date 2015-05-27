@@ -8,12 +8,14 @@ angular.module("malariaApp")
         $scope.showtable = false;
         $scope.currentKaya.village = null;
         $scope.kaya =[];
+        $scope.showloader = false;
         $scope.search = function(currentKaya){
 
-            console.log(currentKaya);
+            $scope.showloader = true;
             $http.post("index.php/search/kaya",currentKaya).success(function(data){
                 $scope.kaya = data ;
                 $scope.showtable = true;
+                $scope.showloader = false;
             });
         }
 

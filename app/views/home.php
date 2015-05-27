@@ -49,22 +49,21 @@ else
     </style>
 </head>
 <div id="load-screen" ng-if="showLoader"></div>
-<body class="bg-img-num1" data-settings="close"  style="min-height: 820px">
-{{ showLoader }}
-<div class="container">
+<body class="bg-img-num1" data-settings="close"  style="min-height: 820px; background-color: lightgrey !important;">
+<div class="container " >
 
 <div class="row">
-    <div class="col-md-12">
-        <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px">
+    <div class="col-md-12" style="margin:0px; padding: 5px">
+        <header style="padding-left: 8px;padding-right: 10px;padding-bottom: 0px; padding-top: 5px" class="mainmenu">
             <div class="row">
-                <div class="col-md-2 hidden-sm">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <img alt="Brand" src="<?php echo asset('img/red.png') ?>" style="height: 70px;width: 70px" class="img-rounded pull-left">
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <h4 class="text-center" style="letter-spacing: 1px;font-family: myBoldFont "> WIZARA YA AFYA NA USTAWI WA JAMII</h4>
                     <h4 class="text-center" style="letter-spacing: 1px;font-family: myBoldFont"> MPANGO WA TAIFA WA KUDHIBITI MALARIA - LLIN MRC DATABASE</h4>
                 </div>
-                <div class="col-md-2 hidden-sm">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <img alt="Brand" src="<?php echo asset('img/malaria.png') ?>" style="height: 70px;width: 70px" class="img-rounded pull-right">
                 </div>
             </div>
@@ -85,15 +84,17 @@ else
                             <span class="icon-home"></span> dashboard
                         </a>
                     </li>
-                    <li class="dropdown" ng-class="{ active: isActive('/registration') || isActive('/import') || isActive('/distribute') || isActive('/verify') }">
+                    <?php if(Auth::user()->role == 'Administrator' || Auth::user()->role == 'Data'){ ?>
+                    <li class="dropdown hidden-sm hidden-xs" ng-class="{ active: isActive('/registration') || isActive('/import') || isActive('/distribute') || isActive('/verify') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Registration <span class="icon-edit"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#/registration"><i class="fa fa-plus"></i> Add Coupons</a></li>
                             <li><a href="#/import"><i class="fa fa-upload"></i> Import Coupons</a></li>
-                            <li><a href="#/distribute"><i class="fa fa-check"></i> Redeem Coupons</a></li>
-                            <li><a href="#/verify"><i class="fa fa-search"></i> Verify Coupons</a></li>
+<!--                            <li><a href="#/distribute"><i class="fa fa-check"></i> Redeem Coupons</a></li>-->
+<!--                            <li><a href="#/verify"><i class="fa fa-search"></i> Verify Coupons</a></li>-->
                         </ul>
                     </li>
+                    <?php } ?>
                     <li class="dropdown" ng-class="{ active: isActive('/distribution_list') || isActive('/distribution_list1') || isActive('/distribution') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Reports <span class="icon-list"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -102,18 +103,23 @@ else
                             <li><a href="#/distribution_list"><i class="fa fa-th"></i> Issuing List </a></li>
                         </ul>
                     </li>
+                    <?php if(Auth::user()->role == 'Administrator' || Auth::user()->role == 'Supervisor'){ ?>
                     <li class="dropdown" ng-class="{ active: isActive('/supervisor') || isActive('/delivery') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Supervisor <span class="icon-briefcase"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#/supervisor"><i class="fa fa-list"></i> Activity Closing </a></li>
-                            <li><a href="#/delivery"><i class="fa fa-th"></i> Net Delivery </a></li>
-                            <li><a href="#/timeline_show"><i class="fa fa-th"></i> Time Line </a></li>
-                            <li><a href="#/coupon_search"><i class="fa fa-th"></i> Coupon Search </a></li>
+                            <li><a href="#/delivery"><i class="fa fa-check"></i> Net Delivery </a></li>
+                            <li><a href="#/coupon_search"><i class="fa fa-search"></i> Coupon Search </a></li>
                         </ul>
                     </li>
+                    <?php } ?>
+                    <?php if(Auth::user()->role !=  'Data'){ ?>
                     <li class="dropdown" ng-class="{ active: isActive('/statistics_distribution') }">
                         <a href="#/statistics_distribution" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
-
+                    </li>
+                    <?php } ?>
+                    <li class="dropdown" ng-class="{ active: isActive('/timeline_show') }">
+                        <a href="#/timeline_show" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Time Line <span class="icon-calendar"></span></a>
                     </li>
                     <li ng-if="loggedInUser.role == 'Administrator'" class="dropdown" ng-class="{ active: isActive('/stations') || isActive('/users') }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Settings <span class="icon-cog"></span></a>
@@ -132,6 +138,7 @@ else
 <!--                            <li><a href="#/profile"><i class="fa fa-envelope"></i> Messages</a></li>-->
                             <li><a href="#/profile"><i class="fa fa-user"></i> profile</a></li>
                             <li><a href="#/changePass"><i class="fa fa-lock"></i> change password</a></li>
+                            <li><a target="_blank" href="<?php echo asset("LLINMRCUserManual.pdf") ?>"><i class="fa fa-question"></i> Help</a></li>
                             <li class="divider"></li>
                             <li><a href="index.php/logout"><i class="fa fa-power-off"></i> logout</a></li>
                         </ul>
@@ -174,13 +181,6 @@ else
 <script src="<?php echo asset('js/angular.js') ?>"></script>
 
 
-<script type='text/javascript' src='<?php echo asset("js/jszip.min.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("js/c1xlsx.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("js/wijmo.min.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("js/wijmo.grid.min.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("js/wijmo.angular.min.js") ?>'></script>
-<script type='text/javascript' src='<?php echo asset("js/ExcelConverter.js") ?>'></script>
-
 <script type="text/javascript" charset="utf-8" src="jspdf/build/pdf.js"></script>
 <script type="text/javascript" charset="utf-8" src="jspdf/build/pdf.worker.js"></script>
 <script type="text/javascript" charset="utf-8" src="jspdf/web/compatibility.js"></script>
@@ -216,7 +216,7 @@ else
 <script src="<?php echo asset('bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js') ?>"></script>
 
 <script>
-    angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar','wj']);
+    angular.module("malariaApp",['ngRoute','ngResource','ngAnimate','ngMaterial','angularBootstrapNavTree','ui.date',"datatables","highcharts-ng","angularFileUpload",'multi-select','mwl.calendar']);
 </script>
 <script src="<?php echo asset('js/routes.js') ?>"></script>
 <script src="<?php echo asset('js/controllers/malariaAppCtrl.js') ?>"></script>

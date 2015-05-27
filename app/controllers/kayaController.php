@@ -363,7 +363,24 @@ class kayaController extends \BaseController {
 	 */
 	public function store()
 	{
-        return Kaya::create(Input::all());
+        $region = Region::find(Input::get('region'));
+        $table = str_replace(" ","_",$region->region);
+//        return DB::table($table)->where('district',$disid)->get();
+        $nets = intval(round(((Input::get('female') + Input::get('male'))/2), 0, PHP_ROUND_HALF_UP));
+        DB::table($table)->insert(array(
+            'uid' => Input::get('uid'),
+            'male' => Input::get('male'),
+            'female' => Input::get('female'),
+            'nets'   => $nets,
+            'station' => Input::get('station'),
+            'name_of_veo' => Input::get('name_of_veo'),
+            'writer' => Input::get('writer'),
+            'region' => Input::get('region'),
+            'district' => Input::get('district'),
+            'ward' => Input::get('ward'),
+            'entry' => '',
+            'village' => Input::get('village')
+        ));
 	}
 
     /**

@@ -1484,6 +1484,906 @@
       <column name="CHARACTER_SET_CLIENT" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="COLLATION_CONNECTION" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12" def="Jyc="/>
     </table>
+    <table name="Arusha" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="arusha_district_index" unique="false" columns="district"/>
+      <index name="arusha_entry_index" unique="false" columns="entry"/>
+      <index name="arusha_female_index" unique="false" columns="female"/>
+      <index name="arusha_male_index" unique="false" columns="male"/>
+      <index name="arusha_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="arusha_nets_index" unique="false" columns="nets"/>
+      <index name="arusha_region_index" unique="false" columns="region"/>
+      <index name="arusha_station_index" unique="false" columns="station"/>
+      <index name="arusha_status_index" unique="false" columns="status"/>
+      <index name="arusha_uid_index" unique="false" columns="uid"/>
+      <index name="arusha_village_index" unique="false" columns="village"/>
+      <index name="arusha_ward_index" unique="false" columns="ward"/>
+      <index name="arusha_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Dar_es_salaam" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="dar_es_salaam_district_index" unique="false" columns="district"/>
+      <index name="dar_es_salaam_entry_index" unique="false" columns="entry"/>
+      <index name="dar_es_salaam_female_index" unique="false" columns="female"/>
+      <index name="dar_es_salaam_male_index" unique="false" columns="male"/>
+      <index name="dar_es_salaam_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="dar_es_salaam_nets_index" unique="false" columns="nets"/>
+      <index name="dar_es_salaam_region_index" unique="false" columns="region"/>
+      <index name="dar_es_salaam_station_index" unique="false" columns="station"/>
+      <index name="dar_es_salaam_status_index" unique="false" columns="status"/>
+      <index name="dar_es_salaam_uid_index" unique="false" columns="uid"/>
+      <index name="dar_es_salaam_village_index" unique="false" columns="village"/>
+      <index name="dar_es_salaam_ward_index" unique="false" columns="ward"/>
+      <index name="dar_es_salaam_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Dodoma" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="dodoma_district_index" unique="false" columns="district"/>
+      <index name="dodoma_entry_index" unique="false" columns="entry"/>
+      <index name="dodoma_female_index" unique="false" columns="female"/>
+      <index name="dodoma_male_index" unique="false" columns="male"/>
+      <index name="dodoma_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="dodoma_nets_index" unique="false" columns="nets"/>
+      <index name="dodoma_region_index" unique="false" columns="region"/>
+      <index name="dodoma_station_index" unique="false" columns="station"/>
+      <index name="dodoma_status_index" unique="false" columns="status"/>
+      <index name="dodoma_uid_index" unique="false" columns="uid"/>
+      <index name="dodoma_village_index" unique="false" columns="village"/>
+      <index name="dodoma_ward_index" unique="false" columns="ward"/>
+      <index name="dodoma_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Geita" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="geita_district_index" unique="false" columns="district"/>
+      <index name="geita_entry_index" unique="false" columns="entry"/>
+      <index name="geita_female_index" unique="false" columns="female"/>
+      <index name="geita_male_index" unique="false" columns="male"/>
+      <index name="geita_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="geita_nets_index" unique="false" columns="nets"/>
+      <index name="geita_region_index" unique="false" columns="region"/>
+      <index name="geita_station_index" unique="false" columns="station"/>
+      <index name="geita_status_index" unique="false" columns="status"/>
+      <index name="geita_uid_index" unique="false" columns="uid"/>
+      <index name="geita_village_index" unique="false" columns="village"/>
+      <index name="geita_ward_index" unique="false" columns="ward"/>
+      <index name="geita_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Iringa" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="iringa_district_index" unique="false" columns="district"/>
+      <index name="iringa_entry_index" unique="false" columns="entry"/>
+      <index name="iringa_female_index" unique="false" columns="female"/>
+      <index name="iringa_male_index" unique="false" columns="male"/>
+      <index name="iringa_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="iringa_nets_index" unique="false" columns="nets"/>
+      <index name="iringa_region_index" unique="false" columns="region"/>
+      <index name="iringa_station_index" unique="false" columns="station"/>
+      <index name="iringa_status_index" unique="false" columns="status"/>
+      <index name="iringa_uid_index" unique="false" columns="uid"/>
+      <index name="iringa_village_index" unique="false" columns="village"/>
+      <index name="iringa_ward_index" unique="false" columns="ward"/>
+      <index name="iringa_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Kagera" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="kagera_district_index" unique="false" columns="district"/>
+      <index name="kagera_entry_index" unique="false" columns="entry"/>
+      <index name="kagera_female_index" unique="false" columns="female"/>
+      <index name="kagera_male_index" unique="false" columns="male"/>
+      <index name="kagera_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="kagera_nets_index" unique="false" columns="nets"/>
+      <index name="kagera_region_index" unique="false" columns="region"/>
+      <index name="kagera_station_index" unique="false" columns="station"/>
+      <index name="kagera_status_index" unique="false" columns="status"/>
+      <index name="kagera_uid_index" unique="false" columns="uid"/>
+      <index name="kagera_village_index" unique="false" columns="village"/>
+      <index name="kagera_ward_index" unique="false" columns="ward"/>
+      <index name="kagera_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Katavi" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="katavi_district_index" unique="false" columns="district"/>
+      <index name="katavi_entry_index" unique="false" columns="entry"/>
+      <index name="katavi_female_index" unique="false" columns="female"/>
+      <index name="katavi_male_index" unique="false" columns="male"/>
+      <index name="katavi_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="katavi_nets_index" unique="false" columns="nets"/>
+      <index name="katavi_region_index" unique="false" columns="region"/>
+      <index name="katavi_station_index" unique="false" columns="station"/>
+      <index name="katavi_status_index" unique="false" columns="status"/>
+      <index name="katavi_uid_index" unique="false" columns="uid"/>
+      <index name="katavi_village_index" unique="false" columns="village"/>
+      <index name="katavi_ward_index" unique="false" columns="ward"/>
+      <index name="katavi_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Kigoma" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="kigoma_district_index" unique="false" columns="district"/>
+      <index name="kigoma_entry_index" unique="false" columns="entry"/>
+      <index name="kigoma_female_index" unique="false" columns="female"/>
+      <index name="kigoma_male_index" unique="false" columns="male"/>
+      <index name="kigoma_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="kigoma_nets_index" unique="false" columns="nets"/>
+      <index name="kigoma_region_index" unique="false" columns="region"/>
+      <index name="kigoma_station_index" unique="false" columns="station"/>
+      <index name="kigoma_status_index" unique="false" columns="status"/>
+      <index name="kigoma_uid_index" unique="false" columns="uid"/>
+      <index name="kigoma_village_index" unique="false" columns="village"/>
+      <index name="kigoma_ward_index" unique="false" columns="ward"/>
+      <index name="kigoma_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Kilimanjaro" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="kilimanjaro_district_index" unique="false" columns="district"/>
+      <index name="kilimanjaro_entry_index" unique="false" columns="entry"/>
+      <index name="kilimanjaro_female_index" unique="false" columns="female"/>
+      <index name="kilimanjaro_male_index" unique="false" columns="male"/>
+      <index name="kilimanjaro_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="kilimanjaro_nets_index" unique="false" columns="nets"/>
+      <index name="kilimanjaro_region_index" unique="false" columns="region"/>
+      <index name="kilimanjaro_station_index" unique="false" columns="station"/>
+      <index name="kilimanjaro_status_index" unique="false" columns="status"/>
+      <index name="kilimanjaro_uid_index" unique="false" columns="uid"/>
+      <index name="kilimanjaro_village_index" unique="false" columns="village"/>
+      <index name="kilimanjaro_ward_index" unique="false" columns="ward"/>
+      <index name="kilimanjaro_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Lindi" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="lindi_district_index" unique="false" columns="district"/>
+      <index name="lindi_entry_index" unique="false" columns="entry"/>
+      <index name="lindi_female_index" unique="false" columns="female"/>
+      <index name="lindi_male_index" unique="false" columns="male"/>
+      <index name="lindi_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="lindi_nets_index" unique="false" columns="nets"/>
+      <index name="lindi_region_index" unique="false" columns="region"/>
+      <index name="lindi_station_index" unique="false" columns="station"/>
+      <index name="lindi_status_index" unique="false" columns="status"/>
+      <index name="lindi_uid_index" unique="false" columns="uid"/>
+      <index name="lindi_village_index" unique="false" columns="village"/>
+      <index name="lindi_ward_index" unique="false" columns="ward"/>
+      <index name="lindi_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Manyara" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="manyara_district_index" unique="false" columns="district"/>
+      <index name="manyara_entry_index" unique="false" columns="entry"/>
+      <index name="manyara_female_index" unique="false" columns="female"/>
+      <index name="manyara_male_index" unique="false" columns="male"/>
+      <index name="manyara_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="manyara_nets_index" unique="false" columns="nets"/>
+      <index name="manyara_region_index" unique="false" columns="region"/>
+      <index name="manyara_station_index" unique="false" columns="station"/>
+      <index name="manyara_status_index" unique="false" columns="status"/>
+      <index name="manyara_uid_index" unique="false" columns="uid"/>
+      <index name="manyara_village_index" unique="false" columns="village"/>
+      <index name="manyara_ward_index" unique="false" columns="ward"/>
+      <index name="manyara_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Mara" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="mara_district_index" unique="false" columns="district"/>
+      <index name="mara_entry_index" unique="false" columns="entry"/>
+      <index name="mara_female_index" unique="false" columns="female"/>
+      <index name="mara_male_index" unique="false" columns="male"/>
+      <index name="mara_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="mara_nets_index" unique="false" columns="nets"/>
+      <index name="mara_region_index" unique="false" columns="region"/>
+      <index name="mara_station_index" unique="false" columns="station"/>
+      <index name="mara_status_index" unique="false" columns="status"/>
+      <index name="mara_uid_index" unique="false" columns="uid"/>
+      <index name="mara_village_index" unique="false" columns="village"/>
+      <index name="mara_ward_index" unique="false" columns="ward"/>
+      <index name="mara_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Mbeya" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="mbeya_district_index" unique="false" columns="district"/>
+      <index name="mbeya_entry_index" unique="false" columns="entry"/>
+      <index name="mbeya_female_index" unique="false" columns="female"/>
+      <index name="mbeya_male_index" unique="false" columns="male"/>
+      <index name="mbeya_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="mbeya_nets_index" unique="false" columns="nets"/>
+      <index name="mbeya_region_index" unique="false" columns="region"/>
+      <index name="mbeya_station_index" unique="false" columns="station"/>
+      <index name="mbeya_status_index" unique="false" columns="status"/>
+      <index name="mbeya_uid_index" unique="false" columns="uid"/>
+      <index name="mbeya_village_index" unique="false" columns="village"/>
+      <index name="mbeya_ward_index" unique="false" columns="ward"/>
+      <index name="mbeya_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Morogoro" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="morogoro_district_index" unique="false" columns="district"/>
+      <index name="morogoro_entry_index" unique="false" columns="entry"/>
+      <index name="morogoro_female_index" unique="false" columns="female"/>
+      <index name="morogoro_male_index" unique="false" columns="male"/>
+      <index name="morogoro_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="morogoro_nets_index" unique="false" columns="nets"/>
+      <index name="morogoro_region_index" unique="false" columns="region"/>
+      <index name="morogoro_station_index" unique="false" columns="station"/>
+      <index name="morogoro_status_index" unique="false" columns="status"/>
+      <index name="morogoro_uid_index" unique="false" columns="uid"/>
+      <index name="morogoro_village_index" unique="false" columns="village"/>
+      <index name="morogoro_ward_index" unique="false" columns="ward"/>
+      <index name="morogoro_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Mtwara" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="mtwara_district_index" unique="false" columns="district"/>
+      <index name="mtwara_entry_index" unique="false" columns="entry"/>
+      <index name="mtwara_female_index" unique="false" columns="female"/>
+      <index name="mtwara_male_index" unique="false" columns="male"/>
+      <index name="mtwara_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="mtwara_nets_index" unique="false" columns="nets"/>
+      <index name="mtwara_region_index" unique="false" columns="region"/>
+      <index name="mtwara_station_index" unique="false" columns="station"/>
+      <index name="mtwara_status_index" unique="false" columns="status"/>
+      <index name="mtwara_uid_index" unique="false" columns="uid"/>
+      <index name="mtwara_village_index" unique="false" columns="village"/>
+      <index name="mtwara_ward_index" unique="false" columns="ward"/>
+      <index name="mtwara_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Mwanza" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="mwanza_district_index" unique="false" columns="district"/>
+      <index name="mwanza_entry_index" unique="false" columns="entry"/>
+      <index name="mwanza_female_index" unique="false" columns="female"/>
+      <index name="mwanza_male_index" unique="false" columns="male"/>
+      <index name="mwanza_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="mwanza_nets_index" unique="false" columns="nets"/>
+      <index name="mwanza_region_index" unique="false" columns="region"/>
+      <index name="mwanza_station_index" unique="false" columns="station"/>
+      <index name="mwanza_status_index" unique="false" columns="status"/>
+      <index name="mwanza_uid_index" unique="false" columns="uid"/>
+      <index name="mwanza_village_index" unique="false" columns="village"/>
+      <index name="mwanza_ward_index" unique="false" columns="ward"/>
+      <index name="mwanza_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Njombe" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="njombe_district_index" unique="false" columns="district"/>
+      <index name="njombe_entry_index" unique="false" columns="entry"/>
+      <index name="njombe_female_index" unique="false" columns="female"/>
+      <index name="njombe_male_index" unique="false" columns="male"/>
+      <index name="njombe_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="njombe_nets_index" unique="false" columns="nets"/>
+      <index name="njombe_region_index" unique="false" columns="region"/>
+      <index name="njombe_station_index" unique="false" columns="station"/>
+      <index name="njombe_status_index" unique="false" columns="status"/>
+      <index name="njombe_uid_index" unique="false" columns="uid"/>
+      <index name="njombe_village_index" unique="false" columns="village"/>
+      <index name="njombe_ward_index" unique="false" columns="ward"/>
+      <index name="njombe_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Pwani" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="pwani_district_index" unique="false" columns="district"/>
+      <index name="pwani_entry_index" unique="false" columns="entry"/>
+      <index name="pwani_female_index" unique="false" columns="female"/>
+      <index name="pwani_male_index" unique="false" columns="male"/>
+      <index name="pwani_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="pwani_nets_index" unique="false" columns="nets"/>
+      <index name="pwani_region_index" unique="false" columns="region"/>
+      <index name="pwani_station_index" unique="false" columns="station"/>
+      <index name="pwani_status_index" unique="false" columns="status"/>
+      <index name="pwani_uid_index" unique="false" columns="uid"/>
+      <index name="pwani_village_index" unique="false" columns="village"/>
+      <index name="pwani_ward_index" unique="false" columns="ward"/>
+      <index name="pwani_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Rukwa" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="rukwa_district_index" unique="false" columns="district"/>
+      <index name="rukwa_entry_index" unique="false" columns="entry"/>
+      <index name="rukwa_female_index" unique="false" columns="female"/>
+      <index name="rukwa_male_index" unique="false" columns="male"/>
+      <index name="rukwa_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="rukwa_nets_index" unique="false" columns="nets"/>
+      <index name="rukwa_region_index" unique="false" columns="region"/>
+      <index name="rukwa_station_index" unique="false" columns="station"/>
+      <index name="rukwa_status_index" unique="false" columns="status"/>
+      <index name="rukwa_uid_index" unique="false" columns="uid"/>
+      <index name="rukwa_village_index" unique="false" columns="village"/>
+      <index name="rukwa_ward_index" unique="false" columns="ward"/>
+      <index name="rukwa_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Ruvuma" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="ruvuma_district_index" unique="false" columns="district"/>
+      <index name="ruvuma_entry_index" unique="false" columns="entry"/>
+      <index name="ruvuma_female_index" unique="false" columns="female"/>
+      <index name="ruvuma_male_index" unique="false" columns="male"/>
+      <index name="ruvuma_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="ruvuma_nets_index" unique="false" columns="nets"/>
+      <index name="ruvuma_region_index" unique="false" columns="region"/>
+      <index name="ruvuma_station_index" unique="false" columns="station"/>
+      <index name="ruvuma_status_index" unique="false" columns="status"/>
+      <index name="ruvuma_uid_index" unique="false" columns="uid"/>
+      <index name="ruvuma_village_index" unique="false" columns="village"/>
+      <index name="ruvuma_ward_index" unique="false" columns="ward"/>
+      <index name="ruvuma_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Shinyanga" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="shinyanga_district_index" unique="false" columns="district"/>
+      <index name="shinyanga_entry_index" unique="false" columns="entry"/>
+      <index name="shinyanga_female_index" unique="false" columns="female"/>
+      <index name="shinyanga_male_index" unique="false" columns="male"/>
+      <index name="shinyanga_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="shinyanga_nets_index" unique="false" columns="nets"/>
+      <index name="shinyanga_region_index" unique="false" columns="region"/>
+      <index name="shinyanga_station_index" unique="false" columns="station"/>
+      <index name="shinyanga_status_index" unique="false" columns="status"/>
+      <index name="shinyanga_uid_index" unique="false" columns="uid"/>
+      <index name="shinyanga_village_index" unique="false" columns="village"/>
+      <index name="shinyanga_ward_index" unique="false" columns="ward"/>
+      <index name="shinyanga_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Simiyu" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="simiyu_district_index" unique="false" columns="district"/>
+      <index name="simiyu_entry_index" unique="false" columns="entry"/>
+      <index name="simiyu_female_index" unique="false" columns="female"/>
+      <index name="simiyu_male_index" unique="false" columns="male"/>
+      <index name="simiyu_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="simiyu_nets_index" unique="false" columns="nets"/>
+      <index name="simiyu_region_index" unique="false" columns="region"/>
+      <index name="simiyu_station_index" unique="false" columns="station"/>
+      <index name="simiyu_status_index" unique="false" columns="status"/>
+      <index name="simiyu_uid_index" unique="false" columns="uid"/>
+      <index name="simiyu_village_index" unique="false" columns="village"/>
+      <index name="simiyu_ward_index" unique="false" columns="ward"/>
+      <index name="simiyu_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Singida" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="singida_district_index" unique="false" columns="district"/>
+      <index name="singida_entry_index" unique="false" columns="entry"/>
+      <index name="singida_female_index" unique="false" columns="female"/>
+      <index name="singida_male_index" unique="false" columns="male"/>
+      <index name="singida_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="singida_nets_index" unique="false" columns="nets"/>
+      <index name="singida_region_index" unique="false" columns="region"/>
+      <index name="singida_station_index" unique="false" columns="station"/>
+      <index name="singida_status_index" unique="false" columns="status"/>
+      <index name="singida_uid_index" unique="false" columns="uid"/>
+      <index name="singida_village_index" unique="false" columns="village"/>
+      <index name="singida_ward_index" unique="false" columns="ward"/>
+      <index name="singida_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Tabora" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="tabora_district_index" unique="false" columns="district"/>
+      <index name="tabora_entry_index" unique="false" columns="entry"/>
+      <index name="tabora_female_index" unique="false" columns="female"/>
+      <index name="tabora_male_index" unique="false" columns="male"/>
+      <index name="tabora_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="tabora_nets_index" unique="false" columns="nets"/>
+      <index name="tabora_region_index" unique="false" columns="region"/>
+      <index name="tabora_station_index" unique="false" columns="station"/>
+      <index name="tabora_status_index" unique="false" columns="status"/>
+      <index name="tabora_uid_index" unique="false" columns="uid"/>
+      <index name="tabora_village_index" unique="false" columns="village"/>
+      <index name="tabora_ward_index" unique="false" columns="ward"/>
+      <index name="tabora_writer_index" unique="false" columns="writer"/>
+    </table>
+    <table name="Tanga" schema="" catalog="malaria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uid" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="region" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ward" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="village" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="male" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="female" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="nets" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="station" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name_of_veo" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="writer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="entry" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="comfirmed_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="confirmation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verification_status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="verified_by" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="tanga_district_index" unique="false" columns="district"/>
+      <index name="tanga_entry_index" unique="false" columns="entry"/>
+      <index name="tanga_female_index" unique="false" columns="female"/>
+      <index name="tanga_male_index" unique="false" columns="male"/>
+      <index name="tanga_name_of_veo_index" unique="false" columns="name_of_veo"/>
+      <index name="tanga_nets_index" unique="false" columns="nets"/>
+      <index name="tanga_region_index" unique="false" columns="region"/>
+      <index name="tanga_station_index" unique="false" columns="station"/>
+      <index name="tanga_status_index" unique="false" columns="status"/>
+      <index name="tanga_uid_index" unique="false" columns="uid"/>
+      <index name="tanga_village_index" unique="false" columns="village"/>
+      <index name="tanga_ward_index" unique="false" columns="ward"/>
+      <index name="tanga_writer_index" unique="false" columns="writer"/>
+    </table>
     <table name="districts" schema="" catalog="malaria" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="district" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
@@ -1515,6 +2415,11 @@
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <index name="uid" unique="true" columns="uid"/>
+      <index name="uid_2" unique="false" columns="uid"/>
+      <index name="uid_3" unique="false" columns="uid"/>
+      <index name="uid_4" unique="false" columns="uid"/>
+      <index name="uid_5" unique="false" columns="uid"/>
     </table>
     <table name="messages" schema="" catalog="malaria" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

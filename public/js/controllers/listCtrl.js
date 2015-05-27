@@ -4,11 +4,14 @@
 angular.module("malariaApp")
     .controller('listCtrl',function($scope,$http){
         $scope.showList =false;
+        $scope.showloader = false;
         $scope.getList = function(currentKaya){
             $scope.showList =false;
+            $scope.showloader =true;
             $http.post("index.php/getkaya",currentKaya).success(function(res){
                 $scope.data.kaya = res;
                 $scope.showList =true;
+                $scope.showloader =false;
             });
         }
 
