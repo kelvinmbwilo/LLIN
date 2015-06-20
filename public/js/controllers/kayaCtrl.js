@@ -26,9 +26,9 @@ angular.module("malariaApp")
             kaya.verification_status = 'registered';
             $http.post("index.php/kaya", kaya).success(function (newKaya) {
 //                $scope.data.kaya.push(newKaya);
-                $scope.currentKaya = {};
+//                $scope.currentKaya = {};
 //                $scope.currentKaya.uid = parseInt(Math.random()*1000000);
-                $scope.currentKaya.uid = 0;
+//                $scope.currentKaya.uid = 0;
                 $scope.kayaSavedSuccess = false;
                 $scope.currentSaving = false;
                 $scope.kayaSavedFalue = false;

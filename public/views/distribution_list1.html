@@ -41,6 +41,8 @@
     Print The list
 </md-tooltip>
 </md-button>
+
+<md-button title="Download data as Excel" href="index.php/distribution_list2/{{ currentKaya.region }}/{{ currentKaya.district }}" target="_blank" ng-show="showDisList && data.onedistrict.villagelist != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_file_download_24px.svg"></md-button>
 <h2 ng-if="showloader" class="text-center"> <i class="fa fa-spin fa-spinner" ></i> Loading data... </h2>
 
 <md-whiteframe class="md-whiteframe-z5">

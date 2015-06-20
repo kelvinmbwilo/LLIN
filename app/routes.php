@@ -210,6 +210,7 @@ Route::post('delete/village/{id}',array('uses'=>'kayaController@destroyVillage')
 /////////////////////////////////generating pdf /////////////////////////////////
 //getting distribution list
 Route::get('distribution_list1/{regid}/{disid}',array('uses'=>'kayaController@generatePdf1'));
+Route::get('distribution_list2/{regid}/{disid}',array('uses'=>'kayaController@generateEXCEL'));
 
 //getting issuing list
 Route::get('distribution_list/{regid}/{disid}/{wardid}/{villid}',array('uses'=>'kayaController@generatePdf'));

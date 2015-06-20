@@ -1,0 +1,2806 @@
+[
+    {
+        "id": "1",
+        "region": "Arusha",
+        "district": [
+            {
+                "district": "Arumeru District",
+                "wards": [
+                    {
+                        "name": "Akheri",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Akheri",
+                                "ward": "Akheri",
+                                "code": "TZ.NT.AS.AM.2.14.1"
+                            },
+                            {
+                                "name": "Nguruma",
+                                "ward": "Akheri",
+                                "code": "TZ.NT.AS.AM.2.14.3"
+                            },
+                            {
+                                "name": "Patandi",
+                                "ward": "Akheri",
+                                "code": "TZ.NT.AS.AM.2.14.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kikatiti",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kikatiti",
+                                "ward": "Kikatiti",
+                                "code": "TZ.NT.AS.AM.2.5.2"
+                            },
+                            {
+                                "name": "Ngyeku",
+                                "ward": "Kikatiti",
+                                "code": "TZ.NT.AS.AM.2.5.3"
+                            },
+                            {
+                                "name": "Sakila",
+                                "ward": "Kikatiti",
+                                "code": "TZ.NT.AS.AM.2.5.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kikwe",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Karangai",
+                                "ward": "Kikwe",
+                                "code": "TZ.NT.AS.AM.2.9.4"
+                            },
+                            {
+                                "name": "Kikwe",
+                                "ward": "Kikwe",
+                                "code": "TZ.NT.AS.AM.2.9.2"
+                            },
+                            {
+                                "name": "Maweni",
+                                "ward": "Kikwe",
+                                "code": "TZ.NT.AS.AM.2.9.3"
+                            },
+                            {
+                                "name": "Nambala",
+                                "ward": "Kikwe",
+                                "code": "TZ.NT.AS.AM.2.9.1"
+                            },
+                            {
+                                "name": "Valeska",
+                                "ward": "Kikwe",
+                                "code": "TZ.NT.AS.AM.2.9.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "King'ori",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "King'ori",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.1"
+                            },
+                            {
+                                "name": "Kolila",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.4"
+                            },
+                            {
+                                "name": "Malula",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.5"
+                            },
+                            {
+                                "name": "Mareu",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.6"
+                            },
+                            {
+                                "name": "Ngajisosia",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.3"
+                            },
+                            {
+                                "name": "Nsengony",
+                                "ward": "King'ori",
+                                "code": "TZ.NT.AS.AM.2.3.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Leguruki",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Leguruki",
+                                "ward": "Leguruki",
+                                "code": "TZ.NT.AS.AM.2.2.4"
+                            },
+                            {
+                                "name": "Maruvano",
+                                "ward": "Leguruki",
+                                "code": "TZ.NT.AS.AM.2.2.3"
+                            },
+                            {
+                                "name": "Miririnyi",
+                                "ward": "Leguruki",
+                                "code": "TZ.NT.AS.AM.2.2.1"
+                            },
+                            {
+                                "name": "Nkoasenga",
+                                "ward": "Leguruki",
+                                "code": "TZ.NT.AS.AM.2.2.5"
+                            },
+                            {
+                                "name": "Shishton",
+                                "ward": "Leguruki",
+                                "code": "TZ.NT.AS.AM.2.2.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Maji ya Chai",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Imbaseny",
+                                "ward": "Maji ya Chai",
+                                "code": "TZ.NT.AS.AM.2.4.4"
+                            },
+                            {
+                                "name": "Kitefu",
+                                "ward": "Maji ya Chai",
+                                "code": "TZ.NT.AS.AM.2.4.3"
+                            },
+                            {
+                                "name": "Maji ya Chai",
+                                "ward": "Maji ya Chai",
+                                "code": "TZ.NT.AS.AM.2.4.2"
+                            },
+                            {
+                                "name": "Ngongongare",
+                                "ward": "Maji ya Chai",
+                                "code": "TZ.NT.AS.AM.2.4.5"
+                            },
+                            {
+                                "name": "Ngurdoto",
+                                "ward": "Maji ya Chai",
+                                "code": "TZ.NT.AS.AM.2.4.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Makiba",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Majengo",
+                                "ward": "Makiba",
+                                "code": "TZ.NT.AS.AM.2.7.1"
+                            },
+                            {
+                                "name": "Makiba",
+                                "ward": "Makiba",
+                                "code": "TZ.NT.AS.AM.2.7.2"
+                            },
+                            {
+                                "name": "Patanumbe",
+                                "ward": "Makiba",
+                                "code": "TZ.NT.AS.AM.2.7.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Maroroni",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kwaugoro",
+                                "ward": "Maroroni",
+                                "code": "TZ.NT.AS.AM.2.6.1"
+                            },
+                            {
+                                "name": "Maroroni",
+                                "ward": "Maroroni",
+                                "code": "TZ.NT.AS.AM.2.6.2"
+                            },
+                            {
+                                "name": "Samaria",
+                                "ward": "Maroroni",
+                                "code": "TZ.NT.AS.AM.2.6.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mbuguni",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kikuletwa",
+                                "ward": "Mbuguni",
+                                "code": "TZ.NT.AS.AM.2.8.5"
+                            },
+                            {
+                                "name": "Mbuguni",
+                                "ward": "Mbuguni",
+                                "code": "TZ.NT.AS.AM.2.8.2"
+                            },
+                            {
+                                "name": "Mikungani",
+                                "ward": "Mbuguni",
+                                "code": "TZ.NT.AS.AM.2.8.1"
+                            },
+                            {
+                                "name": "Msitu wa Mbogo",
+                                "ward": "Mbuguni",
+                                "code": "TZ.NT.AS.AM.2.8.4"
+                            },
+                            {
+                                "name": "Shambarai Burka",
+                                "ward": "Mbuguni",
+                                "code": "TZ.NT.AS.AM.2.8.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ngarenanyuki",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kisimiri chini",
+                                "ward": "Ngarenanyuki",
+                                "code": "TZ.NT.AS.AM.2.1.3"
+                            },
+                            {
+                                "name": "Kisimiri Juu",
+                                "ward": "Ngarenanyuki",
+                                "code": "TZ.NT.AS.AM.2.1.4"
+                            },
+                            {
+                                "name": "Ngabobo",
+                                "ward": "Ngarenanyuki",
+                                "code": "TZ.NT.AS.AM.2.1.1"
+                            },
+                            {
+                                "name": "Olkong'wado",
+                                "ward": "Ngarenanyuki",
+                                "code": "TZ.NT.AS.AM.2.1.2"
+                            },
+                            {
+                                "name": "Uwiro",
+                                "ward": "Ngarenanyuki",
+                                "code": "TZ.NT.AS.AM.2.1.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nkoanrua",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Ambureni-Moivaro",
+                                "ward": "Nkoanrua",
+                                "code": "TZ.NT.AS.AM.2.15.4"
+                            },
+                            {
+                                "name": "Kipande-Nkoavele",
+                                "ward": "Nkoanrua",
+                                "code": "TZ.NT.AS.AM.2.15.2"
+                            },
+                            {
+                                "name": "Loita-Nkoamala",
+                                "ward": "Nkoanrua",
+                                "code": "TZ.NT.AS.AM.2.15.1"
+                            },
+                            {
+                                "name": "Nkoanrua",
+                                "ward": "Nkoanrua",
+                                "code": "TZ.NT.AS.AM.2.15.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nkoaranga",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Ngyani",
+                                "ward": "Nkoaranga",
+                                "code": "TZ.NT.AS.AM.2.11.5"
+                            },
+                            {
+                                "name": "Nkoanekoli",
+                                "ward": "Nkoaranga",
+                                "code": "TZ.NT.AS.AM.2.11.1"
+                            },
+                            {
+                                "name": "Nkoaranga",
+                                "ward": "Nkoaranga",
+                                "code": "TZ.NT.AS.AM.2.11.4"
+                            },
+                            {
+                                "name": "Nshupu",
+                                "ward": "Nkoaranga",
+                                "code": "TZ.NT.AS.AM.2.11.3"
+                            },
+                            {
+                                "name": "Sangananu",
+                                "ward": "Nkoaranga",
+                                "code": "TZ.NT.AS.AM.2.11.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nkoarisambu",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kimundo",
+                                "ward": "Nkoarisambu",
+                                "code": "TZ.NT.AS.AM.2.17.3"
+                            },
+                            {
+                                "name": "Mfulony",
+                                "ward": "Nkoarisambu",
+                                "code": "TZ.NT.AS.AM.2.17.1"
+                            },
+                            {
+                                "name": "Nkoarisambu",
+                                "ward": "Nkoarisambu",
+                                "code": "TZ.NT.AS.AM.2.17.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Poli",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Ndatu",
+                                "ward": "Poli",
+                                "code": "TZ.NT.AS.AM.2.12.2"
+                            },
+                            {
+                                "name": "Njoro",
+                                "ward": "Poli",
+                                "code": "TZ.NT.AS.AM.2.12.3"
+                            },
+                            {
+                                "name": "Poli",
+                                "ward": "Poli",
+                                "code": "TZ.NT.AS.AM.2.12.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Seela Sing'isi",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Seela",
+                                "ward": "Seela Sing'isi",
+                                "code": "TZ.NT.AS.AM.2.13.1"
+                            },
+                            {
+                                "name": "Sing'is",
+                                "ward": "Seela Sing'isi",
+                                "code": "TZ.NT.AS.AM.2.13.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Songoro",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Kilinga",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.6"
+                            },
+                            {
+                                "name": "Mulala",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.5"
+                            },
+                            {
+                                "name": "Songoro",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.4"
+                            },
+                            {
+                                "name": "Sura",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.2"
+                            },
+                            {
+                                "name": "Urisho",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.3"
+                            },
+                            {
+                                "name": "Ushili",
+                                "ward": "Songoro",
+                                "code": "TZ.NT.AS.AM.2.16.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Usa River",
+                        "district": "Arumeru District",
+                        "villages": [
+                            {
+                                "name": "Leki Tatu",
+                                "ward": "Usa River",
+                                "code": "TZ.NT.AS.AM.2.10.1"
+                            },
+                            {
+                                "name": "Manyata",
+                                "ward": "Usa River",
+                                "code": "TZ.NT.AS.AM.2.10.2"
+                            },
+                            {
+                                "name": "Usa River",
+                                "ward": "Usa River",
+                                "code": "TZ.NT.AS.AM.2.10.3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "district": "Arusha District",
+                "wards": [
+                    {
+                        "name": "Bangata",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Bangata",
+                                "ward": "Bangata",
+                                "code": "TZ.NT.AS.AS.6.4.1"
+                            },
+                            {
+                                "name": "Midawe",
+                                "ward": "Bangata",
+                                "code": "TZ.NT.AS.AS.6.4.2"
+                            },
+                            {
+                                "name": "Sasi",
+                                "ward": "Bangata",
+                                "code": "TZ.NT.AS.AS.6.4.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Baraa",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kiroshi",
+                                "ward": "Baraa",
+                                "code": "TZ.NT.AS.AS.3.5.1"
+                            },
+                            {
+                                "name": "Kwa Mrefu",
+                                "ward": "Baraa",
+                                "code": "TZ.NT.AS.AS.3.5.3"
+                            },
+                            {
+                                "name": "Ofisini",
+                                "ward": "Baraa",
+                                "code": "TZ.NT.AS.AS.3.5.2"
+                            },
+                            {
+                                "name": "Sorenyi",
+                                "ward": "Baraa",
+                                "code": "TZ.NT.AS.AS.3.5.4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Bwawani",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Bwawani",
+                                "ward": "Bwawani",
+                                "code": "TZ.NT.AS.AS.6.16.2"
+                            },
+                            {
+                                "name": "Kigongoni",
+                                "ward": "Bwawani",
+                                "code": "TZ.NT.AS.AS.6.16.4"
+                            },
+                            {
+                                "name": "Mungushi",
+                                "ward": "Bwawani",
+                                "code": "TZ.NT.AS.AS.6.16.1"
+                            },
+                            {
+                                "name": "Themi ya Simba",
+                                "ward": "Bwawani",
+                                "code": "TZ.NT.AS.AS.6.16.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Daraja 2",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ally Nyanya",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.5"
+                            },
+                            {
+                                "name": "Darajani",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.1"
+                            },
+                            {
+                                "name": "Jamhuri",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.6"
+                            },
+                            {
+                                "name": "Kati",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.3"
+                            },
+                            {
+                                "name": "Ndarvoi",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.2"
+                            },
+                            {
+                                "name": "Sanare",
+                                "ward": "Daraja 2",
+                                "code": "TZ.NT.AS.AS.3.11.4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Elerai",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Azimio",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.14"
+                            },
+                            {
+                                "name": "Kware",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.8"
+                            },
+                            {
+                                "name": "Majengo A",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.5"
+                            },
+                            {
+                                "name": "Majengo B",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.4"
+                            },
+                            {
+                                "name": "Mama Musa",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.3"
+                            },
+                            {
+                                "name": "Nduruma",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.6.17.16"
+                            },
+                            {
+                                "name": "Ngurumo",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.2"
+                            },
+                            {
+                                "name": "Olmatejo A",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.11"
+                            },
+                            {
+                                "name": "Olmatejo B",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.10"
+                            },
+                            {
+                                "name": "Remtula",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.15"
+                            },
+                            {
+                                "name": "Sakina",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.9"
+                            },
+                            {
+                                "name": "Sakon",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.13"
+                            },
+                            {
+                                "name": "Samanga",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.12"
+                            },
+                            {
+                                "name": "Shuma",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.7"
+                            },
+                            {
+                                "name": "Urundini",
+                                "ward": "Elerai",
+                                "code": "TZ.NT.AS.AS.3.17.6"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Engutoto",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Block C 1",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.1"
+                            },
+                            {
+                                "name": "Block C 2",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.2"
+                            },
+                            {
+                                "name": "Block D",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.3"
+                            },
+                            {
+                                "name": "Block F",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.4"
+                            },
+                            {
+                                "name": "Block H",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.5"
+                            },
+                            {
+                                "name": "Block J",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.AS.3.16.6"
+                            },
+                            {
+                                "name": "Olarash",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.MN.1.4.2"
+                            },
+                            {
+                                "name": "Sinon -Ngarash",
+                                "ward": "Engutoto",
+                                "code": "TZ.NT.AS.MN.1.4.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ilkiding'a",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilkidinga",
+                                "ward": "Ilkiding'a",
+                                "code": "TZ.NT.AS.AS.6.3.3"
+                            },
+                            {
+                                "name": "Ilkisongo",
+                                "ward": "Ilkiding'a",
+                                "code": "TZ.NT.AS.AS.6.3.1"
+                            },
+                            {
+                                "name": "Oloigeruno",
+                                "ward": "Ilkiding'a",
+                                "code": "TZ.NT.AS.AS.6.3.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kaloleni",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kaloleni Magharibi",
+                                "ward": "Kaloleni",
+                                "code": "TZ.NT.AS.AS.3.2.3"
+                            },
+                            {
+                                "name": "Kaloleni Mashariki",
+                                "ward": "Kaloleni",
+                                "code": "TZ.NT.AS.AS.3.2.2"
+                            },
+                            {
+                                "name": "Mita mia mbili",
+                                "ward": "Kaloleni",
+                                "code": "TZ.NT.AS.AS.3.2.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kati",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Bondeni",
+                                "ward": "Kati",
+                                "code": "TZ.NT.AS.AS.3.1.1"
+                            },
+                            {
+                                "name": "Pangani",
+                                "ward": "Kati",
+                                "code": "TZ.NT.AS.AS.3.1.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kimandolu",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kijenge Kaskazini",
+                                "ward": "Kimandolu",
+                                "code": "TZ.NT.AS.AS.3.4.2"
+                            },
+                            {
+                                "name": "Kijenge kusini",
+                                "ward": "Kimandolu",
+                                "code": "TZ.NT.AS.AS.3.4.1"
+                            },
+                            {
+                                "name": "Kityangari",
+                                "ward": "Kimandolu",
+                                "code": "TZ.NT.AS.AS.3.4.4"
+                            },
+                            {
+                                "name": "Tindigani",
+                                "ward": "Kimandolu",
+                                "code": "TZ.NT.AS.AS.3.4.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kimnyaki",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Olmringaringa",
+                                "ward": "Kimnyaki",
+                                "code": "TZ.NT.AS.AS.6.9.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kiranyi",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilkiurei",
+                                "ward": "Kiranyi",
+                                "code": "TZ.NT.AS.AS.6.8.2"
+                            },
+                            {
+                                "name": "Kiranyi",
+                                "ward": "Kiranyi",
+                                "code": "TZ.NT.AS.AS.6.8.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kisongo",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Engorola",
+                                "ward": "Kisongo",
+                                "code": "TZ.NT.AS.AS.6.13.2"
+                            },
+                            {
+                                "name": "Ilkerin",
+                                "ward": "Kisongo",
+                                "code": "TZ.NT.AS.AS.6.13.1"
+                            },
+                            {
+                                "name": "Lesiraa",
+                                "ward": "Kisongo",
+                                "code": "TZ.NT.AS.AS.6.13.4"
+                            },
+                            {
+                                "name": "Loovilukuny",
+                                "ward": "Kisongo",
+                                "code": "TZ.NT.AS.AS.6.13.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Lemara",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilikirouwa",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.7"
+                            },
+                            {
+                                "name": "Kikokwaru 'B'",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.4"
+                            },
+                            {
+                                "name": "Kikokwaru A",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.2"
+                            },
+                            {
+                                "name": "Korongoni",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.3"
+                            },
+                            {
+                                "name": "Lemara kati",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.5"
+                            },
+                            {
+                                "name": "Olepolos",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.6"
+                            },
+                            {
+                                "name": "Sunflag",
+                                "ward": "Lemara",
+                                "code": "TZ.NT.AS.AS.3.8.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Levolosi",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Levolos",
+                                "ward": "Levolosi",
+                                "code": "TZ.NT.AS.AS.3.15.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mateves",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Laroi",
+                                "ward": "Mateves",
+                                "code": "TZ.NT.AS.AS.6.14.3"
+                            },
+                            {
+                                "name": "Lemugur",
+                                "ward": "Mateves",
+                                "code": "TZ.NT.AS.AS.6.14.2"
+                            },
+                            {
+                                "name": "Ngurbob",
+                                "ward": "Mateves",
+                                "code": "TZ.NT.AS.AS.6.14.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mlangarini",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kiseriani",
+                                "ward": "Mlangarini",
+                                "code": "TZ.NT.AS.AS.6.18.1"
+                            },
+                            {
+                                "name": "Manyire",
+                                "ward": "Mlangarini",
+                                "code": "TZ.NT.AS.AS.6.18.3"
+                            },
+                            {
+                                "name": "Mlangarini",
+                                "ward": "Mlangarini",
+                                "code": "TZ.NT.AS.AS.6.18.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Moivo",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilkiroriti",
+                                "ward": "Moivo",
+                                "code": "TZ.NT.AS.AS.6.7.3"
+                            },
+                            {
+                                "name": "Moivo",
+                                "ward": "Moivo",
+                                "code": "TZ.NT.AS.AS.6.7.2"
+                            },
+                            {
+                                "name": "Oltulelei",
+                                "ward": "Moivo",
+                                "code": "TZ.NT.AS.AS.6.7.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Moshono",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Moivaro",
+                                "ward": "Moshono",
+                                "code": "TZ.NT.AS.AS.3.19.3"
+                            },
+                            {
+                                "name": "Moshono",
+                                "ward": "Moshono",
+                                "code": "TZ.NT.AS.AS.3.19.2"
+                            },
+                            {
+                                "name": "Olkeriyan",
+                                "ward": "Moshono",
+                                "code": "TZ.NT.AS.AS.3.19.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mussa",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Likamba",
+                                "ward": "Mussa",
+                                "code": "TZ.NT.AS.AS.6.12.2"
+                            },
+                            {
+                                "name": "Nengung'u",
+                                "ward": "Mussa",
+                                "code": "TZ.NT.AS.AS.6.12.4"
+                            },
+                            {
+                                "name": "Olchorovus",
+                                "ward": "Mussa",
+                                "code": "TZ.NT.AS.AS.6.12.1"
+                            },
+                            {
+                                "name": "Oloitushura",
+                                "ward": "Mussa",
+                                "code": "TZ.NT.AS.AS.6.12.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mwandeti",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Engalaon",
+                                "ward": "Mwandeti",
+                                "code": "TZ.NT.AS.AS.6.11.1"
+                            },
+                            {
+                                "name": "Engurtoto",
+                                "ward": "Mwandeti",
+                                "code": "TZ.NT.AS.AS.6.11.2"
+                            },
+                            {
+                                "name": "Imbibia",
+                                "ward": "Mwandeti",
+                                "code": "TZ.NT.AS.AS.6.11.4"
+                            },
+                            {
+                                "name": "Losikito",
+                                "ward": "Mwandeti",
+                                "code": "TZ.NT.AS.AS.6.11.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nduruma",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Majimoto",
+                                "ward": "Nduruma",
+                                "code": "TZ.NT.AS.AS.6.17.18"
+                            },
+                            {
+                                "name": "Marurani",
+                                "ward": "Nduruma",
+                                "code": "TZ.NT.AS.AS.6.17.17"
+                            },
+                            {
+                                "name": "Mzimuni",
+                                "ward": "Nduruma",
+                                "code": "TZ.NT.AS.AS.6.17.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ngarenaro",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kambi ya Fisi",
+                                "ward": "Ngarenaro",
+                                "code": "TZ.NT.AS.AS.3.14.3"
+                            },
+                            {
+                                "name": "NHC",
+                                "ward": "Ngarenaro",
+                                "code": "TZ.NT.AS.AS.3.14.6"
+                            },
+                            {
+                                "name": "Olmatejo",
+                                "ward": "Ngarenaro",
+                                "code": "TZ.NT.AS.AS.3.14.2"
+                            },
+                            {
+                                "name": "Technical",
+                                "ward": "Ngarenaro",
+                                "code": "TZ.NT.AS.AS.3.14.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olasiti",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Burka",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.7"
+                            },
+                            {
+                                "name": "Kimindolosi",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.5"
+                            },
+                            {
+                                "name": "Mateves",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.3"
+                            },
+                            {
+                                "name": "Mrongoine",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.1"
+                            },
+                            {
+                                "name": "Ngaramtoni chini",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.4"
+                            },
+                            {
+                                "name": "Olasiti",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.9"
+                            },
+                            {
+                                "name": "Olkeriani",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.8"
+                            },
+                            {
+                                "name": "Oloresho",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.6"
+                            },
+                            {
+                                "name": "Olteves",
+                                "ward": "Olasiti",
+                                "code": "TZ.NT.AS.AS.3.18.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oldonyosambu",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Lemong'o",
+                                "ward": "Oldonyosambu",
+                                "code": "TZ.NT.AS.AS.6.1.3"
+                            },
+                            {
+                                "name": "Losinoni",
+                                "ward": "Oldonyosambu",
+                                "code": "TZ.NT.AS.AS.6.1.1"
+                            },
+                            {
+                                "name": "Oldonyowas",
+                                "ward": "Oldonyosambu",
+                                "code": "TZ.NT.AS.AS.6.1.2"
+                            },
+                            {
+                                "name": "Oldonyosambu",
+                                "ward": "Oldonyosambu",
+                                "code": "TZ.NT.AS.NO.5.3.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oljoro",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Mbuyuni",
+                                "ward": "Oljoro",
+                                "code": "TZ.NT.AS.AS.6.15.1"
+                            },
+                            {
+                                "name": "Mirongoine",
+                                "ward": "Oljoro",
+                                "code": "TZ.NT.AS.AS.6.15.3"
+                            },
+                            {
+                                "name": "Oljoro",
+                                "ward": "Oljoro",
+                                "code": "TZ.NT.AS.AS.6.15.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olkokola",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilkurot",
+                                "ward": "Olkokola",
+                                "code": "TZ.NT.AS.AS.6.2.2"
+                            },
+                            {
+                                "name": "Lemanyata",
+                                "ward": "Olkokola",
+                                "code": "TZ.NT.AS.AS.6.2.4"
+                            },
+                            {
+                                "name": "Lengijave",
+                                "ward": "Olkokola",
+                                "code": "TZ.NT.AS.AS.6.2.1"
+                            },
+                            {
+                                "name": "Olkokola",
+                                "ward": "Olkokola",
+                                "code": "TZ.NT.AS.AS.6.2.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olmotonyi",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kimnyaki",
+                                "ward": "Olmotonyi",
+                                "code": "TZ.NT.AS.AS.6.21.3"
+                            },
+                            {
+                                "name": "Ngaramtoni",
+                                "ward": "Olmotonyi",
+                                "code": "TZ.NT.AS.AS.6.21.2"
+                            },
+                            {
+                                "name": "Olevolos",
+                                "ward": "Olmotonyi",
+                                "code": "TZ.NT.AS.AS.6.21.4"
+                            },
+                            {
+                                "name": "Olmotonyi",
+                                "ward": "Olmotonyi",
+                                "code": "TZ.NT.AS.AS.6.21.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oloirien",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Mbeshere",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.5"
+                            },
+                            {
+                                "name": "Meiroti",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.2"
+                            },
+                            {
+                                "name": "Moivoi",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.3"
+                            },
+                            {
+                                "name": "Mwanama",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.4"
+                            },
+                            {
+                                "name": "Roman Catholic",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.6"
+                            },
+                            {
+                                "name": "Suye",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.AS.3.6.1"
+                            },
+                            {
+                                "name": "Oloirien Magaiduru",
+                                "ward": "Oloirien",
+                                "code": "TZ.NT.AS.NO.5.16.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olorieni",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Olorien",
+                                "ward": "Olorieni",
+                                "code": "TZ.NT.AS.AS.6.20.3"
+                            },
+                            {
+                                "name": "Olosiva",
+                                "ward": "Olorieni",
+                                "code": "TZ.NT.AS.AS.6.20.4"
+                            },
+                            {
+                                "name": "Saitabau",
+                                "ward": "Olorieni",
+                                "code": "TZ.NT.AS.AS.6.20.1"
+                            },
+                            {
+                                "name": "Siwandeti",
+                                "ward": "Olorieni",
+                                "code": "TZ.NT.AS.AS.6.20.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oltoroto",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ilkirevi",
+                                "ward": "Oltoroto",
+                                "code": "TZ.NT.AS.AS.6.6.4"
+                            },
+                            {
+                                "name": "Kivulul",
+                                "ward": "Oltoroto",
+                                "code": "TZ.NT.AS.AS.6.6.3"
+                            },
+                            {
+                                "name": "Oldonyo Sapuk",
+                                "ward": "Oltoroto",
+                                "code": "TZ.NT.AS.AS.6.6.1"
+                            },
+                            {
+                                "name": "Olgilai",
+                                "ward": "Oltoroto",
+                                "code": "TZ.NT.AS.AS.6.6.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oltrumet",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ekenywa",
+                                "ward": "Oltrumet",
+                                "code": "TZ.NT.AS.AS.6.10.1"
+                            },
+                            {
+                                "name": "Ilkiushin",
+                                "ward": "Oltrumet",
+                                "code": "TZ.NT.AS.AS.6.10.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sambasha",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Sambasha",
+                                "ward": "Sambasha",
+                                "code": "TZ.NT.AS.AS.6.19.1"
+                            },
+                            {
+                                "name": "Shiboro",
+                                "ward": "Sambasha",
+                                "code": "TZ.NT.AS.AS.6.19.3"
+                            },
+                            {
+                                "name": "Timbolo",
+                                "ward": "Sambasha",
+                                "code": "TZ.NT.AS.AS.6.19.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sekei",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "AICC",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.6"
+                            },
+                            {
+                                "name": "Goliondoi",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.1"
+                            },
+                            {
+                                "name": "Mahakama",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.5"
+                            },
+                            {
+                                "name": "Naura",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.2"
+                            },
+                            {
+                                "name": "Naurei",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.4"
+                            },
+                            {
+                                "name": "Sanawari",
+                                "ward": "Sekei",
+                                "code": "TZ.NT.AS.AS.3.3.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sokon I",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Engosengiu",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.12"
+                            },
+                            {
+                                "name": "Kanisani",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.4"
+                            },
+                            {
+                                "name": "Lolovono",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.2"
+                            },
+                            {
+                                "name": "Longidong",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.1"
+                            },
+                            {
+                                "name": "Madukani",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.3"
+                            },
+                            {
+                                "name": "Makao Mapya",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.7"
+                            },
+                            {
+                                "name": "Migungani",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.8"
+                            },
+                            {
+                                "name": "Mlimani",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.11"
+                            },
+                            {
+                                "name": "Muriet",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.13"
+                            },
+                            {
+                                "name": "Olmukeya",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.9"
+                            },
+                            {
+                                "name": "Olnjavutian",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.10"
+                            },
+                            {
+                                "name": "Sainevuno",
+                                "ward": "Sokon I",
+                                "code": "TZ.NT.AS.AS.3.10.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sokon II",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Ng'ires",
+                                "ward": "Sokon II",
+                                "code": "TZ.NT.AS.AS.6.5.1"
+                            },
+                            {
+                                "name": "Oldadai",
+                                "ward": "Sokon II",
+                                "code": "TZ.NT.AS.AS.6.5.2"
+                            },
+                            {
+                                "name": "Sekei",
+                                "ward": "Sokon II",
+                                "code": "TZ.NT.AS.AS.6.5.4"
+                            },
+                            {
+                                "name": "Sokon II",
+                                "ward": "Sokon II",
+                                "code": "TZ.NT.AS.AS.6.5.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sombetini",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Kirika A",
+                                "ward": "Sombetini",
+                                "code": "TZ.NT.AS.AS.3.13.2"
+                            },
+                            {
+                                "name": "Kirika B",
+                                "ward": "Sombetini",
+                                "code": "TZ.NT.AS.AS.3.13.5"
+                            },
+                            {
+                                "name": "Olamuriaki",
+                                "ward": "Sombetini",
+                                "code": "TZ.NT.AS.AS.3.13.1"
+                            },
+                            {
+                                "name": "Osunyai",
+                                "ward": "Sombetini",
+                                "code": "TZ.NT.AS.AS.3.13.4"
+                            },
+                            {
+                                "name": "Simanjiro",
+                                "ward": "Sombetini",
+                                "code": "TZ.NT.AS.AS.3.13.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Terrat",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Bondeni Kati",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.1"
+                            },
+                            {
+                                "name": "Elwanyi",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.9"
+                            },
+                            {
+                                "name": "Embararuwai",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.13"
+                            },
+                            {
+                                "name": "Engavunet",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.5"
+                            },
+                            {
+                                "name": "Erangau",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.3"
+                            },
+                            {
+                                "name": "Imetong'wa",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.6"
+                            },
+                            {
+                                "name": "Laitayock",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.4"
+                            },
+                            {
+                                "name": "Madosoito",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.11"
+                            },
+                            {
+                                "name": "Mashariki",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.16"
+                            },
+                            {
+                                "name": "Masikiria",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.7"
+                            },
+                            {
+                                "name": "Murieti",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.15"
+                            },
+                            {
+                                "name": "Ngorienito",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.10"
+                            },
+                            {
+                                "name": "Oldonyo Kumur",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.12"
+                            },
+                            {
+                                "name": "Olkungu",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.2"
+                            },
+                            {
+                                "name": "Terrat",
+                                "ward": "Terrat",
+                                "code": "TZ.NT.AS.AS.3.9.18"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Themi",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "AICC Flats",
+                                "ward": "Themi",
+                                "code": "TZ.NT.AS.AS.3.7.3"
+                            },
+                            {
+                                "name": "Corridor",
+                                "ward": "Themi",
+                                "code": "TZ.NT.AS.AS.3.7.2"
+                            },
+                            {
+                                "name": "Old Police line",
+                                "ward": "Themi",
+                                "code": "TZ.NT.AS.AS.3.7.1"
+                            },
+                            {
+                                "name": "Themi Mashariki",
+                                "ward": "Themi",
+                                "code": "TZ.NT.AS.AS.3.7.4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Unga Ltd",
+                        "district": "Arusha District",
+                        "villages": [
+                            {
+                                "name": "Esso",
+                                "ward": "Unga Ltd",
+                                "code": "TZ.NT.AS.AS.3.12.5"
+                            },
+                            {
+                                "name": "Makaburi ya Baniani",
+                                "ward": "Unga Ltd",
+                                "code": "TZ.NT.AS.AS.3.12.4"
+                            },
+                            {
+                                "name": "Oysterbay",
+                                "ward": "Unga Ltd",
+                                "code": "TZ.NT.AS.AS.3.12.1"
+                            },
+                            {
+                                "name": "Tindiga",
+                                "ward": "Unga Ltd",
+                                "code": "TZ.NT.AS.AS.3.12.3"
+                            },
+                            {
+                                "name": "Viwandani",
+                                "ward": "Unga Ltd",
+                                "code": "TZ.NT.AS.AS.3.12.6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "district": "Karatu District",
+                "wards": [
+                    {
+                        "name": "Baray",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Dumbechand",
+                                "ward": "Baray",
+                                "code": "TZ.NT.AS.KR.4.6.4"
+                            },
+                            {
+                                "name": "Jobaj",
+                                "ward": "Baray",
+                                "code": "TZ.NT.AS.KR.4.6.3"
+                            },
+                            {
+                                "name": "Matala",
+                                "ward": "Baray",
+                                "code": "TZ.NT.AS.KR.4.6.5"
+                            },
+                            {
+                                "name": "Mbuganyekundu",
+                                "ward": "Baray",
+                                "code": "TZ.NT.AS.KR.4.6.2"
+                            },
+                            {
+                                "name": "Qangdend",
+                                "ward": "Baray",
+                                "code": "TZ.NT.AS.KR.4.6.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Buger",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Ayalaliyo",
+                                "ward": "Buger",
+                                "code": "TZ.NT.AS.KR.4.3.2"
+                            },
+                            {
+                                "name": "Buger",
+                                "ward": "Buger",
+                                "code": "TZ.NT.AS.KR.4.3.3"
+                            },
+                            {
+                                "name": "Endonyawet",
+                                "ward": "Buger",
+                                "code": "TZ.NT.AS.KR.4.3.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Daa",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Changarawe",
+                                "ward": "Daa",
+                                "code": "TZ.NT.AS.KR.4.8.1"
+                            },
+                            {
+                                "name": "Endashang'wet",
+                                "ward": "Daa",
+                                "code": "TZ.NT.AS.KR.4.8.2"
+                            },
+                            {
+                                "name": "Makhoromba",
+                                "ward": "Daa",
+                                "code": "TZ.NT.AS.KR.4.8.4"
+                            },
+                            {
+                                "name": "Mang'oli Juu",
+                                "ward": "Daa",
+                                "code": "TZ.NT.AS.KR.4.8.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Endabash",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Endabash",
+                                "ward": "Endabash",
+                                "code": "TZ.NT.AS.KR.4.4.2"
+                            },
+                            {
+                                "name": "Kinihhe",
+                                "ward": "Endabash",
+                                "code": "TZ.NT.AS.KR.4.4.3"
+                            },
+                            {
+                                "name": "Qaru",
+                                "ward": "Endabash",
+                                "code": "TZ.NT.AS.KR.4.4.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Endamaghang",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Endamaghang",
+                                "ward": "Endamaghang",
+                                "code": "TZ.NT.AS.KR.4.14.1"
+                            },
+                            {
+                                "name": "Mang'ola Barazani",
+                                "ward": "Endamaghang",
+                                "code": "TZ.NT.AS.KR.4.14.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Endamarariek",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Basodowish",
+                                "ward": "Endamarariek",
+                                "code": "TZ.NT.AS.KR.4.2.1"
+                            },
+                            {
+                                "name": "Endalah",
+                                "ward": "Endamarariek",
+                                "code": "TZ.NT.AS.KR.4.2.2"
+                            },
+                            {
+                                "name": "Endamarariek",
+                                "ward": "Endamarariek",
+                                "code": "TZ.NT.AS.KR.4.2.4"
+                            },
+                            {
+                                "name": "Getamock",
+                                "ward": "Endamarariek",
+                                "code": "TZ.NT.AS.KR.4.2.3"
+                            },
+                            {
+                                "name": "Khusumay",
+                                "ward": "Endamarariek",
+                                "code": "TZ.NT.AS.KR.4.2.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ganako",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Ayalabe",
+                                "ward": "Ganako",
+                                "code": "TZ.NT.AS.KR.4.11.1"
+                            },
+                            {
+                                "name": "Tloma",
+                                "ward": "Ganako",
+                                "code": "TZ.NT.AS.KR.4.11.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kansay",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Kambi ya Faru",
+                                "ward": "Kansay",
+                                "code": "TZ.NT.AS.KR.4.5.1"
+                            },
+                            {
+                                "name": "Kansay",
+                                "ward": "Kansay",
+                                "code": "TZ.NT.AS.KR.4.5.2"
+                            },
+                            {
+                                "name": "Laja",
+                                "ward": "Kansay",
+                                "code": "TZ.NT.AS.KR.4.5.3"
+                            },
+                            {
+                                "name": "Ngaibara",
+                                "ward": "Kansay",
+                                "code": "TZ.NT.AS.KR.4.5.4"
+                            },
+                            {
+                                "name": "Umbang'w",
+                                "ward": "Kansay",
+                                "code": "TZ.NT.AS.KR.4.5.5"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Karatu",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Gyekrum Arusha",
+                                "ward": "Karatu",
+                                "code": "TZ.NT.AS.KR.4.1.1"
+                            },
+                            {
+                                "name": "Gyekrum Lambo",
+                                "ward": "Karatu",
+                                "code": "TZ.NT.AS.KR.4.1.2"
+                            },
+                            {
+                                "name": "Karatu Mjini",
+                                "ward": "Karatu",
+                                "code": "TZ.NT.AS.KR.4.1.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mang'ola",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Laghangareri",
+                                "ward": "Mang'ola",
+                                "code": "TZ.NT.AS.KR.4.7.2"
+                            },
+                            {
+                                "name": "Maleckchand",
+                                "ward": "Mang'ola",
+                                "code": "TZ.NT.AS.KR.4.7.1"
+                            },
+                            {
+                                "name": "Mikocheni",
+                                "ward": "Mang'ola",
+                                "code": "TZ.NT.AS.KR.4.7.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mbulumbulu",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Kambi ya Simba",
+                                "ward": "Mbulumbulu",
+                                "code": "TZ.NT.AS.KR.4.13.5"
+                            },
+                            {
+                                "name": "Kitete",
+                                "ward": "Mbulumbulu",
+                                "code": "TZ.NT.AS.KR.4.13.4"
+                            },
+                            {
+                                "name": "Lositete",
+                                "ward": "Mbulumbulu",
+                                "code": "TZ.NT.AS.KR.4.13.1"
+                            },
+                            {
+                                "name": "Slahhamo",
+                                "ward": "Mbulumbulu",
+                                "code": "TZ.NT.AS.KR.4.13.3"
+                            },
+                            {
+                                "name": "Upper Kitete",
+                                "ward": "Mbulumbulu",
+                                "code": "TZ.NT.AS.KR.4.13.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oldean",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Oldean",
+                                "ward": "Oldean",
+                                "code": "TZ.NT.AS.KR.4.9.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Qurus",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Bashay",
+                                "ward": "Qurus",
+                                "code": "TZ.NT.AS.KR.4.10.3"
+                            },
+                            {
+                                "name": "Gongali",
+                                "ward": "Qurus",
+                                "code": "TZ.NT.AS.KR.4.10.1"
+                            },
+                            {
+                                "name": "Qurus",
+                                "ward": "Qurus",
+                                "code": "TZ.NT.AS.KR.4.10.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Rhotia",
+                        "district": "Karatu District",
+                        "villages": [
+                            {
+                                "name": "Chemchem",
+                                "ward": "Rhotia",
+                                "code": "TZ.NT.AS.KR.4.12.2"
+                            },
+                            {
+                                "name": "Kilima moja",
+                                "ward": "Rhotia",
+                                "code": "TZ.NT.AS.KR.4.12.1"
+                            },
+                            {
+                                "name": "Kilimatembo",
+                                "ward": "Rhotia",
+                                "code": "TZ.NT.AS.KR.4.12.5"
+                            },
+                            {
+                                "name": "Rhotia Kainam",
+                                "ward": "Rhotia",
+                                "code": "TZ.NT.AS.KR.4.12.3"
+                            },
+                            {
+                                "name": "Rhotia Kati",
+                                "ward": "Rhotia",
+                                "code": "TZ.NT.AS.KR.4.12.4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "district": "Longido District",
+                "wards": [
+                    {
+                        "name": "Eleng'ata Dapash",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Eleng'ata Dapash",
+                                "ward": "Eleng'ata Dapash",
+                                "code": "TZ.NT.AS.LO.7.3.3"
+                            },
+                            {
+                                "name": "Noondoto",
+                                "ward": "Eleng'ata Dapash",
+                                "code": "TZ.NT.AS.LO.7.3.1"
+                            },
+                            {
+                                "name": "Olchoroonyokie",
+                                "ward": "Eleng'ata Dapash",
+                                "code": "TZ.NT.AS.LO.7.3.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Engarenaibor",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Mairowa",
+                                "ward": "Engarenaibor",
+                                "code": "TZ.NT.AS.LO.7.8.3"
+                            },
+                            {
+                                "name": "Ngoswaki",
+                                "ward": "Engarenaibor",
+                                "code": "TZ.NT.AS.LO.7.8.2"
+                            },
+                            {
+                                "name": "Sinonik",
+                                "ward": "Engarenaibor",
+                                "code": "TZ.NT.AS.LO.7.8.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Engikaret",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Engikaret",
+                                "ward": "Engikaret",
+                                "code": "TZ.NT.AS.LO.7.2.2"
+                            },
+                            {
+                                "name": "Kiserian",
+                                "ward": "Engikaret",
+                                "code": "TZ.NT.AS.LO.7.2.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Gelai Lumbwa",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Alaililai",
+                                "ward": "Gelai Lumbwa",
+                                "code": "TZ.NT.AS.LO.7.6.1"
+                            },
+                            {
+                                "name": "Lumbwa",
+                                "ward": "Gelai Lumbwa",
+                                "code": "TZ.NT.AS.LO.7.6.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Gelai Meirugoi",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Magadini",
+                                "ward": "Gelai Meirugoi",
+                                "code": "TZ.NT.AS.LO.7.5.1"
+                            },
+                            {
+                                "name": "Meirugoi",
+                                "ward": "Gelai Meirugoi",
+                                "code": "TZ.NT.AS.LO.7.5.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ilorienito",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Ilorienito",
+                                "ward": "Ilorienito",
+                                "code": "TZ.NT.AS.LO.7.4.1"
+                            },
+                            {
+                                "name": "Losirwa",
+                                "ward": "Ilorienito",
+                                "code": "TZ.NT.AS.LO.7.4.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kamwanga",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Irkaswa",
+                                "ward": "Kamwanga",
+                                "code": "TZ.NT.AS.LO.7.16.2"
+                            },
+                            {
+                                "name": "Kamwanga",
+                                "ward": "Kamwanga",
+                                "code": "TZ.NT.AS.LO.7.16.3"
+                            },
+                            {
+                                "name": "Kitendeni",
+                                "ward": "Kamwanga",
+                                "code": "TZ.NT.AS.LO.7.16.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ketumbeine",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Orkejuloongishu",
+                                "ward": "Ketumbeine",
+                                "code": "TZ.NT.AS.LO.7.1.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kimokouwa",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Eworendeke",
+                                "ward": "Kimokouwa",
+                                "code": "TZ.NT.AS.LO.7.10.1"
+                            },
+                            {
+                                "name": "Kimokouwa",
+                                "ward": "Kimokouwa",
+                                "code": "TZ.NT.AS.LO.7.10.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Longido",
+                        "district": "Longido District",
+                        "villages": []
+                    },
+                    {
+                        "name": "Matale",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Matale B",
+                                "ward": "Matale",
+                                "code": "TZ.NT.AS.LO.7.7.1"
+                            },
+                            {
+                                "name": "Matele A",
+                                "ward": "Matale",
+                                "code": "TZ.NT.AS.LO.7.7.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mundarara",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Mundarara",
+                                "ward": "Mundarara",
+                                "code": "TZ.NT.AS.LO.7.9.1"
+                            },
+                            {
+                                "name": "Orgira",
+                                "ward": "Mundarara",
+                                "code": "TZ.NT.AS.LO.7.9.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Namanga",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Namanga",
+                                "ward": "Namanga",
+                                "code": "TZ.NT.AS.LO.7.11.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olmolog",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Elerai",
+                                "ward": "Olmolog",
+                                "code": "TZ.NT.AS.LO.7.15.1"
+                            },
+                            {
+                                "name": "Lerang'wa",
+                                "ward": "Olmolog",
+                                "code": "TZ.NT.AS.LO.7.15.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Orbomba",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Longido",
+                                "ward": "Orbomba",
+                                "code": "TZ.NT.AS.LO.7.12.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Tingatinga",
+                        "district": "Longido District",
+                        "villages": [
+                            {
+                                "name": "Ngereyani",
+                                "ward": "Tingatinga",
+                                "code": "TZ.NT.AS.LO.7.14.3"
+                            },
+                            {
+                                "name": "Sinya",
+                                "ward": "Tingatinga",
+                                "code": "TZ.NT.AS.LO.7.14.1"
+                            },
+                            {
+                                "name": "Tingatinga",
+                                "ward": "Tingatinga",
+                                "code": "TZ.NT.AS.LO.7.14.2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "district": "Monduli District",
+                "wards": [
+                    {
+                        "name": "Engaruka",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Engaruka chini",
+                                "ward": "Engaruka",
+                                "code": "TZ.NT.AS.MN.1.1.2"
+                            },
+                            {
+                                "name": "Engaruka Juu",
+                                "ward": "Engaruka",
+                                "code": "TZ.NT.AS.MN.1.1.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Esilalei",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Esilalei",
+                                "ward": "Esilalei",
+                                "code": "TZ.NT.AS.MN.1.10.2"
+                            },
+                            {
+                                "name": "Oltukai",
+                                "ward": "Esilalei",
+                                "code": "TZ.NT.AS.MN.1.10.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Lepurko",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Lepurko",
+                                "ward": "Lepurko",
+                                "code": "TZ.NT.AS.MN.1.12.2"
+                            },
+                            {
+                                "name": "Losimingori",
+                                "ward": "Lepurko",
+                                "code": "TZ.NT.AS.MN.1.12.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Lolkisale",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Lolkisale",
+                                "ward": "Lolkisale",
+                                "code": "TZ.NT.AS.MN.1.8.1"
+                            },
+                            {
+                                "name": "Tukusi",
+                                "ward": "Lolkisale",
+                                "code": "TZ.NT.AS.MN.1.8.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Majengo",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Migombani",
+                                "ward": "Majengo",
+                                "code": "TZ.NT.AS.MN.1.15.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Makuyuni",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Makuyuni",
+                                "ward": "Makuyuni",
+                                "code": "TZ.NT.AS.MN.1.9.1"
+                            },
+                            {
+                                "name": "Naiti",
+                                "ward": "Makuyuni",
+                                "code": "TZ.NT.AS.MN.1.9.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Meserani",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Meserani Chini",
+                                "ward": "Meserani",
+                                "code": "TZ.NT.AS.MN.1.13.2"
+                            },
+                            {
+                                "name": "Meserani Juu",
+                                "ward": "Meserani",
+                                "code": "TZ.NT.AS.MN.1.13.1"
+                            },
+                            {
+                                "name": "Naalarami",
+                                "ward": "Meserani",
+                                "code": "TZ.NT.AS.MN.1.13.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Moita",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Kilimatinde",
+                                "ward": "Moita",
+                                "code": "TZ.NT.AS.MN.1.6.4"
+                            },
+                            {
+                                "name": "Moita Bwawani",
+                                "ward": "Moita",
+                                "code": "TZ.NT.AS.MN.1.6.3"
+                            },
+                            {
+                                "name": "Moita Kilorit",
+                                "ward": "Moita",
+                                "code": "TZ.NT.AS.MN.1.6.2"
+                            },
+                            {
+                                "name": "Moita Kipok",
+                                "ward": "Moita",
+                                "code": "TZ.NT.AS.MN.1.6.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Monduli Juu",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Eluai",
+                                "ward": "Monduli Juu",
+                                "code": "TZ.NT.AS.MN.1.3.2"
+                            },
+                            {
+                                "name": "Emairete",
+                                "ward": "Monduli Juu",
+                                "code": "TZ.NT.AS.MN.1.3.1"
+                            },
+                            {
+                                "name": "Enguiki",
+                                "ward": "Monduli Juu",
+                                "code": "TZ.NT.AS.MN.1.3.3"
+                            },
+                            {
+                                "name": "Mfereji",
+                                "ward": "Monduli Juu",
+                                "code": "TZ.NT.AS.MN.1.3.4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Monduli Mjini",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Monduli",
+                                "ward": "Monduli Mjini",
+                                "code": "TZ.NT.AS.MN.1.5.2"
+                            },
+                            {
+                                "name": "Sabasaba",
+                                "ward": "Monduli Mjini",
+                                "code": "TZ.NT.AS.MN.1.5.1"
+                            },
+                            {
+                                "name": "Sinoni kati",
+                                "ward": "Monduli Mjini",
+                                "code": "TZ.NT.AS.MN.1.5.4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mswakini",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Mswakini Chini",
+                                "ward": "Mswakini",
+                                "code": "TZ.NT.AS.MN.1.14.1"
+                            },
+                            {
+                                "name": "Mswakini Juu",
+                                "ward": "Mswakini",
+                                "code": "TZ.NT.AS.MN.1.14.2"
+                            },
+                            {
+                                "name": "Naitolia",
+                                "ward": "Mswakini",
+                                "code": "TZ.NT.AS.MN.1.14.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mto wa Mbu",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Barabarani",
+                                "ward": "Mto wa Mbu",
+                                "code": "TZ.NT.AS.MN.1.11.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Selela",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Mbaashi",
+                                "ward": "Selela",
+                                "code": "TZ.NT.AS.MN.1.2.2"
+                            },
+                            {
+                                "name": "Selela",
+                                "ward": "Selela",
+                                "code": "TZ.NT.AS.MN.1.2.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sepeko",
+                        "district": "Monduli District",
+                        "villages": [
+                            {
+                                "name": "Arkaria",
+                                "ward": "Sepeko",
+                                "code": "TZ.NT.AS.MN.1.7.1"
+                            },
+                            {
+                                "name": "Arkatani",
+                                "ward": "Sepeko",
+                                "code": "TZ.NT.AS.MN.1.7.4"
+                            },
+                            {
+                                "name": "Lashaine",
+                                "ward": "Sepeko",
+                                "code": "TZ.NT.AS.MN.1.7.3"
+                            },
+                            {
+                                "name": "Lendikinya",
+                                "ward": "Sepeko",
+                                "code": "TZ.NT.AS.MN.1.7.2"
+                            },
+                            {
+                                "name": "Mti mmoja",
+                                "ward": "Sepeko",
+                                "code": "TZ.NT.AS.MN.1.7.5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "district": "Ngorongoro District",
+                "wards": [
+                    {
+                        "name": "Alailelai",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Alailelai",
+                                "ward": "Alailelai",
+                                "code": "TZ.NT.AS.NO.5.18.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Arash",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Arash",
+                                "ward": "Arash",
+                                "code": "TZ.NT.AS.NO.5.13.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Digodigo",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Digodigo",
+                                "ward": "Digodigo",
+                                "code": "TZ.NT.AS.NO.5.2.3"
+                            },
+                            {
+                                "name": "Kisangiro",
+                                "ward": "Digodigo",
+                                "code": "TZ.NT.AS.NO.5.2.2"
+                            },
+                            {
+                                "name": "Mgholo",
+                                "ward": "Digodigo",
+                                "code": "TZ.NT.AS.NO.5.2.4"
+                            },
+                            {
+                                "name": "Tinaga",
+                                "ward": "Digodigo",
+                                "code": "TZ.NT.AS.NO.5.2.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Enduleni",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Enduleni",
+                                "ward": "Enduleni",
+                                "code": "TZ.NT.AS.NO.5.11.1"
+                            },
+                            {
+                                "name": "Esere",
+                                "ward": "Enduleni",
+                                "code": "TZ.NT.AS.NO.5.11.2"
+                            },
+                            {
+                                "name": "Olpiro",
+                                "ward": "Enduleni",
+                                "code": "TZ.NT.AS.NO.5.11.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Enguserosambu",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Enguserosambu",
+                                "ward": "Enguserosambu",
+                                "code": "TZ.NT.AS.NO.5.15.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Kakesio",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Kakesio",
+                                "ward": "Kakesio",
+                                "code": "TZ.NT.AS.NO.5.12.1"
+                            },
+                            {
+                                "name": "Osinoni",
+                                "ward": "Kakesio",
+                                "code": "TZ.NT.AS.NO.5.12.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Maalon",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Losoito-Maalon",
+                                "ward": "Maalon",
+                                "code": "TZ.NT.AS.NO.5.19.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Malambo",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Malambo",
+                                "ward": "Malambo",
+                                "code": "TZ.NT.AS.NO.5.6.1"
+                            },
+                            {
+                                "name": "Piyaya",
+                                "ward": "Malambo",
+                                "code": "TZ.NT.AS.NO.5.6.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nainokanoka",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Bulat",
+                                "ward": "Nainokanoka",
+                                "code": "TZ.NT.AS.NO.5.8.1"
+                            },
+                            {
+                                "name": "Irkeepus",
+                                "ward": "Nainokanoka",
+                                "code": "TZ.NT.AS.NO.5.8.2"
+                            },
+                            {
+                                "name": "Nainokanoka",
+                                "ward": "Nainokanoka",
+                                "code": "TZ.NT.AS.NO.5.8.3"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Naiyobi",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Kapenjiro",
+                                "ward": "Naiyobi",
+                                "code": "TZ.NT.AS.NO.5.7.2"
+                            },
+                            {
+                                "name": "Naiyobi",
+                                "ward": "Naiyobi",
+                                "code": "TZ.NT.AS.NO.5.7.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ngorongoro",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Makao",
+                                "ward": "Ngorongoro",
+                                "code": "TZ.NT.AS.NO.5.10.3"
+                            },
+                            {
+                                "name": "Misigiyo",
+                                "ward": "Ngorongoro",
+                                "code": "TZ.NT.AS.NO.5.10.1"
+                            },
+                            {
+                                "name": "Oloirobi",
+                                "ward": "Ngorongoro",
+                                "code": "TZ.NT.AS.NO.5.10.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Olbalbal",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Meshili",
+                                "ward": "Olbalbal",
+                                "code": "TZ.NT.AS.NO.5.9.1"
+                            },
+                            {
+                                "name": "Ngoile",
+                                "ward": "Olbalbal",
+                                "code": "TZ.NT.AS.NO.5.9.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Oloipiri",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Oloipiri",
+                                "ward": "Oloipiri",
+                                "code": "TZ.NT.AS.NO.5.21.2"
+                            },
+                            {
+                                "name": "Soit-Sambu",
+                                "ward": "Oloipiri",
+                                "code": "TZ.NT.AS.NO.5.21.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Ololosokwan",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Ololosokwan",
+                                "ward": "Ololosokwan",
+                                "code": "TZ.NT.AS.NO.5.20.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Orgosorok",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Loliondo",
+                                "ward": "Orgosorok",
+                                "code": "TZ.NT.AS.NO.5.1.3"
+                            },
+                            {
+                                "name": "Sakala",
+                                "ward": "Orgosorok",
+                                "code": "TZ.NT.AS.NO.5.1.2"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pinyinyi",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Ngaresero",
+                                "ward": "Pinyinyi",
+                                "code": "TZ.NT.AS.NO.5.4.2"
+                            },
+                            {
+                                "name": "Pinyinyi",
+                                "ward": "Pinyinyi",
+                                "code": "TZ.NT.AS.NO.5.4.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sale",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Sale",
+                                "ward": "Sale",
+                                "code": "TZ.NT.AS.NO.5.5.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Samunge",
+                        "district": "Ngorongoro District",
+                        "villages": [
+                            {
+                                "name": "Mgongo",
+                                "ward": "Samunge",
+                                "code": "TZ.NT.AS.NO.5.17.3"
+                            },
+                            {
+                                "name": "Samunge",
+                                "ward": "Samunge",
+                                "code": "TZ.NT.AS.NO.5.17.2"
+                            },
+                            {
+                                "name": "Yasi mdito",
+                                "ward": "Samunge",
+                                "code": "TZ.NT.AS.NO.5.17.1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Soit-Sambu",
+                        "district": "Ngorongoro District",
+                        "villages": []
+                    }
+                ]
+            }
+        ]
+    }
+]

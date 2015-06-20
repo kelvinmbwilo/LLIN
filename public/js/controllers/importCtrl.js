@@ -31,7 +31,7 @@ angular.module("malariaApp")
                         $scope.progressParcent = progressPercentage;
                     }).success(function (data, status, headers, config) {
                         $scope.files = null;
-                        $scope.currentKaya = {};
+                        $scope.currentKaya.village = {};
                         $scope.progressParcent = 0;
                         $scope.data.toImport = data.length;
                         $scope.data.imported = data;

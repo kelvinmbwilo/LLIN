@@ -9,7 +9,7 @@ class ReportController extends \BaseController {
 	 */
 	public function index()
 	{
-		echo 8;
+
 	}
 
     /**
@@ -30,6 +30,30 @@ class ReportController extends \BaseController {
             return "village";
         }
 	}
+
+    /**
+     * Display a column for fetching data.
+     *
+     * @param areaType
+     * @param int
+     * @return String table
+     */
+    public function getBaseTable($id,$areaType)
+    {
+        if($areaType == "Regions"){
+            $region =  Region::find($id);
+            return strtolower(str_replace(" ","_",$region->region));;
+        }if($areaType == "Districts"){
+            $region = Region::find(District::find($id)->region_id);
+            return strtolower(str_replace(" ","_",$region->region));
+        }if($areaType == "Wards"){
+            $region = Region::find(District::find((Ward::find($id)->district_id))->region_id);
+            return strtolower(str_replace(" ","_",$region->region));
+        }if($areaType == "Village"){
+            $region = Region::find(District::find((Ward::find(Village::find($id)->ward_id)->district_id))->region_id);
+            return strtolower(str_replace(" ","_",$region->region));
+        }
+    }
 
     public function getCountColumn($column){
         if($column == "Redeemed Coupons"){

@@ -6,6 +6,8 @@ angular.module("malariaApp")
         var  tree;
         $scope.showLoading = false;
         $scope.showloader = false;
+        $scope.orgunitTree = {};
+
         $scope.getRegionChildren = function(id){
             var child = [];
             var regionId = id;
@@ -351,7 +353,32 @@ angular.module("malariaApp")
 
             });
         };
-
+        $scope.orgunitTree.regions = [];
+        $http.get("index.php/regions").success(function(data){
+            $scope.orgunitTree.regions =data;
+        angular.forEach($scope.orgunitTree.regions,function(value){
+            console.log(value.region +" == Arusha");
+            if(value.region == "Arusha"){
+                var regionId = value.id
+                value.districts = []
+                angular.forEach($scope.data.districts,function(val){
+                    if(val.region_id == regionId){
+                        val.wards = [];
+                        $http.get("index.php/wards/district/"+val.id).success(function(data){
+                            angular.forEach(data,function(val2){
+                                val2.villages = [];
+                                $http.get("index.php/village/ward/"+val2.id).success(function(data1){
+                                    val2.villages.push(data1)
+                                });
+                            })
+                            val.wards.push(data);
+                        });
+                        value.districts.push(val);
+                    }
+                });
+            }
+        });
+        });
     });
 
 function DialogController($scope, $mdDialog) {

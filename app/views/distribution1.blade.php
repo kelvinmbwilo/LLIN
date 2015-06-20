@@ -174,10 +174,20 @@
 
 <table style="width: 100%;margin-bottom: 10px;" >
     <tr>
-        <td><b>Region</b></td>
-        <td class="dotted">{{ $region->region }}</td>
-        <td><b>District</b></td>
-        <td class="dotted">{{ $district->district }}</td>
+        <td colspan="2"><b>Region</b></td>
+        <td class="dotted" colspan="2">{{ $region->region }}</td>
+        <td colspan="2"><b>District</b></td>
+        <td colspan="2" class="dotted">{{ $district->district }}</td>
+    </tr>
+    <tr>
+        <td><b>Region Population</b></td>
+        <td class="dotted">{{ $regionPopulation }}</td>
+        <td><b>District Population</b></td>
+        <td class="dotted">{{ $districtPopulation }}</td>
+        <td><b>Total Nets Region</b></td>
+        <td class="dotted">{{ $regionNets }}</td>
+        <td><b>Total Nets District</b></td>
+        <td class="dotted">{{ $districtNets }}</td>
     </tr>
 
 </table>
@@ -186,6 +196,7 @@
     <tr style="border: 0px">
         <th>Na</th>
         <th style="border: 0px">Village</th>
+        <th style="border: 0px">Population</th>
         <th style="border: 0px">Number of Coupons</th>
         <th style="border: 0px">Number of Nets</th>
         <th style="border: 0px">Buffer</th>
@@ -203,32 +214,20 @@
     <tr>
         <td>{{ ++$k }}</td>
         <td style="text-align: left">{{ $kay['name'] }}</td>
+        <td>{{{ $kay['male'] + $kay['female'] }}}</td>
         <td>{{ $kay['kaya'] }}</td>
         <td>{{ $kay['nets'] }}</td>
         <td></td>
     </tr>
     <?php
-    if($j % 33 == 0){
-
-        ?>
-    <tr style="background-color: #7E8F7C">
-        <td></td>
-        <td>Jumla</td>
-        <td>{{ $kayatotal }}</td>
-        <td>{{ $total }}</td>
-        <td></td>
-    </tr>
-
-    <p style="page-break-before: always">
-    <?php
-    }
+    
     ?>
     @endforeach
     <tr>
         <td></td>
-        <td>Jumla</td>
+        <td colspan="2">Total</td>
         <td>{{ $kayatotal }}</td>
-        <td>{{ $total }}</td>
+        <td>{{ $districtNets }}</td>
         <td></td>
     </tr>
     </tbody>

@@ -130,10 +130,10 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
     $scope.data.chartType = 'column'
     $scope.changeChart = function(type){
         $scope.displayTable = false;
-       if(type == 'table'){
+       if(type === 'table'){
             $scope.displayTable = true;
            $scope.data.chartType = 'table';
-        }else if(type == 'excel'){
+        }else if(type === 'excel'){
             $scope.displayTable = true;
            $scope.data.chartType = 'excel';
         }else{
@@ -146,18 +146,20 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
 
         $scope.changeCats();
         $scope.normalseries = [];
-           if($scope.data.chartType == "pie"){
+           if($scope.data.chartType === "pie"){
                delete $scope.chartConfig.chart;
                var serie = [];
                angular.forEach($scope.subCategory,function(value){
                 angular.forEach($scope.chartConfig.xAxis.categories,function(val){
-                    $http.post("getStatistics/")
+                    $http.post("getReportValue",{'area':$scope.data.category,'category':$scope.data.report_type,'id':''}).success(function(){
+
+                    });
                    serie.push({name: value+" - "+ val , y: Math.random()*100 })
                 });
             });
             $scope.normalseries.push({type: $scope.data.chartType, name: $scope.data.category, data: serie})
             $scope.chartConfig.series = $scope.normalseries;
-           }else if($scope.data.chartType == "excel"){
+           }else if($scope.data.chartType === "excel"){
                $scope.table.headers = [];
                $scope.table.colums =[];
                angular.forEach($scope.subCategory,function(value){
@@ -176,7 +178,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                window.location.assign("index.php/excel?data="+JSON.stringify($scope.table));
                alert("drawing excel");
 
-           }else if($scope.data.chartType == "nyingine"){
+           }else if($scope.data.chartType === "nyingine"){
                delete $scope.chartConfig.chart;
                var serie1 = [];
                angular.forEach($scope.subCategory,function(value){
@@ -194,7 +196,7 @@ angular.module('malariaApp').controller('statisticsCtrl',function($scope,$http){
                        enabled: false
                    }})
                $scope.chartConfig.series = $scope.normalseries;
-           }else if($scope.data.chartType == 'table'){
+           }else if($scope.data.chartType === 'table'){
                $scope.table.headers = [];
                $scope.table.colums =[];
                angular.forEach($scope.subCategory,function(value){
