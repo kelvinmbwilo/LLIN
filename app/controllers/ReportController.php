@@ -55,31 +55,36 @@ class ReportController extends \BaseController {
         }
     }
 
-    public function getCountColumn($column){
+    public function getCountColumn(){
+        $column   = Input::get('category_value');
+        $id       =Input::get('id');
+        $areaType   = Input::get('area');
+        $table = $this->getBaseTable($id,$areaType);
+        $areaColumn = $this->getAreaColumn($areaType);
         if($column == "Redeemed Coupons"){
-            return array('column'=>'status',"query"=>"count","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',1)->count();
         }elseif($column == "Non Redeemed Coupons"){
-            return array('column'=>'status',"query"=>"count","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',0)->count();
         }elseif($column == "Coupons"){
-            return array('column'=>'id',"query"=>"all","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->count();
         }elseif($column == "Nets"){
-            return array('column'=>'nets',"query"=>"sum","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',1)->sum('nets');
         }elseif($column == "Male"){
-            return array('column'=>'nets',"query"=>"sum","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',1)->sum('male');
         }elseif($column == "Female"){
-            return array('column'=>'nets',"query"=>"sum","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',1)->sum('female');
         }elseif($column == "Imported"){
-            return array('column'=>'entry',"query"=>"sum","value"=>"imported");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('entry','imported')->count();
         }elseif($column == "Verified"){
-            return array('column'=>'nets',"query"=>"sum","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('verification_status','')->count();
         }elseif($column == "Delivered Nets"){
-            return array('table'=>'village','column'=>'verification_status',"query"=>"count","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('verification_status','1')->count();
         }elseif($column == "Required Nets"){
-            return array('column'=>'nets',"query"=>"sum","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->where('status',1)->sum('nets');
         }elseif($column == "All Coupons"){
-            return array('column'=>'id',"query"=>"all","value"=>"1");
+            return DB::table(strtolower($table))->where($areaColumn,$id)->count();
         }else{
-            return "";
+            //return "http://www.jqueryslidershock.com/";
         }
     }
 

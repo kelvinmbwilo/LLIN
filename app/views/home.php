@@ -114,9 +114,9 @@ else
                     </li>
                     <?php } ?>
                     <?php if(Auth::user()->role !=  'Data'){ ?>
-                    <li class="dropdown" ng-class="{ active: isActive('/statistics_distribution') }">
-                        <a href="#/statistics_distribution" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>
-                    </li>
+<!--                    <li class="dropdown" ng-class="{ active: isActive('/statistics_distribution') }">-->
+<!--                        <a href="#/statistics_distribution" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Statistic <span class="icon-bar-chart"></span></a>-->
+<!--                    </li>-->
                     <?php } ?>
                     <li class="dropdown" ng-class="{ active: isActive('/timeline_show') }">
                         <a href="#/timeline_show" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Time Line <span class="icon-calendar"></span></a>

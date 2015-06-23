@@ -12,7 +12,11 @@ class kayaController extends \BaseController {
         $region = Region::find(Input::get('region'));
         $table = strtolower(str_replace(" ","_",$region->region));
 //        return DB::table($table)->where('district',$disid)->get();
-        return DB::table(strtolower($table))->where('region',Input::get('region'))->where('district',Input::get('district'))->where('ward',Input::get('ward'))->where('village',Input::get('village'))->get();
+        if(Input::get('kituo') == ""){
+            return DB::table(strtolower($table))->where('village',Input::get('village'))->select('uid','male', 'female','nets','station','name_of_veo')->get();
+         }else{
+            return DB::table(strtolower($table))->where('village',Input::get('village'))->where('station',Input::get('kituo'))->select('uid','male', 'female','nets','station','name_of_veo')->get();
+        }
     }
 
     /**
@@ -243,6 +247,17 @@ class kayaController extends \BaseController {
     public function getVillageWard($wardid)
     {
         return Village::where('ward_id',$wardid)->orderBy('name','ASC')->get();
+    }
+
+    /**
+     * Display a listing of Stations for specific village.
+     *
+     * @param int $villageId
+     * @return Response
+     */
+    public function getVillageStation($villageId)
+    {
+        return Station::where('village',$villageId)->orderBy('name','ASC')->get();
     }
 
     /**

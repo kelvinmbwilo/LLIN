@@ -104,7 +104,7 @@ angular.module("malariaApp")
             $scope.data.disward ={};
             $scope.data.disvillage = {};
         }
-
+        $scope.currentKaya = {};
         $scope.loadingWards = false;
         $scope.getWards = function(id){
             $scope.loadingWards = true;
@@ -123,6 +123,17 @@ angular.module("malariaApp")
             $http.get("index.php/village/ward/"+id).success(function(distr){
                 $scope.data.disvillage = distr;
                 $scope.loadingVillages = false;
+            });
+        }
+
+        $scope.loadingStations = false;
+        $scope.getKituo = function(id){
+            $scope.currentKaya.kituo = "";
+            $scope.data.diskituo = {};
+            $scope.loadingStations = true;
+            $http.get("index.php/village/station/"+id).success(function(distr){
+                $scope.data.diskituo = distr;
+                $scope.loadingStations = false;
             });
         }
 

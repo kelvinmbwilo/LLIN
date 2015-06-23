@@ -126,6 +126,9 @@ Route::get('wards/district/{id}',array('uses'=>'kayaController@getwardDistricts'
 //getting  villages from specific ward
 Route::get('village/ward/{id}',array('uses'=>'kayaController@getVillageWard'));
 
+//getting  stations from specific villages
+Route::get('village/station/{id}',array('uses'=>'kayaController@getVillageStation'));
+
 //deleting kaya
 Route::post('kaya/delete/{id}',array('uses'=>'kayaController@destroy'));
 
@@ -234,5 +237,5 @@ Route::get('excel',array('uses'=>'ReportController@downloadExcel'));
 Route::post('excel',array('uses'=>'ReportController@downloadExcel'));
 
 //getting ward details
-Route::post('getReportValue',array('uses'=>'ReportController@index'));
+Route::post('getReportValue',array('uses'=>'ReportController@getCountColumn'));
 

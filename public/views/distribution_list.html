@@ -13,28 +13,34 @@
 </style>
 
 <div class="col-md-12">
-    <div class="col-xs-3">
+    <div class="col-xs-2">
         Mkoa
         <select id="mkoa" class="entry" ng-model="currentKaya.region"  ng-change="changeRegion()">
             <option ng-repeat="region in data.regions" value="{{ region.id }}">{{ region.region }}</option>
         </select>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
         Wilaya
         <select id="wilaya" class="entry" ng-model="currentKaya.district" required ng-change="getWards(currentKaya.district)">
             <option ng-repeat="district in data.districts | filter:matchName(currentKaya.region)" value="{{ district.id }}">{{ district.district }}</option>
         </select>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
         Kata <span ng-if="loadingWards"><i class="fa fa-spin fa-spinner"></i>... </span>
         <select id="kata" class="entry" ng-model="currentKaya.ward" ng-change="getVillages(currentKaya.ward)">
             <option ng-repeat="ward in data.disward" value="{{ ward.id }}">{{ ward.name }}</option>
         </select>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
         Kijiji/Mtaa <span ng-if="loadingVillages"><i class="fa fa-spin fa-spinner"></i>... </span>
-        <select id="kijiji" class="entry" ng-model="currentKaya.village" >
+        <select id="kijiji" class="entry" ng-model="currentKaya.village" ng-change="getKituo(currentKaya.village)">
             <option ng-repeat="village in data.disvillage" value="{{ village.id }}" >{{ village.name }}</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        Ktuo cha ugawaji <span ng-if="loadingStations"><i class="fa fa-spin fa-spinner"></i>... </span>
+        <select id="kituo" class="entry" ng-model="currentKaya.kituo" >
+            <option ng-repeat="kituo in data.diskituo" value="{{ kituo.name }}" >{{ kituo.name }}</option>
         </select>
     </div>
 
