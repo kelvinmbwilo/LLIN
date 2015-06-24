@@ -209,7 +209,7 @@
     @foreach($villag as $kay)
     <?php $j++;
     $kayatotal += $kay['kaya'];
-    $total += intval($kay['nets'])
+    $total += intval($kay['nets']);
     ?>
     <tr>
         <td>{{ ++$k }}</td>
@@ -227,7 +227,7 @@
         <td></td>
         <td colspan="2">Total</td>
         <td>{{ $kayatotal }}</td>
-        <td>{{ $districtNets }}</td>
+        <td>{{ $total }}</td>
         <td></td>
     </tr>
     </tbody>
