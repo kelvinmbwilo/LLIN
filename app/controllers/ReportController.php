@@ -167,4 +167,17 @@ class ReportController extends \BaseController {
 	}
 
 
+/**
+	 *get a summary of coupon distribution per district
+	 * @param $id
+	 * @return Response
+	 */
+	public function getCouponSummary($id)
+	{
+        $table = $this->getBaseTable($id,"Districts");
+        $areaColumn = $this->getAreaColumn("Districts");
+        $nets = DB::table(strtolower($table))->where($areaColumn,$id)->select(DB::raw('male+female as count'))->get();
+        return $nets;
+	}
+
 }

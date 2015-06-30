@@ -239,3 +239,6 @@ Route::post('excel',array('uses'=>'ReportController@downloadExcel'));
 //getting ward details
 Route::post('getReportValue',array('uses'=>'ReportController@getCountColumn'));
 
+//getting ward details
+Route::get('couponSummary/{id}',array('uses'=>'ReportController@getCouponSummary'));
+

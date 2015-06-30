@@ -101,6 +101,7 @@ else
                             <li><a href="#/distribution"><i class="fa fa-book"></i> Summary </a></li>
                             <li><a href="#/distribution_list1"><i class="fa fa-list"></i> Distribution List </a></li>
                             <li><a href="#/distribution_list"><i class="fa fa-th"></i> Issuing List </a></li>
+                            <li><a href="#/coupon_summary"><i class="fa fa-th"></i> Coupon Summary </a></li>
                         </ul>
                     </li>
                     <?php if(Auth::user()->role == 'Administrator' || Auth::user()->role == 'Supervisor'){ ?>

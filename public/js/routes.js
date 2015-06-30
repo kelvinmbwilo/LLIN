@@ -108,6 +108,11 @@ angular.module("malariaApp")
         controller: 'timelineCtrl'
     });
 
+    $routeProvider.when("/coupon_summary",{
+        templateUrl: 'views/coupon_summary.html',
+        controller: 'couponSumaryCtrl'
+    });
+
 
     $routeProvider.otherwise({
         redirectTo: '/home'

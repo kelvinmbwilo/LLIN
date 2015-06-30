@@ -174,4 +174,89 @@ angular.module("malariaApp")
                 $scope.wardDetails = ppl;
             });
         }
+    }).controller('couponSumaryCtrl',function($scope,$http){
+        $scope.districtData = {};
+        $scope.districtData.one= 0;$scope.districtData.two= 0;$scope.districtData.three= 0;$scope.districtData.four= 0;
+        $scope.districtData.five= 0;$scope.districtData.six= 0;$scope.districtData.seven= 0;$scope.districtData.eight= 0;
+        $scope.districtData.nine= 0;$scope.districtData.ten= 0;$scope.districtData.eleven= 0;$scope.districtData.fiften= 0;
+        $scope.districtData.fiften= 0; $scope.districtData.twenty= 0; $scope.districtData.twentyfive= 0;
+        $scope.districtData.thirty= 0;$scope.districtData.thirtyfive= 0;$scope.districtData.forty = 0;
+        $scope.showloader = false;
+        $scope.getList = function(currentKaya){
+            $scope.showDisList = false;
+            $scope.showloader = true;
+            $http.get("index.php/couponSummary/"+currentKaya.district).success(function(ppl){
+                $scope.showDisList = true;
+                $scope.showloader = false;
+                angular.forEach(ppl,function(data){
+                    if(data.count == '1')
+                        $scope.districtData.one++;
+                    if(data.count == '2')
+                        $scope.districtData.two++;
+                    if(data.count == '3')
+                        $scope.districtData.three++;
+                    if(data.count == '4')
+                        $scope.districtData.four++;
+                    if(data.count == '5')
+                        $scope.districtData.five++;
+                    if(data.count == '6')
+                        $scope.districtData.six++;
+                    if(data.count == '7')
+                        $scope.districtData.seven++;
+                    if(data.count == '8')
+                        $scope.districtData.eight++;
+                    if(data.count == '9')
+                        $scope.districtData.nine++;
+                    if(data.count == '10')
+                        $scope.districtData.ten++;
+                    if(data.count > 10 && data.count < 16 )
+                        $scope.districtData.eleven++;
+                    if(data.count > 15 && data.count < 21 )
+                        $scope.districtData.fiften++;
+                    if(data.count > 20 && data.count < 26 )
+                        $scope.districtData.twenty++;
+                    if(data.count > 25 && data.count < 31 )
+                        $scope.districtData.twentyfive++;
+                    if(data.count > 30 && data.count < 36 )
+                        $scope.districtData.thirty++;
+                    if(data.count > 35 && data.count < 41 )
+                        $scope.districtData.thirtyfive++;
+                    if(data.count > 40  )
+                        $scope.districtData.forty++;
+                });
+                var serie =[];
+                angular.forEach($scope.districtData,function(val){
+//                    $http.post("index.php/getReportValue",{'area':$scope.data.category,'category':$scope.data.report_type,'id':$scope.getAreaID(val),'category_value':value}).success(function(data){
+                        serie.push( parseInt(val));
+//                    });
+                });
+                $scope.chartConfig.xAxis.categories = ['1','2','3','4','5','6','7','8','9','10','11-15','16-20','21-25','25-30','31-35','36-40','41-Above']
+                $scope.chartConfig.series = [{type: 'column', name: 'Coupon Summary', data: serie}]
+            });
+        }
+
+
+        $scope.getChart = function(currentKaya){
+
+        }
+       //drawing some charts
+        $scope.chartConfig = {
+            title: {
+                text: 'Combination chart'
+            },
+            xAxis: {
+                categories: []
+            },
+            labels: {
+                items: [{
+                    html: 'Total fruit consumption',
+                    style: {
+                        left: '50px',
+                        top: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                    }
+                }]
+            },
+            series: []
+        };
     });
