@@ -46,24 +46,25 @@
 <h2 ng-if="showloader" class="text-center"> <i class="fa fa-spin fa-spinner" ></i> Loading data... </h2>
 
 <md-whiteframe class="md-whiteframe-z5">
-    <table class="table table-bordered table-striped sortable" ng-if="showDisList && data.onedistrict.villagelist != 0">
+    <table class="table table-bordered table-striped" ng-if="showDisList && data.onedistrict.villagelist != 0">
         <thead>
         <tr>
             <th>Village</th>
-            <th>Number of Coupons</th>
+            <th>Registered Population</th>
             <th>Number of <br> Nets</th>
             <th>Buffer</th>
-            <!--<th></th>-->
+            <th>Total Nets</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="ward in data.onedistrict.villagelist | orderBy:'name'">
             <td style="text-align: left" >{{ ward.name }}</td>
-            <td>{{ ward.people.kaya }}</td>
+            <td>{{ ward.people.total }}</td>
             <td>{{ ward.people.nets }}</td>
-            <td></td>
+            <td>{{ ward.people.buffer }}</td>
+            <td>{{ ward.people.total_nets }}</td>
             <!--<td><span ng-if="region.people.kaya == region.people.done"><i class="fa fa-check text-success"></i> </span></td>-->
         </tr>
         </tbody>
-        </table>
+    </table>
 </md-whiteframe>

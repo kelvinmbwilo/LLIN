@@ -13,9 +13,9 @@ class kayaController extends \BaseController {
         $table = strtolower(str_replace(" ","_",$region->region));
 //        return DB::table($table)->where('district',$disid)->get();
         if(Input::get('kituo') == ""){
-            return DB::table(strtolower($table))->where('village',Input::get('village'))->select('uid','male', 'female','nets','station','name_of_veo')->get();
+            return DB::table(strtolower($table))->where('village',Input::get('village'))->where('uid','!=',0)->select('uid','male', 'female','nets','station','name_of_veo')->orderBy('uid','ASC')->get();
          }else{
-            return DB::table(strtolower($table))->where('village',Input::get('village'))->where('station',Input::get('kituo'))->select('uid','male', 'female','nets','station','name_of_veo')->get();
+            return DB::table(strtolower($table))->where('village',Input::get('village'))->where('uid','!=',0)->where('station',Input::get('kituo'))->select('uid','male', 'female','nets','station','name_of_veo')->orderBy('uid','ASC')->get();
         }
     }
 
@@ -346,6 +346,8 @@ class kayaController extends \BaseController {
         $array['male'] =  DB::table(strtolower($table))->where('ward',$wardId)->sum('male');
         $array['female'] =  DB::table(strtolower($table))->where('ward',$wardId)->sum('female');
         $array['nets'] =  DB::table(strtolower($table))->where('ward',$wardId)->sum('nets');
+        $array['buffer'] =  intval(0.03*DB::table(strtolower($table))->where('ward',$wardId)->sum('nets'));
+        $array['total_nets'] =  $array['nets'] + $array['buffer'];
         $array['kaya'] =  DB::table(strtolower($table))->where('ward',$wardId)->count();
         $array['done'] =  DB::table(strtolower($table))->where('ward',$wardId)->where('status',1)->count();
         $array['not_done'] =  DB::table(strtolower($table))->where('ward',$wardId)->where('status',0)->count();
@@ -369,6 +371,8 @@ class kayaController extends \BaseController {
         $array['male'] =  DB::table(strtolower($table))->where('village',$vilId)->sum('male');
         $array['female'] =  DB::table(strtolower($table))->where('village',$vilId)->sum('female');
         $array['nets'] =  DB::table(strtolower($table))->where('village',$vilId)->sum('nets');
+        $array['buffer'] =  intval(0.03*DB::table(strtolower($table))->where('village',$vilId)->sum('nets'));
+        $array['total_nets'] =  $array['nets'] + $array['buffer'];
         $array['kaya'] =  DB::table(strtolower($table))->where('village',$vilId)->count();
         $array['done'] =  DB::table(strtolower($table))->where('village',$vilId)->where('status',1)->count();
         $array['not_done'] =  DB::table(strtolower($table))->where('village',$vilId)->where('status',0)->count();
@@ -857,6 +861,8 @@ class kayaController extends \BaseController {
         $districtPopulation = $districtFemale+$districtMale;
         $regionNets = DB::table(strtolower($table))->sum('nets');
         $districtNets = 0;
+        $bufferdistrictNets = 0;
+        $bufferdistrictNets1 = 0;
         foreach(Ward::where('district_id',$disid)->get() as $ward){
             foreach(Village::where('ward_id',$ward->id)->get() as $village){
                 $array = array();
@@ -866,13 +872,17 @@ class kayaController extends \BaseController {
                 $villag[$j]['nets'] =  DB::table(strtolower($table))->where('village',$village->id)->sum('nets');
                 $villag[$j]['kaya'] =  DB::table(strtolower($table))->where('village',$village->id)->count();
                 $villag[$j]['total'] = $villag[$j]['male'] + $villag[$j]['female'];
+                $villag[$j]['buffer'] = intval(0.03*$villag[$j]['nets']);
+                $villag[$j]['all_nets'] = $villag[$j]['nets'] + $villag[$j]['buffer'];
                 $districtNets += $villag[$j]['nets'];
+                $bufferdistrictNets += $villag[$j]['all_nets'];
+                $bufferdistrictNets1 += $villag[$j]['buffer'];
                 $j++;
             }
         }
         sort($villag);
         //return View::make('distribution1',compact('region','district','villag'));
-        $pdf = PDF::loadView('distribution1',compact('region','district','villag','regionPopulation','districtPopulation','regionNets','districtNets'));
+        $pdf = PDF::loadView('distribution1',compact('region','district','villag','regionPopulation','districtPopulation','regionNets','districtNets','bufferdistrictNets1','bufferdistrictNets'));
         return $pdf->download('Distribution List.pdf'); //Download file
         //return View::make('distribution1',compact('region','district','villag','regionPopulation','districtPopulation','regionNets','districtNets'));
 
@@ -912,25 +922,34 @@ class kayaController extends \BaseController {
                 foreach(Ward::where('district_id',$GLOBALS['disis'])->get() as $ward){
                     foreach(Village::where('ward_id',$ward->id)->get() as $village){
                         if(Station::where('village',$village->id)->count() == 0){
+                            $Male =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('male');
+                            $Female =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
+
                             $villag[$j]['Ward'] = $ward->name;
                             $villag[$j]['Village'] = $village->name;
                             $villag[$j]['Station'] = 'Kituo Cha ugawaji';
-                            $villag[$j]['Male'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('male');
-                            $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
-                            $villag[$j]['Total'] = $villag[$j]['Male'] + $villag[$j]['Female'];
+//                            $villag[$j]['Male'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('male');
+//                            $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
+                            $villag[$j]['Registered People'] = $Male + $Female;
                             $villag[$j]['Number of Coupons'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->count();
                             $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('nets');
+                            $villag[$j]['Buffer'] = (0.03*$villag[$j]['Number Of Nets']);
+                            $villag[$j]['Total Nets'] = (0.03*$villag[$j]['Number Of Nets'])+$villag[$j]['Number Of Nets'];
                             $j++;
                         }else{
                             foreach(Station::where('village',$village->id)->get() as $station){
+                                $Male =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('male');
+                                $Female =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
                                 $villag[$j]['Ward'] = $ward->name;
                                 $villag[$j]['Village'] = $village->name;
                                 $villag[$j]['Station'] = $station->name;
-                                $villag[$j]['Male'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('male');
-                                $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('female');
-                                $villag[$j]['Total'] = $villag[$j]['Male'] + $villag[$j]['Female'];
+//                                $villag[$j]['Male'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('male');
+//                                $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('female');
+                                $villag[$j]['Total'] = $Male + $Female;
                                 $villag[$j]['Number of Coupons'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->count();
                                 $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('nets');
+                                $villag[$j]['Buffer'] = intval((0.03*$villag[$j]['Number Of Nets']));
+                                $villag[$j]['Total Nets'] =$villag[$j]['Buffer'] +$villag[$j]['Number Of Nets'];
                                 $j++;
                             }
                         }

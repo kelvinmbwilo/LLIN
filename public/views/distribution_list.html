@@ -75,7 +75,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="kaya in data.kaya | orderBy:'-id'" class="repeated-item">
+        <tr ng-repeat="kaya in data.kaya | orderBy:'-id'" class="repeated-item" ng-if="kaya.uid != 0">
             <td>{{ $index+1 }}</td>
             <td>{{ kaya.uid }}</td>
             <!--<td>{{ kaya.leader_name }}</td>-->

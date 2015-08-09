@@ -242,3 +242,6 @@ Route::post('getReportValue',array('uses'=>'ReportController@getCountColumn'));
 //getting ward details
 Route::get('couponSummary/{id}',array('uses'=>'ReportController@getCouponSummary'));
 
+//getting ward details
+Route::get('clean/{id}',array('uses'=>'ReportController@cleanCoupon'));
+

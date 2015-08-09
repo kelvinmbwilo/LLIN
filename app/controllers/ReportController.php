@@ -180,4 +180,29 @@ class ReportController extends \BaseController {
         return $nets;
 	}
 
+    /**
+	 *clean coupon per region.
+	 * @param $id
+	 * @return Response
+	 */
+	public function cleanCoupon($id)
+	{
+        $table = $this->getBaseTable($id,"Regions");
+        $nets = DB::table(strtolower($table))->get();
+        $i = 0;
+        foreach($nets as $colum){
+            $i++;
+            if($colum->writer != '1'){
+                $net1 = intval(round((($colum->male + $colum->female)/2), 0, PHP_ROUND_HALF_UP));
+
+                DB::table(strtolower($table))
+                    ->where('id', $colum->id)
+                    ->update(array('nets' => $net1,'writer' => '1'));
+            }
+
+        }
+
+        echo "updates ". $i." Colums";
+	}
+
 }

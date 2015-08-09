@@ -155,7 +155,7 @@
     }
 
 </style>
-<div class="row" style="margin-bottom: 25px">
+<div class="row" style="margin-bottom: 15px">
     <table>
         <tr>
             <td>
@@ -189,6 +189,12 @@
         <td><b>Total Nets District</b></td>
         <td class="dotted">{{ $districtNets }}</td>
     </tr>
+    <tr>
+        <td colspan="2"><b>Buffer Amount</b></td>
+        <td class="dotted" colspan="2">{{ $bufferdistrictNets1 }}</td>
+        <td colspan="2"><b>Total Nets With Buffer</b></td>
+        <td colspan="2" class="dotted">{{ $bufferdistrictNets }}</td>
+    </tr>
 
 </table>
 <table class="table table-striped table-bordered table-condensed" style="border-collapse: collapse;">
@@ -196,28 +202,33 @@
     <tr style="border: 0px">
         <th>Na</th>
         <th style="border: 0px">Village</th>
-        <th style="border: 0px">Population</th>
-        <th style="border: 0px">Number of Coupons</th>
+        <th style="border: 0px">Registered Population</th>
+<!--        <th style="border: 0px">Number of Coupons</th>-->
         <th style="border: 0px">Number of Nets</th>
         <th style="border: 0px">Buffer</th>
+        <th style="border: 0px">Total Nets</th>
     </tr>
     </thead>
     <tbody>
     <?php $index=0;
-    $j = 0; $total = 0;$kayatotal=0;$k = 0;
+    $j = 0; $total = 0;$kayatotal=0;$k = 0;$buffertotal=0;$allnets1 = 0;
     ?>
     @foreach($villag as $kay)
     <?php $j++;
     $kayatotal += $kay['kaya'];
     $total += intval($kay['nets']);
+    $buffertotal += intval($kay['buffer']);
+    $allnets = $kay['nets'] + $kay['buffer'];
+    $allnets1 += $allnets;
     ?>
     <tr>
         <td>{{ ++$k }}</td>
         <td style="text-align: left">{{ $kay['name'] }}</td>
         <td>{{{ $kay['male'] + $kay['female'] }}}</td>
-        <td>{{ $kay['kaya'] }}</td>
+<!--        <td>{{ $kay['kaya'] }}</td>-->
         <td>{{ $kay['nets'] }}</td>
-        <td></td>
+        <td>{{ $kay['buffer'] }}</td>
+        <td>{{ $allnets }}</td>
     </tr>
     <?php
     
@@ -225,10 +236,11 @@
     @endforeach
     <tr>
         <td></td>
-        <td colspan="2">Total</td>
-        <td>{{ $kayatotal }}</td>
-        <td>{{ $total }}</td>
-        <td></td>
+        <td><b>Total</b></td>
+        <td><b>{{ $kayatotal }}</b></td>
+        <td><b>{{ $total }}</b></td>
+        <td><b>{{ $buffertotal }}</b></td>
+        <td><b>{{ $allnets1 }}</b></td>
     </tr>
     </tbody>
 </table>
