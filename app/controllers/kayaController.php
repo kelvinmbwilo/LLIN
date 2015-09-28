@@ -20,6 +20,67 @@ class kayaController extends \BaseController {
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @param $regid
+     * @param $disid
+     * @param $wardid
+     * @param $vilid
+     * @return Response
+     */
+    public function generateEXCEL1($regid,$disid,$wardid,$vilid)
+    {
+        $region = Region::find($regid);
+        $table = strtolower(str_replace(" ","_",$region->region));
+//        return DB::table($table)->where('district',$disid)->get();
+            $GLOBALS['data'] = DB::table(strtolower($table))->where('village',$vilid)->where('uid','!=',0)->select('uid','male', 'female','nets','station','name_of_veo')->orderBy('uid','ASC')->get();
+
+
+        $district = District::find($disid);
+        $region  = Region::find($regid);
+        $village  = Village::find($vilid);
+        $ward  = Ward::find($wardid);
+
+        $GLOBALS['tab'] = $table;
+        $GLOBALS['dis'] = $district->district;
+        $GLOBALS['reg'] = $region->region;
+        $GLOBALS['ward'] = $ward->name;
+        $GLOBALS['vill'] = $village->name;
+        Excel::create($GLOBALS['reg'].'_'.$GLOBALS['dis'].'_'.$GLOBALS['ward'].'_'.$GLOBALS['vill'].'_IssuingList', function($excel) {
+
+            // Set the title
+            $excel->setTitle('A issuing List for '.$GLOBALS['vill'].' Village ');
+
+            // Chain the setters
+            $excel->setCreator('LLIN MRC')
+                ->setCompany('HEBET TECHNOLOGIES');
+
+            // Call them separately
+            $excel->setDescription('A issuing List for '.$GLOBALS['vill']);
+            $excel->sheet('Sheetname', function($sheet) {
+                $j = 0;
+                $villag = array();
+                foreach($GLOBALS['data'] as $data){
+                    //'uid','male', 'female','nets','station','name_of_veo'
+                    $villag[$j]['S/N'] = $j+1;
+                    $villag[$j]['ID'] = $data->uid;
+                    $villag[$j]['IDADI YA WATU'] = $data->male + $data->female ;
+                    $villag[$j]['IDADI YA VTANDARUA'] = $data->nets+0;
+                    $villag[$j]['KITUO CHA UGAWAJI'] = $data->station;
+                    $villag[$j]['VEO'] = $data->name_of_veo;
+                    $j++;
+
+                }
+                sort($villag);
+                $sheet->fromArray($villag);
+
+            });
+
+        })->download('xlsx');
+
+    }
+
+    /**
      * Display a search result.
      *
      * @return Response
@@ -71,15 +132,16 @@ class kayaController extends \BaseController {
                     {
                         $row->toArray();
                         if(trim($row->kituo_cha_ugawaji) != ""){
+                            //C:\Users\Public\ReadSoft\FORMS\Images\ident\Lubaga_Azimio_Azimio SM_Daniel Kabuta (1).tif
                             $pieces = explode("(", trim($row->kituo_cha_ugawaji));
                             $pieces1 = explode("\\", trim($pieces[0]));
                             $pieces2 = explode("_", trim(end($pieces1)));
                             $stationmame = "";
                             $veo = "";
                             If(isset($pieces2[1])){
-                                $stationmame = $pieces2[1];
-                            }If(isset($pieces2[2])){
-                                $veo = $pieces2[2];
+                                $stationmame = $pieces2[2];
+                            }If(isset($pieces2[3])){
+                                $veo = $pieces2[3];
                             }
                             if($GLOBALS['kituo'] == $stationmame){
 
@@ -111,33 +173,14 @@ class kayaController extends \BaseController {
 
                             if(count(DB::table($GLOBALS['table'])->where('uid',trim($row->id))->get()) != 0){
                                 array_push($GLOBALS['duplicate'],$kaya);
-                                $nets = intval(round((($kaya['me'] + $kaya['ke'])/2), 0, PHP_ROUND_HALF_UP));
-                                array_push($GLOBALS['entry'],array(
-                                    'uid' => trim($kaya['id']),
-//                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
-//                                'phone' => trim($kaya['simu']),
-                                    'male' => trim($kaya['me']),
-                                    'female' => trim($kaya['ke']),
-                                    'nets'   => $nets,
-                                    'station' => $kaya['kituo_cha_ugawaji'],
-                                    'name_of_veo' => $kaya['jina_la_veo'],
-//                                'writer' => trim($kaya['mwandishi']),
-                                    'region' => Input::get('region'),
-                                    'district' => Input::get('district'),
-                                    'ward' => Input::get('ward'),
-                                    'entry' => 'imported',
-                                    'village' => Input::get('village')
-                                ));
-//                                DB::table($GLOBALS['table'])->insert(array(
+//                                $nets = intval(round((($kaya['me'] + $kaya['ke'])/2), 0, PHP_ROUND_HALF_UP));
+//                                array_push($GLOBALS['entry'],array(
 //                                    'uid' => trim($kaya['id']),
-////                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
-////                                'phone' => trim($kaya['simu']),
 //                                    'male' => trim($kaya['me']),
 //                                    'female' => trim($kaya['ke']),
 //                                    'nets'   => $nets,
 //                                    'station' => $kaya['kituo_cha_ugawaji'],
 //                                    'name_of_veo' => $kaya['jina_la_veo'],
-////                                'writer' => trim($kaya['mwandishi']),
 //                                    'region' => Input::get('region'),
 //                                    'district' => Input::get('district'),
 //                                    'ward' => Input::get('ward'),
@@ -149,36 +192,17 @@ class kayaController extends \BaseController {
                                 array_push($GLOBALS['newVals'],$kaya);
                                 array_push($GLOBALS['entry'],array(
                                     'uid' => trim($kaya['id']),
-//                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
-//                                'phone' => trim($kaya['simu']),
                                     'male' => trim($kaya['me']),
                                     'female' => trim($kaya['ke']),
                                     'nets'   => $nets,
                                     'station' => $kaya['kituo_cha_ugawaji'],
                                     'name_of_veo' => $kaya['jina_la_veo'],
-//                                'writer' => trim($kaya['mwandishi']),
                                     'region' => Input::get('region'),
                                     'district' => Input::get('district'),
                                     'ward' => Input::get('ward'),
                                     'entry' => 'imported',
                                     'village' => Input::get('village')
                                 ));
-//                                DB::table($GLOBALS['table'])->insert(array(
-//                                    'uid' => trim($kaya['id']),
-////                                'leader_name' => trim($kaya['jina_la_mkuu_wa_kaya']),
-////                                'phone' => trim($kaya['simu']),
-//                                    'male' => trim($kaya['me']),
-//                                    'female' => trim($kaya['ke']),
-//                                    'nets'   => $nets,
-//                                    'station' => $kaya['kituo_cha_ugawaji'],
-//                                    'name_of_veo' => $kaya['jina_la_veo'],
-////                                'writer' => trim($kaya['mwandishi']),
-//                                    'region' => Input::get('region'),
-//                                    'district' => Input::get('district'),
-//                                    'ward' => Input::get('ward'),
-//                                    'entry' => 'imported',
-//                                    'village' => Input::get('village')
-//                                ));
                             }
                         }
 
@@ -932,25 +956,28 @@ class kayaController extends \BaseController {
 //                            $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
                             $villag[$j]['Registered People'] = $Male + $Female;
                             $villag[$j]['Number of Coupons'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->count();
-                            $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('nets');
+                            $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('nets')+0;
                             $villag[$j]['Buffer'] = (0.03*$villag[$j]['Number Of Nets']);
                             $villag[$j]['Total Nets'] = (0.03*$villag[$j]['Number Of Nets'])+$villag[$j]['Number Of Nets'];
                             $j++;
                         }else{
                             foreach(Station::where('village',$village->id)->get() as $station){
-                                $Male =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('male');
-                                $Female =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->sum('female');
-                                $villag[$j]['Ward'] = $ward->name;
-                                $villag[$j]['Village'] = $village->name;
-                                $villag[$j]['Station'] = $station->name;
+                                if(DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->count() != 0){
+                                    $Male =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('male');
+                                    $Female =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('female');
+                                    $villag[$j]['Ward'] = $ward->name;
+                                    $villag[$j]['Village'] = $village->name;
+                                    $villag[$j]['Station'] = $station->name;
 //                                $villag[$j]['Male'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('male');
 //                                $villag[$j]['Female'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('female');
-                                $villag[$j]['Total'] = $Male + $Female;
-                                $villag[$j]['Number of Coupons'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->count();
-                                $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('nets');
-                                $villag[$j]['Buffer'] = intval((0.03*$villag[$j]['Number Of Nets']));
-                                $villag[$j]['Total Nets'] =$villag[$j]['Buffer'] +$villag[$j]['Number Of Nets'];
-                                $j++;
+                                    $villag[$j]['Total'] = $Male + $Female;
+                                    $villag[$j]['Number of Coupons'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->count();
+                                    $villag[$j]['Number Of Nets'] =  DB::table(strtolower($GLOBALS['tab']))->where('village',$village->id)->where('station',$station->name)->sum('nets')+0;
+                                    $villag[$j]['Buffer'] = intval((0.03*$villag[$j]['Number Of Nets']));
+                                    $villag[$j]['Total Nets'] =$villag[$j]['Buffer'] +$villag[$j]['Number Of Nets'];
+                                    $j++;
+                                }
+
                             }
                         }
 

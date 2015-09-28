@@ -11,7 +11,6 @@
         text-align: center;
     }
 </style>
-
 <div class="col-md-12">
     <div class="col-xs-2">
         Mkoa
@@ -53,12 +52,10 @@
     <md-button title="Display The list" class="pull-right md-primary md-hue-3 md-raised" ng-click="getList(currentKaya)" style="margin: 15px">Get List
 
     </md-button>
-   <!--<md-button title="Print The list" href="index.php/distribution_list/{{ currentKaya.region }}/{{ currentKaya.district }}/{{ currentKaya.ward }}/{{ currentKaya.village }}" target="_blank" ng-show="showList && data.kaya.length != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_print_24px.svg">-->
-
-   <!--</md-button>-->
 <md-button title="Print The list" ng-click="downloadData()" target="_blank" ng-show="showList && data.kaya.length != 0" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_print_24px.svg">
+</md-button>
+    <md-button title="Download data as Excel for whole village" href="index.php/distribution_list/{{ currentKaya.region }}/{{ currentKaya.district }}/{{ currentKaya.ward }}/{{ currentKaya.village }}" target="_blank" class=" pull-right md-fab md-raised" style="width: 35px;height: 35px;margin: 15px"><img src="bower_components/icons/ic_file_download_24px.svg"></md-button>
 
-   </md-button>
 <h2 ng-if="showloader" class="text-center"> <i class="fa fa-spin fa-spinner" ></i> Loading data... </h2>
 <md-whiteframe class="md-whiteframe-z5" ng-if="showList">
     <div>

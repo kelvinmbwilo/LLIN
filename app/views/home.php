@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
-if(Auth::guest())
-  echo Redirect::to("login");
-else
+if(Auth::guest()){
+
+    echo Redirect::to("login");
+}
+else{
 ?>
 <html lang="en" ng-app="malariaApp" ng-controller="malariaAppCtrl">
 <head>
@@ -236,3 +238,6 @@ else
 <script src="<?php echo asset('js/controllers/timelineCtrl.js') ?>"></script>
 </body>
 </html>
+<?php
+}
+?>

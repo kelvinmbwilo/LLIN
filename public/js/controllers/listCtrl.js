@@ -35,15 +35,15 @@ angular.module("malariaApp")
                 veo = data.name_of_veo
                 kituo = data.station
                 datas.push(
-                    {'sn':i,'uid':data.uid,'sum':$scope.findSum(data),'nets':data.nets,'mpokeaji':'___________','sahihi':'_______'}
+                    {'sn':i,'uid':data.uid,'sum':$scope.findSum(data),'nets':data.nets,'mpokeaji':'_____________________','sahihi':'_______'}
             );
              i++;
             });
             var columns = [
                 {title: "S/N", key: "sn"},
                 {title: "ID", key: "uid"},
-                {title: "Idadi ya Watu", key: "sum"},
-                {title: "Idadi ya vyandarua", key: "nets"},
+                {title: "Watu", key: "sum"},
+                {title: "vyandarua", key: "nets"},
                 {title: "Jina la Mpokeaji", key: "mpokeaji"},
                 {title: "Sahihi", key: "sahihi"}
             ];
@@ -58,9 +58,11 @@ angular.module("malariaApp")
 
 
             doc.autoTable(columns, data, {
-                    padding: 3, // Horizontal cell padding
-                    fontSize: 10,
-                    lineHeight: 15,
+                    padding: 10, // Horizontal cell padding
+                    fontSize: 14,
+                    cellPadding: 5,
+                    lineHeight: 20,
+                    halign: 'center',
                     border: 1,
                     renderHeader: function (doc, pageNumber, settings) {
                         doc.setFontSize('13');
@@ -86,8 +88,7 @@ angular.module("malariaApp")
 
                 }, // Called on the end of every page
                 renderHeaderCell: function (x, y, width, height, key, value, settings) {
-                    doc.setFillColor(52, 73, 94); // Asphalt
-                    doc.setTextColor(255, 255, 255);
+                    doc.setFillColor(252, 253, 254); // Asphalt
                     doc.setFontStyle('bold');
                     doc.rect(x, y, width, height, 'F');
                     y += settings.lineHeight / 2 + doc.internal.getLineHeight() / 2 - 2.5;
@@ -95,11 +96,12 @@ angular.module("malariaApp")
                 },
                 renderCell: function (x, y, width, height, key, value, row, settings) {
 //                    doc.setFillColor(row % 2 === 0 ? 215 : 255);
+                    doc.setFontSize('14');
                     doc.rect(x, y, width, height, 'S');
                     y += settings.lineHeight / 2 + doc.internal.getLineHeight() / 2 - 2.5;
                     doc.text('' + value, x + settings.padding, y);
                 },
-                margins: { horizontal: 40, top: 80, bottom: 40 }, // How much space around the table
+                margins: { horizontal: 20, top: 80, bottom: 40 }, // How much space around the table
                 startY: false, // The start Y position on the first page. If set to false, top margin is used
                 avoidPageSplit: false, // Avoid splitting table over multiple pages (starts drawing table on fresh page instead).
                 extendWidth: true // If true, the table will span 100% of page width minus horizontal margins.
